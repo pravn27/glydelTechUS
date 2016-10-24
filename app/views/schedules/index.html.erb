@@ -1,22 +1,164 @@
-<div class="layout">
-  <div class="row">
-    <div class="col-md-12">
-    <form action="" class="col-md-6 no-padding">
-      <div class="form-group">
-        <div class="input-group">
-          <div class="input-group-addon"><span class="fa fa-search"></span></div>
-          <input type="text" placeholder="Search vehicles..." />
+<div class="layout" id="general">
+  <h2>Scheduled Vehicles</h2>
+  <div class="row top-search">
+    <div class="col-md-12 pad-zero">
+      <form action="" class="col-md-6 pad-zero">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon"><span class="fa fa-search"></span></div>
+            <input type="text" placeholder="Search vehicles..." />
+          </div>
         </div>
+      </form>
+      <div class="col-md-6 text-right">
+        <a href="#" class="action-btn" data-toggle="modal" data-target="#schedule"><i class="fa fa-plus"></i> Schedule</a>
       </div>
-    </form>
-    <div class="clearfix"></div>
-      <div>
-        <p>Vehicle name: Honda TR-1 (2015 | Truck011NR)</p>
-        <p>Vehicle Type: Washing</p>
-        <p>Details: Descrption details about schedule</p>
-        <p>Schedule From : 12/10/2016</p>
-        <p>Schedule To : 14/10/2016</p>
-      </div>
+      <div class="clearfix"></div>
     </div>
   </div>
+  <div class="scheduled">
+    <div class="col-sm-4">
+      <div class="scheduled-list">
+        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
+        <div class="schedule-details">
+          <ul class="list-unstyled details">
+            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
+            <li>Truck</li>
+            <li class="desc">Descrption details about schedule</li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+     <div class="col-sm-4">
+      <div class="scheduled-list">
+        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
+        <div class="schedule-details">
+          <ul class="list-unstyled details">
+            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
+            <li>Truck</li>
+            <li class="desc">Descrption details about schedule</li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+     <div class="col-sm-4">
+      <div class="scheduled-list">
+        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
+        <div class="schedule-details">
+          <ul class="list-unstyled details">
+            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
+            <li>Truck</li>
+            <li class="desc">Descrption details about schedule</li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+     <div class="col-sm-4">
+      <div class="scheduled-list">
+        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
+        <div class="schedule-details">
+          <ul class="list-unstyled details">
+            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
+            <li>Truck</li>
+            <li class="desc">Descrption details about schedule</li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+     <div class="col-sm-4">
+      <div class="scheduled-list">
+        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
+        <div class="schedule-details">
+          <ul class="list-unstyled details">
+            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
+            <li>Truck</li>
+            <li class="desc">Descrption details about schedule</li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+     <div class="col-sm-4">
+      <div class="scheduled-list">
+        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
+        <div class="schedule-details">
+          <ul class="list-unstyled details">
+            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
+            <li>Truck</li>
+            <li class="desc">Descrption details about schedule</li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <!-- <div class="schedule-form">
+    <ul class="list-unstyled">
+      <li>
+        <label>Vehicle Type</label>
+        <input type="text" name="vehicle-type" placeholder="Vehicle type">
+      </li>
+      <li>
+        <label>Vehicle Name</label>
+        <input type="text" name="vehicle-name" placeholder="Vehicle name">
+      </li>
+      <li>
+        <label>Scheduled on</label>
+        <input type="date" name="vehicle-type" placeholder="DD/MM/YYYY">
+      </li>
+      <li>
+        <label>Decription</label>
+        <textarea></textarea>
+      </li>
+      <li>
+        <input class="action-btn" type="submit" value="Add">
+      </li>
+    </ul>
+  </div> -->
+
+
+  
+
 </div>
+<div class="modal fade" tabindex="-1" role="dialog" id="schedule">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Add Schedule</h4>
+        </div>
+        <div class="modal-body">
+          <div class="schedule-form">
+            <ul class="list-unstyled">
+              <li>
+                <label>Vehicle Type</label>
+                <input type="text" name="vehicle-type" placeholder="Vehicle type">
+              </li>
+              <li>
+                <label>Vehicle Name</label>
+                <input type="text" name="vehicle-name" placeholder="Vehicle name">
+              </li>
+              <li>
+                <label>Scheduled on</label>
+                <input type="date" name="vehicle-type" placeholder="DD/MM/YYYY">
+              </li>
+              <li>
+                <label>Decription</label>
+                <textarea></textarea>
+              </li>
+              <li>
+                <label>&nbsp;</label>
+                <input class="action-btn" type="submit" value="Add">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->

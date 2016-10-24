@@ -3,7 +3,7 @@ body {
   font-family: 'ProximaNovaRegular', Helvetica,Arial,sans-serif;
   font-size: 14px;
 }
-input[type="text"],textarea,select {
+input[type="text"],textarea,select,input[type="date"] {
   outline: none;
   height: 32px;
   padding: 5px 12px;
@@ -24,7 +24,7 @@ input[type="text"],textarea,select {
   padding-right: 0!important
 }
 .pad-zero{
-  padding-: 0!important
+  padding: 0!important
 }
 /*--top-nav--*/
 .top-bar{
@@ -223,6 +223,7 @@ input[type="text"],textarea,select {
   border-radius: 3px;
   outline: none;
   font-weight: 600;
+  border: none;
 }
 .action-btn:hover {
   background: #DE4A00;
@@ -282,4 +283,71 @@ input[type="text"],textarea,select {
 }
 .check-vehicle:hover {
   background: #fff;
+}
+
+
+/*schedule lists*/
+.scheduled-list{
+  border-top: 1px solid #d9d9d9;
+  box-shadow: 0 2px 3px rgba(0,0,0,.3);
+  margin: 0 0 20px;
+}
+.scheduled-list .date {
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  width: 20%;
+  padding: 33px 0;
+  background: #222D32;
+  color: #fff;
+  float: left;
+  height: 120px;
+}
+.scheduled-list .date span {
+  display: block;
+}
+.schedule-details {
+  padding: 5px;
+  width: 75%;
+  float: left;
+}
+.schedule-details .name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.schedule-details li {
+  padding: 0 0 5px;
+}
+.schedule-details .details {
+  margin: 0;
+}
+.schedule-details li.desc{
+  height: 60px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.top-search {
+  margin: 0 0 20px;
+  border-bottom: 1px solid #c3c4ff;
+}
+.top-search .form-group {
+  margin: 0 0 5px!important;
+}
+.schedule-form li {
+  padding: 0 0 8px;
+}
+.schedule-form label {
+  width: 140px;
+}
+.schedule-form  textarea {
+  width: 320px;
+  height: 60px;
+}
+.customer-list th {
+  background: #eee;
+}
+.modal-dialog {
+  z-index: 99999;
 }
