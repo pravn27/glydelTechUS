@@ -1,5 +1,4 @@
-class VehicleController < ApplicationController
-
+class TrackController < ApplicationController
 	def create 
 		
 	end
@@ -15,5 +14,4 @@ class VehicleController < ApplicationController
 	def update
 
 	end
-
 end

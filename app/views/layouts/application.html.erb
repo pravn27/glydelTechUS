@@ -2,15 +2,14 @@
 <html>
   <head>
     <title>GlydelUs</title>
+    <base href="/" >
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
   	  <!--/top-bar-->
-  <div class="top-bar">
+  <div class="top-bar" ng-app="glydel" >
     <div class="logo">
       <a href="">Glydel</a>
     </div><!--/navbrand-->
