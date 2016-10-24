@@ -168,6 +168,9 @@ input[type="text"],textarea,select {
 .wrapper {
   margin: 40px 0 0 200px;
 }
+#Dashboard {
+  padding: 20px;
+}
 #Dashboard .blocks {
   border: 1px solid #ddd;
   padding: 20px;
