@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'vehicles' => "vehicle#index"
   get 'vehicles/new' => "vehicle#add"
   get 'vehicles/details' => "vehicle#detail"
+  get 'scheduling' => 'schedules#index'
 end
