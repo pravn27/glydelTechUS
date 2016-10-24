@@ -1,0 +1,57 @@
+ <div class="layout" id="general">
+      <h1>New Vehicle</h1>
+      <form>
+        <div class="col-sm-5 pad-lzero">
+          <ul class="list-unstyled vehicle-add">
+            <li>
+              <label>Vehicle Type</label>
+              <select>
+                <option value='truck'>Truck</option>
+                <option value='mini_truck'>Mini Truck</option>
+                <option value='others'>Others</option>
+              </select>
+            </li>
+            <li>
+              <label>Registration Number</label>
+              <input type="text" name="registration_number" placeholder="Vehicle Registration Number">
+            </li>
+             <li>
+              <label>VIN Number</label>
+              <input type="text" name="vin" placeholder="Vehicle Identification Number">
+            </li>
+            <li>
+              <label>Make</label>
+              <input type="text" name="make" placeholder="Vehicle Make">
+            </li>
+            <li>
+              <label>Model</label>
+              <input type="text" name="model" placeholder="Vehicle Model">
+            </li>
+            <li>
+              <label>Year</label>
+              <input type="text" name="year" placeholder="Vehicle Make Year">
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-5 pad-rzero">
+          <ul class="list-unstyled vehicle-add">
+            <li>
+              <label>Fuel Type</label>
+              <input type="text" name="fuel_type" placeholder="Vehicle Fuel Type">
+            </li>
+            <li>
+              <label>Fuel Capacity</label>
+              <input type="text" name="fuel_tank" placeholder="Vehicle Fuel Capacity">
+            </li>
+            <li>
+              <label>Current Odometer Reading</label>
+              <input  type="text" name="current_odometer_reading" placeholder="Vehicle Odometer Reading at time of adding">
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div>
+          <input class="action-btn" type="submit" value="Add Vehicle">
+        </div>
+      </form>
+    </div><!--/layout-->
