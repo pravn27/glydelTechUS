@@ -171,7 +171,7 @@ input[type="text"],textarea,select {
 #general{
   padding: 20px;
 }
-#general h1 {
+#general h1,#general h2 {
   margin: 0 0 20px;
   font-size: 21px;
   font-weight: 600;
@@ -188,11 +188,10 @@ input[type="text"],textarea,select {
   width: 80%;
   border: 1px solid #d9d9d9;
 }
-.action-btn,.action-btn:hover {
+.action-btn,.action-btn:hover ,.action-btn:focus{
   text-decoration: none;
   color: #fff;
   padding: 5px 10px;
-  border: 1px solid #d9d9d9;
   background-color: #FF4C00;
   border-radius: 3px;
   outline: none;
@@ -200,4 +199,46 @@ input[type="text"],textarea,select {
 }
 .action-btn:hover {
   background: #DE4A00;
+}
+/*vehicle details page*/
+.vehicle-details li {
+  padding: 0 0 15px;
+}
+.vehicle-details label {
+  font-size: 15px;
+  color: #666;
+  font-weight: 400;
+  width: 190px;
+}
+.vehicles-list th {
+  background: #eee;
+  position: relative;
+}
+.vehicles-list {
+  border: 1px solid #d9d9d9;
+}
+.vehicles-list a{
+  text-decoration: none;
+  color: #666;
+}
+.vehicles-list .fa-caret-down ,.vehicles-list .fa-caret-up{
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+}
+.vehicles-list .fa-caret-up{
+  top: 5px;
+}
+.vehicles-list .fa-caret-down{
+  top: 15px;
+}
+.action-btns {
+  color: rgba(102, 102, 102, 0.62)!important;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 5px;
+
+}
+.action-btns:hover{
+  color: rgba(102, 102, 102, 1)!important;
 }
