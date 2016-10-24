@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'vehicles/details' => "vehicle#detail"
   get 'issues' => "vehicle#issues"
   get 'schedule' => "schedules#index"
+  get 'schedule/calendar' => "schedules#calendar"
 end
