@@ -8,8 +8,8 @@ app.factory('scheduleRoutes',['$resource', function ($resource) {
 			url: '/schedules/all',
 			method: 'GET'
 		},
-		show: {
-			url: '/schedules/:id',
+		edit: {
+			url: '/schedules/:id/edit',
 			method: 'GET'
 		},
 		create: {
@@ -18,7 +18,7 @@ app.factory('scheduleRoutes',['$resource', function ($resource) {
 		},
 		update: {
 			url: '/schedules/:id',
-			method: 'PUT'
+			method: 'PATCH'
 		},
 		delete: {
 			url: '/schedules/:id',

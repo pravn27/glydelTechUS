@@ -343,11 +343,18 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   display: inline-block;
   font-size: 18px;
   margin: 0 5px;
-
 }
+
 .action-btns:hover{
   color: rgba(102, 102, 102, 1)!important;
 }
+.p0 .action-btns,.p0 .action-btns:hover,.p0 .check-vehicle  {
+  color: #a94442!important;
+}
+.p1 .action-btns,.p1 .action-btns:hover,.p1 .check-vehicle{
+  color: #8a6d3b!important;
+}
+
 .issue-desc {
   width: 45%;
 }
@@ -359,7 +366,6 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .check-vehicle:hover {
   background: #fff;
 }
-
 
 /*schedule lists*/
 .scheduled-list{
@@ -439,4 +445,12 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .new-cm h1 {
   margin: 0!important;
+}
+.p0 {
+  background: #f2dede;
+  color: #a94442;
+}
+.p1 {
+  background: #fcf8e3;
+  color: #8a6d3b;
 }
