@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require angular.min
+//= require angular-resource
 //= require moment.min
 //= require fullcalendar.min
 //= require app

@@ -4,15 +4,48 @@ class SchedulesController < ApplicationController
 		
 	end
 
+	def list
+		@vehicles = Vehicle.all
+		render :json=> { data: @vehicles}
+	end
+
+	def all
+		@schedules = Schedule.where(:is_active => "true")
+		render :json=> { data: @schedules}
+	end
+
+	def edit
+		@schedule = Schedule.find(params[:id])
+		render :json=> { data: @schedule}
+	end
+
 	def create
-		vehicle = Vehicle.find(:id)
+		vehicle = Vehicle.find(params[:id])
 		if vehicle.present?
-			schedule = Schedule.create(schedule_params)
-			flash[:notice] = "Schedule created successfully"
-			redirect_to schedules_path and return
+			schedule = vehicle.schedules.create(schedule_params)
+			render :json=> { message:"Schedule created Succesfully", path: schedules_path}
 		else
-			flash[:error] = "Unable to save. Please try again"
-			redirect_to schedules_path and return
+			ender :json=> { message:"Unable to save. Please try againy", path: schedules_path}
+		end
+	end
+
+	def update
+		schedule = Schedule.find(params[:id])
+		if schedule.present?
+			schedule = schedule.update(schedule_params)
+			render :json=> { message:"Schedule updated Succesfully", path: schedules_path}
+		else
+			ender :json=> { message:"Unable to update. Please try again", path: schedules_path}
+		end
+	end
+
+	def destroy
+		schedule = Schedule.find(params[:id])
+		if schedule.present?
+			schedule = schedule.update(:is_active => false)
+			render :json=> { message:"Schedule removed Succesfully", path: schedules_path}
+		else
+			ender :json=> { message:"Unable to delete. Please try again", path: schedules_path}
 		end
 	end
 
@@ -23,7 +56,7 @@ class SchedulesController < ApplicationController
 	private
 
 	def schedule_params
-		params.require(:schedule).permit(:vehicle_name, :type_of_service, :scheduling_details, :scheduled_date, :company_id)
+		params.permit(:vehicle_name, :vehicle_type, :scheduling_details, :scheduled_date)
 	end
 
 end

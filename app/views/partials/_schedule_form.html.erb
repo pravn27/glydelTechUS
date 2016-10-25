@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" role="dialog" id="schedule" ng-controller="scheduleController">
+<div class="modal fade" tabindex="-1" role="dialog" id="schedule">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -10,23 +10,24 @@
             <ul class="list-unstyled">
               <li>
                 <label>Vehicle Type</label>
-                <input type="text" name="vehicle-type" placeholder="Vehicle type" ng-model="schedule.vehicle_type">
+                <select ng-model="schedule.vehicle_type" ng-options="type for type in vehicle_types"></select>
               </li>
               <li>
                 <label>Vehicle Name</label>
-                <input type="text" name="vehicle-name" placeholder="Vehicle name" ng-model="schedule.vehicle_name">
+                <select ng-model="schedule.vehicle_name" ng-options="vehicle.make for vehicle in vehicles"></select>
               </li>
               <li>
                 <label>Scheduled on</label>
-                <input type="date" name="vehicle-type" placeholder="DD/MM/YYYY" ng-model="schedule.date">
+                <input type="date" name="vehicle-type" placeholder="DD/MM/YYYY" ng-model="schedule.scheduled_date">
               </li>
               <li>
                 <label>Decription</label>
-                <textarea ng-model="schedule.details"></textarea>
+                <textarea ng-model="schedule.scheduling_details"></textarea>
               </li>
               <li>
                 <label>&nbsp;</label>
-                <input class="action-btn" type="button" value="Add" ng-click="addSchedule(schedule)">
+                <input class="action-btn" type="button" value="Add" ng-click="addSchedule(schedule)" ng-if="add">
+                <input class="action-btn" type="button" value="Edit" ng-click="updateSchedule(schedule)" ng-if="edit">
               </li>
             </ul>
           </div>
