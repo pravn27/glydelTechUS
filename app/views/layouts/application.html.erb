@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GlydelUs</title>
-    <base href="/" >
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body ng-app="glydel">
-  	  <!--/top-bar-->
+<head>
+  <title>GlydelUs</title>
+  <base href="/" >
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body ng-app="glydel">
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
+  <!--/top-bar-->
+  <% if current_user.present? %>
   <div class="top-bar">
     <div class="logo">
       <a href="">Glydel</a>
@@ -22,7 +30,7 @@
       <li class="dropdown useraccountmenu">
         <a href="" data-toggle="dropdown" class="dropdown-toggle" >
           <span class="avatar"><img src="images/user.png" alt=""></span>
-          <span class="name">M subash</span>
+          <span class="name"><%= current_user.email %></span>
         </a>
         
         <ul class="dropdown-menu extended">
@@ -31,48 +39,49 @@
           <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Manage Accounts</a></li>
           <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a></li>
         </ul>
-        </li>
+      </li>
     </ul>
   </div><!--/top-bar-->
   <!--/top-bar ends-->
 
 
-	<!--/side-nav starts here-->
-	<div class="side-nav">
+  <!--/side-nav starts here-->
+  <div class="side-nav">
 
-	<ul class="list-unstyled menu">
-	  <li><a href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
-	  <li><a href="/vehicles"><i class="fa fa-truck" aria-hidden="true"></i> Vehicles</a></li>
-	  <li><a href="/customers"><i class="fa fa-user" aria-hidden="true"></i> Customers</a></li>
-	  <li><a href="/schedules"><i class="fa fa-calendar" aria-hidden="true"></i> Schedules</a></li>
-	  <li><a href="/issues"><i class="fa fa-bug" aria-hidden="true"></i> Issues</a></li>
-	  <li><a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+   <ul class="list-unstyled menu">
+     <li><a href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
+     <li><a href="/vehicles"><i class="fa fa-truck" aria-hidden="true"></i> Vehicles</a></li>
+     <li><a href="/customers"><i class="fa fa-user" aria-hidden="true"></i> Customers</a></li>
+     <li><a href="/schedules"><i class="fa fa-calendar" aria-hidden="true"></i> Schedules</a></li>
+     <li><a href="/issues"><i class="fa fa-bug" aria-hidden="true"></i> Issues</a></li>
+     <li><a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
 
-	</ul><!--/invoice-menu-->
-	<div class="footer-side-nav">
-	  <ul class="list-inline">
+   </ul><!--/invoice-menu-->
+   <div class="footer-side-nav">
+     <ul class="list-inline">
 	    <!-- <li>
 	      <a data-toggle="tooltip" data-placement="top" href="" title="Settings">
 	        <i class="fa fa-cogs"></i>
 	      </a>
 	    </li> -->
 	    <li>
-	      <a data-toggle="tooltip" data-placement="top" href="" title="Logout">
-	        <i class="fa fa-power-off" aria-hidden="true"></i>
-	      </a>
-	    </li>
-	    <li>
-	      <a data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
-	        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-	      </a>
-	    </li>
-	  </ul>
-	</div><!--/footer-side-nav-->
-	</div><!--/side-nav-->
-  	<!--/side-nav ends here-->
-	<!--wrapper-content-->
-	<div class="wrapper">
+       <a data-toggle="tooltip" data-placement="top" href="" title="Logout">
+         <i class="fa fa-power-off" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li>
+       <a data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
+         <i class="fa fa-arrow-left" aria-hidden="true"></i>
+       </a>
+     </li>
+   </ul>
+ </div><!--/footer-side-nav-->
+</div><!--/side-nav-->
+<!--/side-nav ends here-->
+<!--wrapper-content-->
+<% end %>
+<div class="wrapper">
 	<%= yield %>
-	</div>
-  </body>
+</div>
+</body>
 </html>
