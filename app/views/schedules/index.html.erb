@@ -1,4 +1,4 @@
-<div class="layout" id="general">
+<div class="layout" id="general" ng-controller="scheduleController">
   <h2>Scheduled Vehicles</h2>
   <div class="row top-search">
     <div class="col-md-12 pad-zero">
@@ -17,148 +17,19 @@
     </div>
   </div>
   <div class="scheduled">
-    <div class="col-sm-4">
+    <div class="col-sm-4" ng-repeat="schedule in schedules">
       <div class="scheduled-list">
-        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
+        <div class="date">{{schedule.date}} <span>19</span></div>
         <div class="schedule-details">
           <ul class="list-unstyled details">
-            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
-            <li>Truck</li>
-            <li class="desc">Descrption details about schedule</li>
+            <li class="name">{{schedule.name}}</li>
+            <li>{{schedule.type}}</li>
+            <li class="desc">{{schedule.details}}</li>
           </ul>
         </div>
         <div class="clearfix"></div>
       </div>
     </div>
-     <div class="col-sm-4">
-      <div class="scheduled-list">
-        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
-        <div class="schedule-details">
-          <ul class="list-unstyled details">
-            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
-            <li>Truck</li>
-            <li class="desc">Descrption details about schedule</li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-     <div class="col-sm-4">
-      <div class="scheduled-list">
-        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
-        <div class="schedule-details">
-          <ul class="list-unstyled details">
-            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
-            <li>Truck</li>
-            <li class="desc">Descrption details about schedule</li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-     <div class="col-sm-4">
-      <div class="scheduled-list">
-        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
-        <div class="schedule-details">
-          <ul class="list-unstyled details">
-            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
-            <li>Truck</li>
-            <li class="desc">Descrption details about schedule</li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-     <div class="col-sm-4">
-      <div class="scheduled-list">
-        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
-        <div class="schedule-details">
-          <ul class="list-unstyled details">
-            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
-            <li>Truck</li>
-            <li class="desc">Descrption details about schedule</li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-     <div class="col-sm-4">
-      <div class="scheduled-list">
-        <div class="date">Dec <span>19</span> <!-- <span>to</span> 21 Dec --></div>
-        <div class="schedule-details">
-          <ul class="list-unstyled details">
-            <li class="name">Honda TR-1 (2015 | Truck011NR)</li>
-            <li>Truck</li>
-            <li class="desc">Descrption details about schedule</li>
-          </ul>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-
-  <!-- <div class="schedule-form">
-    <ul class="list-unstyled">
-      <li>
-        <label>Vehicle Type</label>
-        <input type="text" name="vehicle-type" placeholder="Vehicle type">
-      </li>
-      <li>
-        <label>Vehicle Name</label>
-        <input type="text" name="vehicle-name" placeholder="Vehicle name">
-      </li>
-      <li>
-        <label>Scheduled on</label>
-        <input type="date" name="vehicle-type" placeholder="DD/MM/YYYY">
-      </li>
-      <li>
-        <label>Decription</label>
-        <textarea></textarea>
-      </li>
-      <li>
-        <input class="action-btn" type="submit" value="Add">
-      </li>
-    </ul>
-  </div> -->
-
-
-  
-
 </div>
-<div class="modal fade" tabindex="-1" role="dialog" id="schedule">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Add Schedule</h4>
-        </div>
-        <div class="modal-body">
-          <div class="schedule-form">
-            <ul class="list-unstyled">
-              <li>
-                <label>Vehicle Type</label>
-                <input type="text" name="vehicle-type" placeholder="Vehicle type">
-              </li>
-              <li>
-                <label>Vehicle Name</label>
-                <input type="text" name="vehicle-name" placeholder="Vehicle name">
-              </li>
-              <li>
-                <label>Scheduled on</label>
-                <input type="date" name="vehicle-type" placeholder="DD/MM/YYYY">
-              </li>
-              <li>
-                <label>Decription</label>
-                <textarea></textarea>
-              </li>
-              <li>
-                <label>&nbsp;</label>
-                <input class="action-btn" type="submit" value="Add">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+</div>
+<%= render "partials/schedule_form" %>
