@@ -5,6 +5,7 @@ class SchedulesController < ApplicationController
 	end
 
 	def create
+		binding.pry
 		vehicle = Vehicle.find(:id)
 		if vehicle.present?
 			schedule = Schedule.create(schedule_params)

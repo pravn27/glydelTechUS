@@ -1,4 +1,4 @@
-app.controller('scheduleController',["$scope",function($scope){
+app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.schedules = [
 		{
 			"name": "Honda TR-1 (2015 | Truck011NR)",
@@ -30,7 +30,9 @@ app.controller('scheduleController',["$scope",function($scope){
 		}
 	]
 	$scope.addSchedule = function(schedule){
-		console.log(schedule)
+		scheduleRoutes.create({schedule:schedule}, function(resp) {
+			a = resp
+		})
 	}
 
-}])
+})
