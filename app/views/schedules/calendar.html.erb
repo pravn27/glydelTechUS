@@ -1,7 +1,29 @@
-<div class="layout">
-  <div class="row">
-    <div class="col-md-12">
-     <div id="calendar"></div>
+<div class="layout" id="general" ng-controller="scheduleController">
+  <h2>Scheduled Vehicles</h2>
+  <div class="row top-search">
+    <div class="col-md-12 pad-zero">
+      <form action="" class="col-md-6 pad-zero">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-addon"><span class="fa fa-search"></span></div>
+            <input type="text" placeholder="Search vehicles..." />
+          </div>
+        </div>
+      </form>
+      <div class="col-md-6 text-right">
+        <a href="#" class="action-btn" data-toggle="modal" data-target="#schedule"><i class="fa fa-plus"></i> Schedule</a>
+      </div>
+      <div class="clearfix"></div>
     </div>
   </div>
+  <div class="scheduled">
+  <div class="pull-right">
+    <a href="/schedules">grid</a>
+    <a href="/schedules/calendar">calender</a>
+  </div>
+    <div class="col-md-12">
+    	<div id="calendar" ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
+    </div>
+</div>
+<%= render "partials/schedule_form" %>
 </div>

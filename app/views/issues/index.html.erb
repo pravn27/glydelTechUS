@@ -1,0 +1,42 @@
+<div class="layout" id="general" ng-controller="issueController">
+<h2>Issues</h2>
+  <table class="table vehicles-list table-hover">
+    <thead>
+      <tr>
+        <th>
+          <a>Issues
+            <span class="fa fa-caret-down"></span>
+            <span class="fa fa-caret-up" ></span>
+          </a>
+        </th>
+        <th>
+          <a>Vehicle Number
+            <span class="fa fa-caret-down"></span>
+            <span class="fa fa-caret-up" ></span>
+          </a>
+        </th>
+        <th>
+          <a>On</a>
+        </th>
+        <th>
+          &nbsp;
+        </th>
+        <th>
+          &nbsp;
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="issue in issues">
+        <td class="issue-desc">{{issue.issue_description}}</td>
+        <td>{{issue.vehicle_id}}</td>
+        <td>{{issue.issue_date | date}}</td>
+        <td><a class="check-vehicle" href="" ng-click="scheduleDetails(issue)" data-toggle="modal" data-target="#schedule">Schedule It</a></td>
+        <td>
+          <a class="action-btns" href="" title="Delete Vehicle" ng-click="removeIssue(issue.vehicle_id)"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%= render "partials/issue_schedule" %>
+</div>

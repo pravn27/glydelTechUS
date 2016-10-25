@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'vehicles' => "vehicle#index"
   get 'vehicles/new' => "vehicle#add"
   get 'vehicles/details' => "vehicle#detail"
-  get 'issues' => "vehicle#issues"
 
   post 'company/create'=>"company#create"
   get 'companies'=>"company#index"
@@ -19,5 +18,10 @@ Rails.application.routes.draw do
   get 'schedules/all' => "schedules#all"
   get 'schedules/show' => "schedules#show"
   resources :schedules
+  
+  get 'issues/list' => "issues#list"
+  post 'issues/schedule' => "issues#schedule"
+  get 'issues/vehicle' => "issues#vehicle"
+  resources :issues
 
 end

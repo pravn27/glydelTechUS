@@ -1,1 +1,1 @@
-var app=angular.module('glydel',['ngResource']);
+var app=angular.module('glydel',['ngResource', 'ui.calendar']);

@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
 	end
 
 	def all
-		@schedules = Schedule.where(:is_active => "true")
+		@schedules = Schedule.where(:is_active => "true", :status => "pending")
 		render :json=> { data: @schedules}
 	end
 

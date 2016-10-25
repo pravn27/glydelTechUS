@@ -12,7 +12,6 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.getAllSchedules = function(){
 		scheduleRoutes.all(function(resp) {
 			$scope.schedules = resp.data
-			console.log(resp.data)
 		})
 	}
 	$scope.getAllSchedules()

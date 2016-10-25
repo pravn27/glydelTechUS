@@ -2,10 +2,9 @@
 <html>
 <head>
   <title>GlydelUs</title>
-  <base href="/" >
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 </head>
 <body ng-app="glydel">
   <% if notice %>
@@ -49,10 +48,10 @@
   <div class="side-nav">
 
    <ul class="list-unstyled menu">
-     <li><a href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
+     <li><a ng-href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
      <li><a href="/vehicles"><i class="fa fa-truck" aria-hidden="true"></i> Vehicles</a></li>
      <li><a href="/companies"><i class="fa fa-user" aria-hidden="true"></i> Customers</a></li>
-     <li><a href="/schedules"><i class="fa fa-calendar" aria-hidden="true"></i> Schedules</a></li>
+     <li><a ng-href="/schedules"><i class="fa fa-calendar" aria-hidden="true"></i> Schedules</a></li>
      <li><a href="/issues"><i class="fa fa-bug" aria-hidden="true"></i> Issues</a></li>
      <li><a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
 
