@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" role="dialog" id="schedule" ng-controller="scheduleController">
+<div class="modal fade" tabindex="-1" role="dialog" id="schedule">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -26,7 +26,8 @@
               </li>
               <li>
                 <label>&nbsp;</label>
-                <input class="action-btn" type="button" value="Add" ng-click="addSchedule(schedule)">
+                <input class="action-btn" type="button" value="Add" ng-click="addSchedule(schedule)" ng-if="add">
+                <input class="action-btn" type="button" value="Edit" ng-click="updateSchedule(schedule)" ng-if="edit">
               </li>
             </ul>
           </div>

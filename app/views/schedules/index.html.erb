@@ -25,11 +25,13 @@
             <li class="name">{{schedule.vehicle_name}}</li>
             <li>{{schedule.vehicle_type}}</li>
             <li class="desc">{{schedule.scheduling_details}}</li>
+            <li class="desc" data-toggle="modal" data-target="#schedule" ng-click="getSchedule(schedule._id)">Edit</li>
+            <li class="desc" ng-click="removeSchedule(schedule._id)">Delete</li>
           </ul>
         </div>
         <div class="clearfix"></div>
       </div>
     </div>
 </div>
-</div>
 <%= render "partials/schedule_form" %>
+</div>

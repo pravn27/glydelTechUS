@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'schedules/calendar' => "schedules#calendar"
   get 'schedules/vehicles' => "schedules#list"
   get 'schedules/all' => "schedules#all"
+  get 'schedules/show' => "schedules#show"
   resources :schedules
 
 end

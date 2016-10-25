@@ -8,5 +8,6 @@ class Schedule
   field :vehicle_type,       	type: String
   field :scheduling_details,    type: String
   field :scheduled_date,       	type: DateTime
+  field :is_active,       		type: Boolean, default: true
 
 end 
