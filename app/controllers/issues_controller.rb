@@ -5,7 +5,12 @@ class IssuesController < ApplicationController
 	end
 
 	def list
-		@issues = Issue.where(:is_active => "true")
+		binding.pry
+		if params[:id].present?
+			@issues = Issue.where(:vehicle_id => params[:id])
+		else
+			@issues = Issue.where(:is_active => "true")
+		end
 		render :json=> { data: @issues}
 	end
 
@@ -25,19 +30,19 @@ class IssuesController < ApplicationController
 	end
 
 	def destroy
-		schedule = Schedule.find(params[:id])
-		if schedule.present?
-			schedule = schedule.update(:is_active => false)
-			render :json=> { message:"Schedule removed Succesfully", path: schedules_path}
+		issue = Issue.find(params[:id])
+		if issue.present?
+			issue = issue.update(:is_active => false)
+			render :json=> { message:"Schedule removed Succesfully", path: issues_path}
 		else
-			render :json=> { message:"Unable to delete. Please try again", path: schedules_path}
+			render :json=> { message:"Unable to delete. Please try again", path: issues_path}
 		end
 	end
 
 	private
 
 	def schedule_params
-		params.permit(:vehicle_name, :vehicle_type, :scheduling_details, :scheduled_date)
+		params.permit(:vehicle_name, :vehicle_type, :scheduling_details, :scheduled_date, :id)
 	end
 
 end

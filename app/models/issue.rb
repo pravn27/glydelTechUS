@@ -9,5 +9,9 @@ class Issue
 	field :issue_date,    				type: String
 	field :is_active,       			type: Boolean, default: true
 	field :status,       				type: String, default: "pending"
-
+	def as_json(option={})
+		super.merge({
+			vehicle_name: self.vehicle.make,
+			})
+	end
 end 
