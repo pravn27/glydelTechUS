@@ -266,20 +266,27 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 #general{
   padding: 20px;
 }
+#general .input-group-addon {
+  width: auto;
+  height: auto;
+}
+#general .input-group {
+  width: auto;
+}
 #general h1,#general h2 {
   margin: 0 0 20px;
   font-size: 21px;
   font-weight: 600;
   color: #666;
 }
-#general .vehicle-add label {
+#general .vehicle-add label,#general .company-form label {
   display: block;
   color: #666;
 }
-#general .vehicle-add li {
+#general .vehicle-add li,#general .company-form li {
   padding: 0 0 10px;
 }
-#general .vehicle-add li input[type="text"],#general .vehicle-add li select{
+#general .vehicle-add li input[type="text"],#general .vehicle-add li select,#general .company-form input[type="text"]{
   width: 80%;
   border: 1px solid #d9d9d9;
 }
@@ -418,4 +425,18 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .modal-dialog {
   z-index: 99999;
+}
+.new-cm {
+  padding: 40px;
+  text-align: center;
+  width: 300px;
+  margin: 10% auto 0;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 2px 3px rgba(0,0,0,.3);
+}
+.new-cm a {
+  text-decoration: none;
+}
+.new-cm h1 {
+  margin: 0!important;
 }

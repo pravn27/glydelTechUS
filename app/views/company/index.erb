@@ -1,0 +1,53 @@
+<div class="layout" id="general">
+    <% if @companies.present?%>
+        <% @companies.each do |company|%>
+            <div> <%= comapany.name %></div>
+            <div> <%= comapany.contact_number %></div>
+            <div> <%= comapany.address%></div>
+    <% end %>
+    <% else %>
+        <div class="new-cm">
+            <a href="companies/new"><h1>please add a company</h1></a>
+        </div>
+    <% end %>
+    <h1>Customers</h1>
+    <div class="row top-search">
+        <div class="col-md-12 pad-zero">
+          <form action="" class="col-md-6 pad-zero">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon"><span class="fa fa-search"></span></div>
+                <input type="text" placeholder="Search Customers..." />
+              </div>
+            </div>
+          </form>
+          <div class="col-md-6 text-right">
+            <a href="companies/new" class="action-btn"><i class="fa fa-plus"></i> Customer</a>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+    <table class="table table-hover customer-list">
+        <tr>
+            <th>Company name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Vehicles Count</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>SS Groups</td>
+            <td>9876543211</td>
+            <td>asdasd@asd.com</td>
+            <td>12</td>
+            <td>New york</td>
+        </tr>
+        <tr>
+            <td>SS Groups</td>
+            <td>9876543211</td>
+            <td>asdasd@asd.com</td>
+            <td>12</td>
+            <td>New york</td>
+        </tr>
+    </table>
+</div>
