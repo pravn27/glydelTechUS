@@ -6,7 +6,6 @@ class CompanyController < ApplicationController
 
 	def edit
 		@company=current_user.companies.where({_id: params[:id]})
-
 	end
 
 	def destroy
@@ -18,7 +17,7 @@ class CompanyController < ApplicationController
 		if @company
 			@company=@company.update(company_data)
 			if @company
-				flash[:notice] = "Price updated successfully"
+				flash[:notice] = "company updated successfully"
 			else
 				flash[:error] = "Not able to save! Please Try again"
 				redirect_to (:back) and return

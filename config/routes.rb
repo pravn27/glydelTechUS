@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'vehicles/new' => "vehicle#add"
   get 'vehicles/details' => "vehicle#detail"
   get 'issues' => "vehicle#issues"
-
   get 'schedule/calendar' => "schedules#calendar"
-  resoures :schedule
+  post 'company/create'=>"company#create"
+  post 'vehicle/create'=>"vehicle#create"
+
+  resources :schedule
 end
