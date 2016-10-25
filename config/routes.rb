@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
   get 'dashboard' =>'home#dashboard'
-  get 'customers' => 'home#customers'
+  # get 'cus' => 'home#customers'
   get 'vehicles' => "vehicle#index"
   get 'vehicles/new' => "vehicle#add"
   get 'vehicles/details' => "vehicle#detail"
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'schedule/calendar' => "schedules#calendar"
 
   post 'company/create'=>"company#create"
-  get 'company/all'=>"company#all"
+  get 'companies'=>"company#all"
   post 'vehicle/create'=>"vehicle#create"
   resources :schedule
   get 'schedules/calendar' => "schedules#calendar"
