@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'issues' => "vehicle#issues"
 
   get 'schedule/calendar' => "schedules#calendar"
-  resoures :schedule
+  resources :schedule
 end
