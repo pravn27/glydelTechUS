@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'schedule/calendar' => "schedules#calendar"
   post 'company/create'=>"company#create"
   post 'vehicle/create'=>"vehicle#create"
-
   resources :schedule
+  get 'schedules/calendar' => "schedules#calendar"
+  resources :schedules
+
 end
