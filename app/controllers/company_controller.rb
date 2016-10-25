@@ -4,12 +4,22 @@ class CompanyController < ApplicationController
 		@company=current_user.companies.create(company_data)
 	end
 
+	def all
+		@companies=current_user.companies.all
+		render 'all.html.erb'
+	end
+
 	def edit
 		@company=current_user.companies.where({_id: params[:id]})
 	end
 
 	def destroy
-
+		@company=current_user.companies.where(_id: params[:id])
+		if @company && @company.delete
+			flash[:notice]="company successfully deleted"
+		else
+			flash[:error]="unable to delete ...please try again"
+		end
 	end
 
 	def update

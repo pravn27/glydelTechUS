@@ -1,15 +1,26 @@
 class VehicleController < ApplicationController
 
 	def create 
+		
 		@vehicle=current_user.companies.vehicles.create(company_data)
 	end
 
+	def all
+		@company=current_user.companies.vehicles.all
+	end
+
 	def edit
-		
+		@vehicle=current_user.companies.vehicles.where('_id'=>params[:id])
 	end
 
 	def destroy
+		@vehicle=current_user.companies.vehicles.where('_id'=>params[:id])
 
+		if @vehicle && @vehicle.delete
+			flash[:notice]="vehicle successfully deleted"
+		else
+			flash[:notice]="unable to delete try again"
+		end
 	end
 
 	def update
