@@ -1,12 +1,11 @@
-class Schedule < ActiveRecord::Base
+class Schedule
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :company
   belongs_to :vehicle
 
   field :vehicle_name,       	type: String
-  field :type_of_service,       type: String
+  field :vehicle_type,       	type: String
   field :scheduling_details,    type: String
   field :scheduled_date,       	type: DateTime
 

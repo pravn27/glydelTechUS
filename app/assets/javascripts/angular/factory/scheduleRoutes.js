@@ -1,5 +1,13 @@
 app.factory('scheduleRoutes',['$resource', function ($resource) {
 	var rule=$resource('/schedules', {id: '@id'}, {
+		list: {
+			url: '/schedules/vehicles',
+			method: 'GET'
+		},
+		all: {
+			url: '/schedules/all',
+			method: 'GET'
+		},
 		show: {
 			url: '/schedules/:id',
 			method: 'GET'

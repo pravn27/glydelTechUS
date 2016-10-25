@@ -4,13 +4,21 @@ class SchedulesController < ApplicationController
 		
 	end
 
+	def list
+		@vehicles = Vehicle.all
+		render :json=> { data: @vehicles}
+	end
+
+	def all
+		@schedules = Schedule.all
+		render :json=> { data: @schedules}
+	end
+
 	def create
-		binding.pry
-		vehicle = Vehicle.find(:id)
+		vehicle = Vehicle.find(params[:id])
 		if vehicle.present?
-			schedule = Schedule.create(schedule_params)
-			flash[:notice] = "Schedule created successfully"
-			redirect_to schedules_path and return
+			schedule = vehicle.schedules.create(schedule_params)
+			render :json=> { message:"Schedule success", path: schedules_path}
 		else
 			flash[:error] = "Unable to save. Please try again"
 			redirect_to schedules_path and return
@@ -24,7 +32,7 @@ class SchedulesController < ApplicationController
 	private
 
 	def schedule_params
-		params.require(:schedule).permit(:vehicle_name, :type_of_service, :scheduling_details, :scheduled_date, :company_id)
+		params.permit(:vehicle_name, :vehicle_type, :scheduling_details, :scheduled_date)
 	end
 
 end

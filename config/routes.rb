@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post 'vehicle/create'=>"vehicle#create"
  
   get 'schedules/calendar' => "schedules#calendar"
+  get 'schedules/vehicles' => "schedules#list"
+  get 'schedules/all' => "schedules#all"
   resources :schedules
 
 end

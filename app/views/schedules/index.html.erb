@@ -19,12 +19,12 @@
   <div class="scheduled">
     <div class="col-sm-4" ng-repeat="schedule in schedules">
       <div class="scheduled-list">
-        <div class="date">{{schedule.date}} <span>19</span></div>
+        <div class="date">{{schedule.scheduled_date | date:'MMM'}} <span>{{schedule.scheduled_date | date:'dd'}}</span></div>
         <div class="schedule-details">
           <ul class="list-unstyled details">
-            <li class="name">{{schedule.name}}</li>
-            <li>{{schedule.type}}</li>
-            <li class="desc">{{schedule.details}}</li>
+            <li class="name">{{schedule.vehicle_name}}</li>
+            <li>{{schedule.vehicle_type}}</li>
+            <li class="desc">{{schedule.scheduling_details}}</li>
           </ul>
         </div>
         <div class="clearfix"></div>

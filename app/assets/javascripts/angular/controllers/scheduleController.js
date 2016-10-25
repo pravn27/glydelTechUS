@@ -1,37 +1,23 @@
-app.controller('scheduleController', function ($scope, scheduleRoutes){
-	$scope.schedules = [
-		{
-			"name": "Honda TR-1 (2015 | Truck011NR)",
-			"type": "Truck",
-			"details": "Descrption details about schedule. Descrption details about schedule",
-			"date": "12/10/2016"
-
-		},
-		{
-			"name": "Honda TR-1 (2015 | Truck011NR)",
-			"type": "Truck",
-			"details": "Descrption details about schedule. Descrption details about schedule",
-			"date": "12/10/2016"
-
-		},
-		{
-			"name": "Honda TR-1 (2015 | Truck011NR)",
-			"type": "Truck",
-			"details": "Descrption details about schedule. Descrption details about schedule",
-			"date": "12/10/2016"
-
-		},
-		{
-			"name": "Honda TR-1 (2015 | Truck011NR)",
-			"type": "Truck",
-			"details": "Descrption details about schedule. Descrption details about schedule",
-			"date": "12/10/2016"
-
-		}
-	]
+app.controller('scheduleController', function ($scope, scheduleRoutes, $httpParamSerializer){
+	$scope.vehicle_types = ["Gas", "Truck", "Mini-Truck"]
+	$scope.getVehicles = function(schedule){
+		scheduleRoutes.list(function(resp) {
+			$scope.vehicles = resp.data
+		})
+	}
+	$scope.getVehicles()
+	$scope.schedules = []
+	$scope.getSchedule = function(){
+		scheduleRoutes.all(function(resp) {
+			$scope.schedules = resp.data
+			console.log(resp.data)
+		})
+	}
+	$scope.getSchedule()
 	$scope.addSchedule = function(schedule){
-		scheduleRoutes.create({schedule:schedule}, function(resp) {
-			a = resp
+		id = schedule.vehicle_name._id.$oid
+		scheduleRoutes.create({id:id, vehicle_name: schedule.vehicle_name.make,vehicle_type: schedule.vehicle_type, scheduling_details: schedule.scheduling_details, scheduled_date: schedule.scheduled_date }, function(resp) {
+			 window.location = resp.path;
 		})
 	}
 
