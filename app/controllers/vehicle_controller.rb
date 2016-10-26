@@ -24,7 +24,7 @@ class VehicleController < ApplicationController
 	def destroy
 		binding.pry
 		@company=current_user.companies.find_by(:id=>params[:id])
-		@vehicle=@company.vehicles.find_by(_id=>params[:vehicle_id])
+		@vehicle=@company.vehicles.find_by(:id=>params[:vehicle_id])
 		if @vehicle.present? && @vehicle.delete
 			flash[:notice]="vehicle successfully deleted"
 		else
@@ -33,10 +33,11 @@ class VehicleController < ApplicationController
 	end
 
 	def update
-		@vehicle=current_user.companies.vehicles.where(_id: params[:id])
+		@company=current_user.companies.find_by(_id: params[:id])
+		@vehicle=@company.vehicles.find_by(:id=>params[:vehicle_id])
 		if @vehicle.present?
 			@vehicle.update_attributes(vehicle_data)
-			unless @company.errors.any?
+			unless @vehicle.errors.any?
 				flash[:notice] = "vehicle updated successfully"
 			else
 				flash[:error] = "Not able to save! Please Try again"

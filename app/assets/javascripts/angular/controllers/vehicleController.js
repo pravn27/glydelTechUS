@@ -33,8 +33,10 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 	}
 
 	$scope.deleteVehicle=function(vehicle){
-		vehicleRoutes.delete({id:vehicle["_id"]["$oid"]},function(resp){
+		vehicleRoutes.delete({id:vehicle["company_id"]["$oid"],vehicle_id:vehicle["_id"]["$oid"]},function(resp){
 			console.log(resp)
+			location.href('/vehicles')
+
 		})
 	}
 	$scope.clear=function(){
