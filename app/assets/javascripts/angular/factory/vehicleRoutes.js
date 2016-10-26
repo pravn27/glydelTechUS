@@ -1,7 +1,7 @@
 app.factory('vehicleRoutes',['$resource', function ($resource) {
-	var rule=$resource('/vehicles', {id: '@id'}, {
+	var rule=$resource('/vehicles', {id: '@id',vehicle_id:'@vehicle_id'}, {
 		create: {
-			url: '/vehicles/create',
+			url: '/vehicle/create',
 			method: 'POST'
 		},
 
@@ -9,18 +9,16 @@ app.factory('vehicleRoutes',['$resource', function ($resource) {
 			url: '/vehicles/all',
 			method: 'GET'
 		},
-
 		edit: {
 			url: '/vehicle/:id',
 			method: 'GET'
 		},
-		
 		update: {
 			url: '/vehicles/:id.json',
 			method: 'PUT'
 		},
 		delete: {
-			url: '/vehicles/:id',
+			url: '/vehicles/:id/:vehicle_id',
 			method: 'DELETE'
 		}
 	})

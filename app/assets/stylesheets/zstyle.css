@@ -528,6 +528,12 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 #schedule select,#schedule input[type="date"] {
   width: 35%;
 }
+
+
+.ui-autocomplete{
+  z-index: 10000
+}
+
 .fc-day-grid-event .fc-time{
   display: none;
 }

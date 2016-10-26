@@ -6,7 +6,10 @@ class CompanyController < ApplicationController
 	end
 
 	def all
-		@companies=current_user.companies.all
+		@companies=current_user.companies
+		if params[:search]
+			@companies = @companies.where(:name=>/#{params[:search]}/i)
+		end
 		render :json=>{data:@companies}
 	end
 
