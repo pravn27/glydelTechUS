@@ -1,0 +1,80 @@
+ <div class="layout" id="vehicle" ng-controller="vehicle" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Add Vehicle</h4>
+          </div>
+          <div class="modal-body" >
+            <form method="post">
+              <div class="col-sm-5 pad-lzero">
+                <ul class="list-unstyled vehicle-add">
+                  <li>
+                    <label>Company Name</label>
+                    <input type="text" name="company-name" placeholder="Company Name" ng-modal="vehicle.vehicle">
+                  </li>
+                <li>
+                  <label>Vehicle Type</label>
+                  <select ng-model="vehicle.vehicle_type">
+                    <option value='truck'>Truck</option>
+                    <option value='mini_truck'>Mini Truck</option>
+                    <option value='others'>Others</option>
+                  </select>
+                </li>
+                <li>
+                  <label>Registration Number</label>
+                  <input type="text" name="registration_number" placeholder="Vehicle Registration Number" ng-model="vehicle.registration_number">
+                </li>
+                 <li>
+                  <label>VIN Number</label>
+                  <input type="text" name="vin" placeholder="Vehicle Identification Number" ng-model="vehicle.vin">
+                </li>
+                <li>
+                  <label>Make</label>
+                  <input type="text" name="make" placeholder="Vehicle Make" ng-model="vehicle.make">
+                </li>
+                <li>
+                  <label>Model</label>
+                  <input type="text" name="model" placeholder="Vehicle Model" ng-model="vehicle.model">
+                </li>
+                <li>
+                  <label>Year</label>
+                  <input type="text" name="year" placeholder="Vehicle Make Year" ng-model="vehicle.year">
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-5 pad-rzero">
+              <ul class="list-unstyled vehicle-add">
+                <li>
+                  <label>Fuel Type</label>
+                  <input type="text" name="fuel_type" placeholder="Vehicle Fuel Type" ng-model="vehicle.fuel_type">
+                </li>
+                <li>
+                  <label>Fuel Capacity</label>
+                  <input type="text" name="fuel_tank" placeholder="Vehicle Fuel Capacity" ng-model="vehicle.fuel_tank">
+                </li>
+                <li>
+                  <label>Current Odometer Reading</label>
+                  <input  type="text" name="current_odometer_reading" placeholder="Vehicle Odometer Reading at time of adding" ng-model="vehicle.odometer_reading">
+                </li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+            
+
+            <div >
+              <input class="action-btn" type="submit" value="Add Vehicle" ng-click="createVehicle(vehicle)">
+            </div>
+
+          </form>
+          </div>
+    </div>
+  </div>
+</div><!--/layout-->
+
+
+
+
+
+
+

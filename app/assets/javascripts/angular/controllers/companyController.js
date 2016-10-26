@@ -1,11 +1,10 @@
 app.controller("company",["$scope","companyRoutes","$httpParamSerializer",function ($scope, companyRoutes, $httpParamSerializer){
 	$scope.companies=[]
-	$scope.name="jay"
+	//$scope.name="jay"
 	companyRoutes.all(function(resp){
 			$scope.companies=resp.data
 			// console.log(Array.isArray($scope.companies))
 	})
-
 
 	$scope.createCompany=function(companyObj){
 		$scope.modal="create"
