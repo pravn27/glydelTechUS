@@ -30,7 +30,7 @@ namespace :deploy do
 	task :restart do
 		on roles(:app), in: :sequence, wait: 5 do
 			execute "chown -R www-data:www-data /var/www/glydel-us"
-			execute "sudo service nginx restart"
+			execute "sudo service apache2 restart"
 		end
 	end
  after :finishing, 'deploy:restart'
