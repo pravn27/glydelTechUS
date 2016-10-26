@@ -62,9 +62,11 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 		scheduleRoutes.calendar(function(resp) {
 			events = myCounter(resp.data)
 			angular.forEach(events, function(value, key) {
+				date = new Date(key)
 				event = {
 					"title": value+" schedule(s)",
-					"start": key
+					"start": date,
+					"value" : key
 				}
 				$scope.allEvents.push(event)				
 			});
@@ -73,7 +75,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.uiConfig = {
         calendar:{
         	eventClick:function(event) {
-        			date = event.start._i;
+        			date = event.value;
         			window.location = '/schedules?date='+date
         		},
             events:$scope.fetchEvents
