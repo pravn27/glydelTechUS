@@ -11,4 +11,9 @@ class Schedule
   field :is_active,       		type: Boolean, default: true
   field :status,       			type: String, default: "pending"
 
+  def as_json(option={})
+		super.merge({
+			issues: self.vehicle.issues.count,
+			})
+	end
 end 
