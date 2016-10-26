@@ -5,7 +5,7 @@ app.factory('userRoutes',['$resource', function ($resource) {
 			method: 'POST'
 		},
 		signup: {
-			url: '/users/sign_up',
+			url: '/users',
 			method: 'POST'
 		},
 		logout: {
