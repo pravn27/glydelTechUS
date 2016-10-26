@@ -423,19 +423,19 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;*/
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
-    -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
-    -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
-    transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  -moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  -webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
 }
 .top{
   top: 100%;
@@ -466,7 +466,7 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .scheduled-list:hover .options {
   display: block;
-    -webkit-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
@@ -536,4 +536,8 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 
 .fc-day-grid-event .fc-time{
   display: none;
+}
+#map {
+  height: 400px;
+  margin: 20px 15px;
 }

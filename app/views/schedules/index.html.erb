@@ -6,7 +6,7 @@
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon"><span class="fa fa-search"></span></div>
-            <input type="text" placeholder="Search vehicles..." />
+            <input type="date" placeholder="Search vehicles..." ng-model="filterDate" ng-change="dateFilter()"/>
           </div>
         </div>
       </form>
@@ -18,8 +18,7 @@
     </div>
   </div>
   <div class="scheduled">
- 
-    <div class="col-sm-4" ng-repeat="schedule in schedules">
+    <div class="col-sm-4" ng-repeat="schedule in schedules | filter: {s_date: fDate}">
       <div class="scheduled-list">
         <div class="date">{{schedule.scheduled_date | date:'MMM'}} <span>{{schedule.scheduled_date | date:'dd'}}</span></div>
         <div class="schedule-details">
