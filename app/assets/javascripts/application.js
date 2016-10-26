@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery-ui.min
+//= require bootstrap.min
 //= require jquery_ujs
 //= require angular.min
 //= require angular-resource
 //= require moment.min
-//= require calendar
 //= require fullcalendar.min
+//= require calendar
 //= require app
 //= require_tree .
