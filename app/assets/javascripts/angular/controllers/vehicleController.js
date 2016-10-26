@@ -1,10 +1,8 @@
 app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, companyRoutes){
 
 	$scope.vehicles=[]
-	//$scope.name="jay"
 	vehicleRoutes.all(function(resp){
-			$scope.companies=resp.data
-			// console.log(Array.isArray($scope.companies))
+		$scope.companies=resp.data
 	})
 	$scope.createVehicle=function(vehicleObj){
 		$scope.modal="create"
