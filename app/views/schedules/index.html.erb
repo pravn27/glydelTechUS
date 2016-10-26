@@ -11,16 +11,14 @@
         </div>
       </form>
       <div class="col-md-6 text-right">
+        <a href="/schedules/calendar" class="view-toggle"><i class="fa fa-calendar"></i> View</a>
         <a href="#" class="action-btn" data-toggle="modal" data-target="#schedule"><i class="fa fa-plus"></i> Schedule</a>
       </div>
       <div class="clearfix"></div>
     </div>
   </div>
   <div class="scheduled">
-  <div class="pull-right">
-    <a href="/schedules">grid</a>
-    <a href="/schedules/calendar">calender</a>
-  </div>
+ 
     <div class="col-sm-4" ng-repeat="schedule in schedules">
       <div class="scheduled-list">
         <div class="date">{{schedule.scheduled_date | date:'MMM'}} <span>{{schedule.scheduled_date | date:'dd'}}</span></div>
@@ -31,14 +29,14 @@
             <li class="desc">{{schedule.scheduling_details}}</li>
           </ul>
         </div>
-        <div class="options">
-          <ul>
-            <li class="btn" data-toggle="modal" data-target="#schedule" ng-click="getSchedule(schedule._id)">Edit</li>
-            <li class="btn" ng-click="removeSchedule(schedule._id)">Delete</li>
-            <li class="btn" ng-click="completeSchedule(schedule._id)">Complete</li>
+        <div class="clearfix"></div>
+        <div class="options top">
+          <ul class="list-inline">
+            <li title="Edit the schedule" data-toggle="modal" data-target="#schedule" ng-click="getSchedule(schedule._id)"><i class="fa fa-edit"></i></li>
+            <li title="Delete the schedule" ng-click="removeSchedule(schedule._id)"><i class="fa fa-trash"></i></li>
+            <li title="Complete the schedule" ng-click="completeSchedule(schedule._id)"><i class="fa fa-check" aria-hidden="true"></i></li>
           </ul>
         </div>
-        <div class="clearfix"></div>
       </div>
     </div>
 </div>

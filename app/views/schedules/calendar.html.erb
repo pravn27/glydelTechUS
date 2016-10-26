@@ -11,16 +11,13 @@
         </div>
       </form>
       <div class="col-md-6 text-right">
+        <a href="/schedules" class="view-toggle"><i class="fa fa-th-large" aria-hidden="true"></i> View</a>
         <a href="#" class="action-btn" data-toggle="modal" data-target="#schedule"><i class="fa fa-plus"></i> Schedule</a>
       </div>
       <div class="clearfix"></div>
     </div>
   </div>
   <div class="scheduled">
-  <div class="pull-right">
-    <a href="/schedules">grid</a>
-    <a href="/schedules/calendar">calender</a>
-  </div>
     <div class="col-md-12">
     	<div id="calendar" ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
     </div>
