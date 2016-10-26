@@ -10,8 +10,13 @@ class SchedulesController < ApplicationController
 	end
 
 	def all
-		@schedules = Schedule.where(:is_active => "true", :status => "pending")
+		if params[:date].present?
+			@schedules = Schedule.where(:scheduled_date => params[:date], :is_active => "true", :status => "pending")
+		else
+			@schedules = Schedule.where(:is_active => "true", :status => "pending")
+		end
 		render :json=> { data: @schedules}
+
 	end
 
 	def edit
@@ -57,6 +62,12 @@ class SchedulesController < ApplicationController
 		else
 			render :json=> { message:"Unable to update. Please try again", path: schedules_path}
 		end
+	end
+
+	def events
+		@schedules = Schedule.where(:is_active => "true", :status => "pending")
+		@events = @schedules.map{|s|s.scheduled_date.to_s}
+		render :json=> { data: @events}
 	end
 
 	def destroy

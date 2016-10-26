@@ -1,5 +1,5 @@
 app.factory('vehicleRoutes',['$resource', function ($resource) {
-	var rule=$resource('/vehicles', {id: '@id'}, {
+	var rule=$resource('/vehicles', {id: '@id',vehicle_id:'@vehicle_id'}, {
 		create: {
 			url: '/vehicle/create',
 			method: 'POST'

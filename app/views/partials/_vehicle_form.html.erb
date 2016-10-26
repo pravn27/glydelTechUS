@@ -1,15 +1,21 @@
- <div id="vehicle" ng-controller="vehicle" class="modal fade" tabindex="-1" role="dialog">
+ <div id="vehicle" class="modal fade" tabindex="-1" role="dialog">
+ 
   <div class="modal-dialog" role="document">
       <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Add Vehicle</h4>
+            <div  ng-if="modal==create">
+              <h4 class="modal-title">Add Vehicle</h4>
+            </div>
+            <div ng-if="modal==edit">
+              <h4 class="modal-title">Edit Vehicle</h4>
+            </div>
           </div>
           <div class="modal-body" >
             <form method="post">
               <div class="col-sm-6 pad-lzero">
                 <ul class="list-unstyled vehicle-add">
-                  <li>
+                  <li ng-if="modal==create">
                     <label>Company Name</label>
                     <input type="text" name="company-name" placeholder="Company Name" auto-complete>
                   </li>
@@ -60,10 +66,13 @@
               </ul>
             </div>
             <div class="clearfix"></div>
-            <div >
+            <div ng-if="modal==create">
               <input class="action-btn" type="submit" value="Add Vehicle" ng-click="createVehicle(vehicle)">
             </div>
-            
+
+            <div ng-if="modal==edit">
+              <input class="action-btn" type="submit" value="Edit Vehicle" ng-click="edit(vehicle)">
+            </div>
           </form>
           </div>
     </div>
