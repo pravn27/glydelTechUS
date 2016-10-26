@@ -1,5 +1,5 @@
-<div class="layout" id="general" ng-controller="company">
-    <input type="button" data-toggle="modal" data-target="#company" value="Add company"/>
+<div class="layout" id="general" ng-controller="company" ng-init="modal">
+    <input type="button" data-toggle="modal" data-target="#company" value="Add company" ng-click="modal='create'"/>
     <%= render "partials/company_form" %>
     <div ng-if="companies.length>0">
         <h1>Companies</h1>
@@ -22,14 +22,46 @@
             </div>
         </div>
         <table class="table table-hover customer-list" >
+                <thead>
+                    <tr>
+                      <th>
+                        <a>Index
+                          <span class="fa fa-caret-down"></span>
+                          <span class="fa fa-caret-up" ></span>
+                        </a>
+                      </th>
+                      <th>
+                        <a>Name
+                          <span class="fa fa-caret-down"></span>
+                          <span class="fa fa-caret-up" ></span>
+                        </a>
+                      </th>
+                      <th>
+                        <a>Contact
+                          <span class="fa fa-caret-down"></span>
+                          <span class="fa fa-caret-up" ></span>
+                        </a>
+                      </th>
+                      <th>
+                        <a>Address
+                          <span class="fa fa-caret-down"></span>
+                          <span class="fa fa-caret-up" ></span>
+                        </a>
+                      </th>
+                      <th>Delete</th> 
+                      <th>Edit</th> 
+                    </tr>
+              </thead>
+              <tbody>
                 <tr ng-repeat="company in companies">
-                    <th>{{$index}}</th>
+                    <th>{{$index+1}}</th>
                     <th>{{company.name}}</th>
                     <th>{{company.contact_number}}</th>
                     <th>{{company.address}}</th>
                     <th ng-click="deleteCompany(companies[$index])" ><a>Delete</a></th>
-                    <th ng-click="editCompany(companies[$index])"><a>Edit</a></th>
+                    <th ng-click="modal='edit';editCompany(companies[$index]);"><a>Edit</a></th>
                 </tr>
+                </tbody>
         </table>
     </div> 
     <div ng-if="companies.length==0">

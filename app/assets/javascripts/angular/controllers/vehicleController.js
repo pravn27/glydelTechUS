@@ -20,16 +20,21 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 
 	$scope.editVehicle=function(vehicle){
 		$scope.modal="edit"
+		var vehicle=angular.copy(vehicle);
 		$('#vehicle').modal('show')
 		$scope.vehicle=vehicle
-		console.log($scope.vehicle)
 	}
 	
-	$scope.edit=function(vehicle,index){	
-		company=angular.copy(vehicle);
+	$scope.edit=function(vehicle){	
 		var id=vehicle["company_id"]["$oid"];
+		
 		vehicleRoutes.update({id:id,vehicle_id:vehicle["_id"]["$oid"]},vehicle,function(resp){
-			
+			window.location='/vehicles'
+			$scope.clear()
+			$('#vehicle').modal('hide')
+
+		},function(a,b){
+			window.location='/vehicles'
 		})
 	}
 

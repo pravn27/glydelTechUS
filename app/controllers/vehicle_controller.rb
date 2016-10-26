@@ -32,8 +32,10 @@ class VehicleController < ApplicationController
 	end
 
 	def update
+		
 		@company=current_user.companies.find_by(_id: params[:id])
-		@vehicle=@company.vehicles.find_by(:id=>params[:vehicle_id])
+		@vehicle=@company.vehicles.find_by(_id: params[:vehicle_id])
+
 		if @vehicle.present?
 			@vehicle.update_attributes(vehicle_data)
 			unless @vehicle.errors.any?
