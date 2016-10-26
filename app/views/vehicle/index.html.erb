@@ -13,7 +13,7 @@
       </div>
     </form>
     <div class="col-md-6 text-right">
-      <a data-toggle="modal" data-target="#vehicle" ng-click="modal=create;clear()" value="Add vehicle" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
+      <a data-toggle="modal" data-target="#vehicle" ng-click="modal='create';clear()" value="Add vehicle" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
     </div>
   </div>
   <table class="table vehicles-list table-hover">
@@ -68,7 +68,7 @@
     </thead>
     <tbody ng-repeat="vehicle in vehicles">
       <tr>
-        <td>{{$index}}</td>
+        <td>{{$index + 1}}</td>
         <td>{{vehicle.vehicle_type}}</td>
         <td>{{vehicle.vehicle_number}}</td>
         <td>{{vehicle.vin_number}}</td>
@@ -77,7 +77,7 @@
         <td>{{vehicle.fuel_type}}</td>
         <td>
           <a class="action-btns" href="" title="Edit Vehicle ">
-          <i class="fa fa-info" aria-hidden="true" ng-click="modal=edit;editVehicle(vehicles[$index])"></i>
+          <i class="fa fa-info" aria-hidden="true" ng-click="modal='edit';editVehicle(vehicles[$index])"></i>
           </a>
           <a class="action-btns" href="" title="Delete Vehicle">
             <i class="fa fa-trash" ng-click="deleteVehicle(vehicles[$index])"></i>

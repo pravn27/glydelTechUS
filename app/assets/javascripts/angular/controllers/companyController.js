@@ -12,6 +12,7 @@ app.controller("company",["$scope","companyRoutes","$httpParamSerializer",functi
 		console.log(companyObj)
 		companyRoutes.create(companyObj,function(resp){
 			$scope.companies.push(resp)
+			window.location = "/companies"
 		})
 	}
 
@@ -27,12 +28,14 @@ app.controller("company",["$scope","companyRoutes","$httpParamSerializer",functi
 		var id=company["_id"]["$oid"];
 		companyRoutes.update({id:id},company,function(resp){
 			console.log(resp)
+			window.location = "/companies"
 		})
 	}
 
 	$scope.deleteCompany=function(company){
 		companyRoutes.delete({id:company["_id"]["$oid"]},function(resp){
 			console.log(resp)
+			window.location = "/companies"
 		})
 	}
 

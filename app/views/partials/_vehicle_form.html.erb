@@ -4,10 +4,10 @@
       <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <div  ng-if="modal==create">
+            <div  ng-if="modal=='create'">
               <h4 class="modal-title">Add Vehicle</h4>
             </div>
-            <div ng-if="modal==edit">
+            <div ng-if="modal=='edit'">
               <h4 class="modal-title">Edit Vehicle</h4>
             </div>
           </div>
@@ -15,7 +15,7 @@
             <form method="post">
               <div class="col-sm-6 pad-lzero">
                 <ul class="list-unstyled vehicle-add">
-                  <li ng-if="modal==create">
+                  <li ng-if="modal=='create'">
                     <label>Company Name</label>
                     <input type="text" name="company-name" placeholder="Company Name" auto-complete>
                   </li>
@@ -66,11 +66,11 @@
               </ul>
             </div>
             <div class="clearfix"></div>
-            <div ng-if="modal==create">
+            <div ng-if="modal=='create'">
               <input class="action-btn" type="submit" value="Add Vehicle" ng-click="createVehicle(vehicle)">
             </div>
 
-            <div ng-if="modal==edit">
+            <div ng-if="modal=='edit'">
               <input class="action-btn" type="submit" value="Edit Vehicle" ng-click="edit(vehicle)">
             </div>
           </form>

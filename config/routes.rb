@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'vehicle/create'=>"vehicle#create"
   get 'vehicles/all'=>"vehicle#all"
   get 'vehicle/edit/:id'=>'vehicle#edit'
-  put 'vehicles/:id'=>"vehicle#update"
+  put 'vehicles/:id/:vehicle_id'=>"vehicle#update"
   delete 'vehicles/:id/:vehicle_id'=>"vehicle#destroy"
 
   post'company/create'=>"company#create"
