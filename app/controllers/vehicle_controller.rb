@@ -32,7 +32,6 @@ class VehicleController < ApplicationController
 	end
 
 	def update
-		
 		@company=current_user.companies.find_by(_id: params[:id])
 		@vehicle=@company.vehicles.find_by(_id: params[:vehicle_id])
 

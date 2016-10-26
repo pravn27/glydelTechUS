@@ -27,14 +27,13 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 	
 	$scope.edit=function(vehicle){	
 		var id=vehicle["company_id"]["$oid"];
-		
 		vehicleRoutes.update({id:id,vehicle_id:vehicle["_id"]["$oid"]},vehicle,function(resp){
 			window.location='/vehicles'
 			$scope.clear()
 			$('#vehicle').modal('hide')
 
 		},function(a,b){
-			window.location='/vehicles'
+			//window.location='/vehicles'
 		})
 	}
 
