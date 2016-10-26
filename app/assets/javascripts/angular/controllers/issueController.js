@@ -15,8 +15,9 @@ app.controller('issueController', function ($scope, issueRoutes){
 			$scope.schedule.vehicle_id = issue.vehicle_id.$oid
 		})
 	}
-	if(querystring('id').length>0){
-		$scope.getIssues(querystring('id')[0])
+	param = getParam('id')
+	if(param.length>0){
+		$scope.getIssues(param[0])
 	} else{
 		$scope.getIssues()
 	}
@@ -28,7 +29,7 @@ app.controller('issueController', function ($scope, issueRoutes){
 })
 
 
-function querystring(key) {
+function getParam(key) {
    var re=new RegExp('(?:\\?|&)'+key+'=(.*?)(?=&|$)','gi');
    var r=[], m;
    while ((m=re.exec(document.location.search)) != null) r[r.length]=m[1];

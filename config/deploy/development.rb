@@ -5,7 +5,7 @@ set :rails_env, :development
  
 set :normalize_asset_timestamps, %{public/images public/javascripts public/stylesheets}
  
-role :app, %w{root@104.236.196.112}
+role :app, %w{root@67.205.154.207}
 
 set :ssh_options, {
    forward_agent: true,

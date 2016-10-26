@@ -5,7 +5,6 @@ class IssuesController < ApplicationController
 	end
 
 	def list
-		binding.pry
 		if params[:id].present?
 			@issues = Issue.where(:vehicle_id => params[:id])
 		else
