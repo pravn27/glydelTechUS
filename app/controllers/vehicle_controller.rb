@@ -22,7 +22,6 @@ class VehicleController < ApplicationController
 	end
 
 	def destroy
-		binding.pry
 		@company=current_user.companies.find_by(:id=>params[:id])
 		@vehicle=@company.vehicles.find_by(:id=>params[:vehicle_id])
 		if @vehicle.present? && @vehicle.delete

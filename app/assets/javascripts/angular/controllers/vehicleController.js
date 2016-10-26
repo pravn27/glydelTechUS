@@ -13,7 +13,8 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 		vehicleRoutes.create(vehicleObj,function(resp){
 			$('#vehicle').modal('hide')
 			$scope.vehicle={}
-			$scope.vehicles.push(resp)
+			console.log(resp)
+			$scope.vehicles.push(resp.data)
 		})
 	}
 
@@ -24,19 +25,18 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 		console.log($scope.vehicle)
 	}
 	
-	$scope.edit=function(vehicle){	
+	$scope.edit=function(vehicle,index){	
 		company=angular.copy(vehicle);
-		var id=vehicle["_id"]["$oid"];
-		vehicleRoutes.update({id:id},vehicle,function(resp){
-			console.log(resp)
+		var id=vehicle["company_id"]["$oid"];
+		vehicleRoutes.update({id:id,vehicle_id:vehicle["_id"]["$oid"]},vehicle,function(resp){
+			
 		})
 	}
 
-	$scope.deleteVehicle=function(vehicle){
+	$scope.deleteVehicle=function(vehicle,index){
 		vehicleRoutes.delete({id:vehicle["company_id"]["$oid"],vehicle_id:vehicle["_id"]["$oid"]},function(resp){
 			console.log(resp)
-			location.href('/vehicles')
-
+			$scope.vehicles.splice(index,1)
 		})
 	}
 	$scope.clear=function(){
