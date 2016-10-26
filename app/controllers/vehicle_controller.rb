@@ -1,12 +1,19 @@
 class VehicleController < ApplicationController
 
 	def create 
-		@vehicle=current_user.companies.vehicles.create(company_data)
+		@company=current_user.companies.find_by(:id=>params[:id])
+		if @company.present?
+			@vehicle=@company.vehicles.create(vehicle_data)
+		end 
 		render :json=>{data:@vehicle}
 	end
 
 	def all
-		@vehicles=current_user.companies.vehicles.all
+		@vehicles= []
+		current_user.companies.each do |c|
+			@vehicles << c.vehicles
+		end
+
 		render :json=>{data:@vehicles}
 	end
 
@@ -15,8 +22,9 @@ class VehicleController < ApplicationController
 	end
 
 	def destroy
-		@vehicle=current_user.companies.vehicles.where(_id: params[:id])
-		if @vehicle && @vehicle.delete
+		@company=current_user.companies.find_by(:id=>params[:id])
+		@vehicle=@company.vehicles.find_by(_id=>params[:vehicle_id])
+		if @vehicle.present? && @vehicle.delete
 			flash[:notice]="vehicle successfully deleted"
 		else
 			flash[:notice]="unable to delete try again"
@@ -41,6 +49,7 @@ class VehicleController < ApplicationController
 
 	private
 	def vehicle_data
-		params.permit(:vehicle_type,:vehicle_number,:vin_number,:make,:model,:year,:fuel_capacity,:fuel_type,:id)
+		params.permit(:vehicle_type,:vehicle_number,:vin_number,:make,:model,:year,:fuel_capacity,:fuel_type,:odometer_reading)
 	end
+
 end

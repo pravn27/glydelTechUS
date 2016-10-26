@@ -1,4 +1,4 @@
-<div class="layout" id="general">
+<div class="layout" id="general" ng-controller="vehicle">
   <h1>Vehicles list</h1>
   <!-- <input type="button" data-toggle="modal" data-target="#vehicle" value="Add vehicle"/> -->
   <div class="row">
@@ -18,6 +18,12 @@
   <table class="table vehicles-list table-hover">
     <thead>
       <tr>
+        <th>
+          <a>Index
+            <span class="fa fa-caret-down"></span>
+            <span class="fa fa-caret-up" ></span>
+          </a>
+        </th>
         <th>
           <a>Vehicle Type
             <span class="fa fa-caret-down"></span>
@@ -59,29 +65,22 @@
         <th>&nbsp;</th> 
       </tr>
     </thead>
-    <tbody>
+    <tbody ng-repeat="vehicle in vehicles">
       <tr>
-        <td>Truck</td>
-        <td>12AA00G5</td>
-        <td>1234567890098</td>
-        <td>Toyata,2015</td>
-        <td>120ltr</td>
-        <td>Attached</td>
+        <td>{{$index}}</td>
+        <td>{{vehicle.vehicle_type}}</td>
+        <td>{{vehicle.vehicle_number}}</td>
+        <td>{{vehicle.vin_number}}</td>
+        <td>{{vehicle.make}}{{vehicle.model}}{{vehicle.year}}</td>
+        <td>{{vehicle.fuel_capacity}}</td>
+        <td>{{vehicle.fuel_type}}</td>
         <td>
-          <a class="action-btns" href="" title="Vehicle Details"><i class="fa fa-info" aria-hidden="true"></i></a>
-          <a class="action-btns" href="" title="Delete Vehicle"><i class="fa fa-trash"></i></a>
-        </td>
-      </tr>
-      <tr>
-        <td>Truck</td>
-        <td>12AA00G5</td>
-        <td>1234567890098</td>
-        <td>Toyata,2015</td>
-        <td>120ltr</td>
-        <td>Attached</td>
-        <td>
-          <a class="action-btns" href="" title="Vehicle Details"><i class="fa fa-info" aria-hidden="true"></i></a>
-          <a class="action-btns" href="" title="Delete Vehicle"><i class="fa fa-trash"></i></a>
+          <a class="action-btns" href="" title="Edit Vehicle ">
+          <i class="fa fa-info" aria-hidden="true"></i>
+          </a>
+          <a class="action-btns" href="" title="Delete Vehicle">
+            <i class="fa fa-trash"></i>
+          </a>
         </td>
       </tr>
     </tbody>

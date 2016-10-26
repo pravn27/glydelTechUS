@@ -11,7 +11,7 @@
                 <ul class="list-unstyled vehicle-add">
                   <li>
                     <label>Company Name</label>
-                    <input type="text" name="company-name" placeholder="Company Name" ng-modal="vehicle.vehicle">
+                    <input type="text" name="company-name" placeholder="Company Name" auto-complete>
                   </li>
                 <li>
                   <label>Vehicle Type</label>
@@ -23,11 +23,11 @@
                 </li>
                 <li>
                   <label>Registration Number</label>
-                  <input type="text" name="registration_number" placeholder="Vehicle Registration Number" ng-model="vehicle.registration_number">
+                  <input type="text" name="registration_number" placeholder="Vehicle Registration Number" ng-model="vehicle.vehicle_number">
                 </li>
                  <li>
                   <label>VIN Number</label>
-                  <input type="text" name="vin" placeholder="Vehicle Identification Number" ng-model="vehicle.vin">
+                  <input type="text" name="vin" placeholder="Vehicle Identification Number" ng-model="vehicle.vin_number">
                 </li>
                 <li>
                   <label>Make</label>
@@ -51,7 +51,7 @@
                 </li>
                 <li>
                   <label>Fuel Capacity</label>
-                  <input type="text" name="fuel_tank" placeholder="Vehicle Fuel Capacity" ng-model="vehicle.fuel_tank">
+                  <input type="text" name="fuel_tank" placeholder="Vehicle Fuel Capacity" ng-model="vehicle.fuel_capacity">
                 </li>
                 <li>
                   <label>Current Odometer Reading</label>
@@ -60,12 +60,10 @@
               </ul>
             </div>
             <div class="clearfix"></div>
-            
-
             <div >
               <input class="action-btn" type="submit" value="Add Vehicle" ng-click="createVehicle(vehicle)">
             </div>
-
+            
           </form>
           </div>
     </div>

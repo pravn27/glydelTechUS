@@ -1,22 +1,26 @@
-app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, companyRoutes){
-
+app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRoutes){
+	$scope.vehicle={};
 	$scope.vehicles=[]
+	$scope.name="jay"
 	//$scope.name="jay"
 	vehicleRoutes.all(function(resp){
-			$scope.companies=resp.data
-			// console.log(Array.isArray($scope.companies))
+		$scope.vehicles=resp.data[0]	
+		console.log($scope.vehicles)	
 	})
+
 	$scope.createVehicle=function(vehicleObj){
 		$scope.modal="create"
-		console.log(companyObj)
+		// console.log(vehicleObj)
 		vehicleRoutes.create(vehicleObj,function(resp){
+			$('#vehicle').modal('hide')
+			$scope.vehicle={}
 			$scope.vehicles.push(resp)
 		})
 	}
 
 	$scope.editVehicle=function(vehicle){
 		$scope.modal="edit"
-		$('#company').modal('show')
+		$('#vehile').modal('show')
 		$scope.vehicle=vehicle
 	}
 	

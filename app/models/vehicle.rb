@@ -3,7 +3,7 @@ class Vehicle
   belongs_to :company
   has_many :schedules
   has_many :issues
-  
+
   field :vehicle_type, type: String
   field :vehicle_number,type: String
   field :vin_number,type: String
@@ -12,5 +12,7 @@ class Vehicle
   field :year,type: Integer
   field :fuel_capacity,type: Integer
   field :fuel_type,type: String
+  field :odometer_reading,type: Integer
+
 end
 
