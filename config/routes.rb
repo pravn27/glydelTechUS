@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   get 'dashboard' =>'home#dashboard'
   # get 'cus' => 'home#customers'
   get 'vehicles' => "vehicle#index"
-  get 'vehicles/new' => "vehicle#add"
-  get 'vehicles/details' => "vehicle#detail"
+  post 'vehicle/create'=>"vehicle#create"
+  get 'vehicles/all'=>"vehicle#all"
+  get 'vehicle/edit/:id'=>'vehicle#edit'
+  put 'vehicles/:id'=>"vehicle#update"
+  delete 'vehicles/:id'=>"vehicle#destroy"
+
   get 'issues' => "vehicle#issues"
   post'company/create'=>"company#create"
   get 'companies'=>"company#index"
@@ -14,8 +18,8 @@ Rails.application.routes.draw do
   get 'companies/all'=>"company#all"
   get 'company/edit/:id'=>'company#edit'
   put 'companies/:id'=>"company#update"
-  delete 'companies/:id'=>"company#destroy" 
-  post 'vehicle/create'=>"vehicle#create"
+  delete 'companies/:id'=>"company#destroy"
+  
   get 'schedules/calendar' => "schedules#calendar"
   get 'schedules/vehicles' => "schedules#list"
   get 'schedules/all' => "schedules#all"
