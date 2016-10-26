@@ -1,6 +1,6 @@
 <div class="login-bk"></div>
 <div class="overlay"></div>
-<div class="white-box">
+<div class="white-box" ng-controller="userController">
     <h2>Sign Up</h2>
     <form>
       <ul class="list-unstyled">
@@ -8,7 +8,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-user"></span></div>
-              <input type="text" placeholder="User name" />
+              <input type="text" placeholder="User name" ng-model="user.first_name"/>
             </div>
           </div>
         </li>
@@ -16,7 +16,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-envelope"></span></div>
-              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Email" ng-model="user.email"/>
             </div>
           </div>
         </li>
@@ -24,7 +24,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-mobile"></span></div>
-              <input type="text" placeholder="Mobile number" />
+              <input type="text" placeholder="Mobile number" ng-model="user.contact_number"/>
             </div>
           </div>
         </li>
@@ -32,7 +32,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-map-marker"></span></div>
-              <input type="text" placeholder="Locality" />
+              <input type="text" placeholder="Locality" ng-model="user.locality"/>
             </div>
           </div>
         </li>
@@ -40,15 +40,15 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-lock"></span></div>
-              <input type="password" placeholder="password" />
+              <input type="password" placeholder="password" ng-model="user.password"/>
             </div>
           </div>
         </li>
         <li>
-          <input type="submit" value="Signup"> 
+          <input type="button" value="Signup" ng-click="signup(user)"> 
         </li>
         <li class="direction-link">
-          Do you have an account? <a href="">Sign In</a>
+          Do you have an account? <a href="/users/sign_in">Sign In</a>
         </li>
       </ul>
     </form>
