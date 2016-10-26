@@ -1,21 +1,21 @@
 class VehicleController < ApplicationController
 
 	def create 
-		
 		@vehicle=current_user.companies.vehicles.create(company_data)
+		render :json=>{data:@vehicle}
 	end
 
 	def all
-		@company=current_user.companies.vehicles.all
+		@vehicles=current_user.companies.vehicles.all
+		render :json=>{data:@vehicles}
 	end
 
 	def edit
-		@vehicle=current_user.companies.vehicles.where('_id'=>params[:id])
+		@vehicle=current_user.companies.vehicles.where(_id: params[:id])
 	end
 
 	def destroy
-		@vehicle=current_user.companies.vehicles.where('_id'=>params[:id])
-
+		@vehicle=current_user.companies.vehicles.where(_id: params[:id])
 		if @vehicle && @vehicle.delete
 			flash[:notice]="vehicle successfully deleted"
 		else
@@ -24,15 +24,18 @@ class VehicleController < ApplicationController
 	end
 
 	def update
-		@vehicle=current_user.companies.vehicles.where('_id'=>params[:id])
-		if @vehicle
-			@vehicle=@vehicle.update(vehicle_data)
-			if @vehicle
+		@vehicle=current_user.companies.vehicles.where(_id: params[:id])
+		if @vehicle.present?
+			@vehicle.update_attributes(vehicle_data)
+			unless @company.errors.any?
 				flash[:notice] = "vehicle updated successfully"
 			else
 				flash[:error] = "Not able to save! Please Try again"
-				redirect_to (:back) and return
 			end
+		end
+		respond_to do |f|
+			f.html{ redirect_to (:back) and return }
+			f.json{ render :json=>@vehicle, :status=>200}
 		end
 	end
 

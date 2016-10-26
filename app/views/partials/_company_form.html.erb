@@ -1,0 +1,40 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="company" ng-controller="company">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Add Company</h4>
+        </div>
+        
+        <div class="modal-body">
+          <div class="schedule-form">
+            <ul class="list-unstyled">
+              <li>
+                <label>Company Name</label>
+                <input type="text" name="comapnyName" placeholder="Company Name" ng-model="company.name">
+              </li>
+              <li>
+                <label>Contact Number</label>
+                <input type="text" name="contactNumber" placeholder="Enter company contact number" ng-model="company.contact_number">
+              </li>
+              <li>
+                <label>Address</label>
+                <input type="text" name="companyAddress" placeholder="Enter company address" ng-model="company.address">
+              </li>
+
+
+              <li ng-if="modal=='create'">
+                <label>&nbsp;</label>
+                <input class="action-btn" type="button" value="Add" ng-click="createCompany(company)" >
+              </li>
+
+              <li ng-if="modal=='edit'">
+                <label>&nbsp;</label>
+                <input class="action-btn" type="button" value="update" ng-click="edit(company)">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->

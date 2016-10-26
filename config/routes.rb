@@ -7,12 +7,15 @@ Rails.application.routes.draw do
   get 'vehicles' => "vehicle#index"
   get 'vehicles/new' => "vehicle#add"
   get 'vehicles/details' => "vehicle#detail"
-
-  post 'company/create'=>"company#create"
+  get 'issues' => "vehicle#issues"
+  post'company/create'=>"company#create"
   get 'companies'=>"company#index"
   get 'companies/new'=>"company#new"
+  get 'companies/all'=>"company#all"
+  get 'company/edit/:id'=>'company#edit'
+  put 'companies/:id'=>"company#update"
+  delete 'companies/:id'=>"company#destroy" 
   post 'vehicle/create'=>"vehicle#create"
- 
   get 'schedules/calendar' => "schedules#calendar"
   get 'schedules/vehicles' => "schedules#list"
   get 'schedules/all' => "schedules#all"

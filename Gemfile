@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
+gem 'angular_rails_csrf'
 
 
 group :development, :test do

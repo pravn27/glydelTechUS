@@ -279,15 +279,15 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   font-weight: 600;
   color: #666;
 }
-#general .vehicle-add label,#general .company-form label {
+#vehicle .vehicle-add label,#general .company-form label,#vehicle label{
   display: block;
   color: #666;
 }
-#general .vehicle-add li,#general .company-form li {
+#vehicle .vehicle-add li,#general .company-form li {
   padding: 0 0 10px;
 }
-#general .vehicle-add li input[type="text"],#general .vehicle-add li select,#general .company-form input[type="text"]{
-  width: 80%;
+#vehicle .vehicle-add li input[type="text"],#vehicle .vehicle-add li select,#general .company-form input[type="text"]{
+  width: 100%;
   border: 1px solid #d9d9d9;
 }
 .action-btn,.action-btn:hover ,.action-btn:focus{

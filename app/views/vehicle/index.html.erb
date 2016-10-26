@@ -1,5 +1,7 @@
 <div class="layout" id="general">
   <h1>Vehicles list</h1>
+  <!-- <input type="button" data-toggle="modal" data-target="#vehicle" value="Add vehicle"/> -->
+
   <div class="row">
     <!--Search box-->
     <form action="" class="col-md-6 no-padding">
@@ -11,7 +13,7 @@
       </div>
     </form>
     <div class="col-md-6 text-right">
-      <a href="/vehicles/new" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
+      <a data-toggle="modal" data-target="#vehicle" value="Add vehicle" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
     </div>
   </div>
   <table class="table vehicles-list table-hover">
@@ -55,7 +57,7 @@
             <span class="fa fa-caret-up" ></span>
           </a>
         </th>
-        <th>&nbsp;</th>
+        <th>&nbsp;</th> 
       </tr>
     </thead>
     <tbody>
@@ -86,3 +88,5 @@
     </tbody>
   </table>
 </div>
+  <%= render "partials/vehicle_form" %>
+
