@@ -1,0 +1,36 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="schedule">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Add Schedule</h4>
+        </div>
+        <div class="modal-body">
+          <div class="schedule-form">
+            <ul class="list-unstyled">
+              <li>
+                <label>Vehicle Type</label>
+                <div>{{schedule.vehicle_type}}</div>
+              </li>
+              <li>
+                <label>Vehicle Name</label>
+                <div>{{schedule.vehicle_name}}</div>
+              </li>
+              <li>
+                <label>Scheduled on</label>
+                <input type="date" name="vehicle-type" placeholder="DD/MM/YYYY" ng-model="schedule.scheduled_date">
+              </li>
+              <li>
+                <label>Decription</label>
+                <textarea ng-model="schedule.scheduling_details"></textarea>
+              </li>
+              <li>
+                <label>&nbsp;</label>
+                <input class="action-btn" type="button" value="Schedule It" ng-click="scheduleVehicle(schedule)">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->

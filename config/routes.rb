@@ -20,6 +20,13 @@ Rails.application.routes.draw do
   get 'schedules/vehicles' => "schedules#list"
   get 'schedules/all' => "schedules#all"
   get 'schedules/show' => "schedules#show"
+  patch 'schedules/complete' => "schedules#complete"
+  get 'schedules/issues' => "schedules#issues"
   resources :schedules
+  
+  get 'issues/list' => "issues#list"
+  post 'issues/schedule' => "issues#schedule"
+  get 'issues/vehicle' => "issues#vehicle"
+  resources :issues
 
 end

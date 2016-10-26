@@ -12,7 +12,6 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.getAllSchedules = function(){
 		scheduleRoutes.all(function(resp) {
 			$scope.schedules = resp.data
-			console.log(resp.data)
 		})
 	}
 	$scope.getAllSchedules()
@@ -40,5 +39,14 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 			window.location = resp.path;
 		})	 
 	}
-
+	$scope.completeSchedule = function (id) {
+		scheduleRoutes.complete({id:id.$oid}, function(resp) {
+			window.location = resp.path;
+		})	 
+	}
+	$scope.viewIssues = function (id) {
+		scheduleRoutes.issue({id:id.$oid}, function(resp) {
+			window.location = resp.path+"?id="+resp.data._id.$oid;
+		})	 
+	}
 })

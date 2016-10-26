@@ -20,6 +20,14 @@ app.factory('scheduleRoutes',['$resource', function ($resource) {
 			url: '/schedules/:id',
 			method: 'PATCH'
 		},
+		complete: {
+			url: '/schedules/complete',
+			method: 'PATCH'
+		},
+		issue: {
+			url: '/schedules/issues',
+			method: 'GET'
+		},
 		delete: {
 			url: '/schedules/:id',
 			method: 'DELETE'

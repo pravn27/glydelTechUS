@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
 	end
 
 	def all
-		@schedules = Schedule.where(:is_active => "true")
+		@schedules = Schedule.where(:is_active => "true", :status => "pending")
 		render :json=> { data: @schedules}
 	end
 
@@ -25,7 +25,7 @@ class SchedulesController < ApplicationController
 			schedule = vehicle.schedules.create(schedule_params)
 			render :json=> { message:"Schedule created Succesfully", path: schedules_path}
 		else
-			ender :json=> { message:"Unable to save. Please try againy", path: schedules_path}
+			render :json=> { message:"Unable to save. Please try againy", path: schedules_path}
 		end
 	end
 
@@ -35,7 +35,27 @@ class SchedulesController < ApplicationController
 			schedule = schedule.update(schedule_params)
 			render :json=> { message:"Schedule updated Succesfully", path: schedules_path}
 		else
-			ender :json=> { message:"Unable to update. Please try again", path: schedules_path}
+			render :json=> { message:"Unable to update. Please try again", path: schedules_path}
+		end
+	end
+
+	def issues
+		schedule = Schedule.find(params[:id])
+		if schedule.present?
+			vehicle = schedule.vehicle
+			render :json=> { message:"Issues", path: issues_path, data: vehicle}
+		else
+			render :json=> { message:"Unable to fetch. Please try again", path: schedules_path}
+		end
+	end
+
+	def complete
+		schedule = Schedule.find(params[:id])
+		if schedule.present?
+			schedule = schedule.update(:status => "completed")
+			render :json=> { message:"Schedule updated Succesfully", path: schedules_path}
+		else
+			render :json=> { message:"Unable to update. Please try again", path: schedules_path}
 		end
 	end
 
@@ -45,7 +65,7 @@ class SchedulesController < ApplicationController
 			schedule = schedule.update(:is_active => false)
 			render :json=> { message:"Schedule removed Succesfully", path: schedules_path}
 		else
-			ender :json=> { message:"Unable to delete. Please try again", path: schedules_path}
+			render :json=> { message:"Unable to delete. Please try again", path: schedules_path}
 		end
 	end
 
