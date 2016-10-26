@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   delete 'companies/:id'=>"company#destroy"
   
   get 'schedules/calendar' => "schedules#calendar"
+  get 'schedules/events' => "schedules#events"
   get 'schedules/vehicles' => "schedules#list"
   get 'schedules/all' => "schedules#all"
   get 'schedules/show' => "schedules#show"

@@ -529,3 +529,6 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 #schedule select,#schedule input[type="date"] {
   width: 35%;
 }
+.fc-day-grid-event .fc-time{
+  display: none;
+}

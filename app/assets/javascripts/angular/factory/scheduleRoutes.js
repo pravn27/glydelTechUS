@@ -28,6 +28,10 @@ app.factory('scheduleRoutes',['$resource', function ($resource) {
 			url: '/schedules/issues',
 			method: 'GET'
 		},
+		calendar: {
+			url: '/schedules/events',
+			method: 'GET'
+		},
 		delete: {
 			url: '/schedules/:id',
 			method: 'DELETE'
