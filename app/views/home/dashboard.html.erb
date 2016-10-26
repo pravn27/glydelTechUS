@@ -38,4 +38,123 @@
     </div>
     <div class="clearfix"></div>
   </div>
+  <script
+  src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDZfwCrdzh9SMuKjw-QIyqIZ6PTLFS9iYY">
+  </script>
+  <div>
+    <div id="map">
+    </div>
+    <script>
+      var colors = ['#002200','#AABBFF','#55BADC','#CCADAC']
+      var path = [
+      {lat: 13.035, lng: 77.6235},
+      {lat: 13.0324, lng: 77.5992},
+      {lat: 13.028, lng: 77.64},
+      {lat: 13.0184, lng: 77.6781}    
+      ];
+      var dest_path = {lat:12.9787,lng:77.5724}
+      function calcRoute(from, to, color) {
+        var request = {
+          origin: from,
+          destination: to,
+          travelMode: 'DRIVING'
+        };
+        directionsService.route(request, function(response, status) {
+          if (status == 'OK') {
+            direction = response.routes[0].overview_path
+            direction_path = []
+            for(i in direction){
+              direction_path.push({lat:direction[i].lat(),lng:direction[i].lng()})
+            }
+            var lineSymbol = {
+              path: 'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z',
+              fillColor: 'black',
+              fillOpacity: 0.8,
+              scale: 0.8,
+              strokeColor: 'black',
+              strokeWeight: 0.5
+    
+            };
+            var line = new google.maps.Polyline({
+              path: direction_path,
+              strokeColor: color,
+              icons: [{
+                icon: lineSymbol,
+                offset: '100%'
+              }],
+              map: map
+            });
+            animateCircle(line);
+          }
+        });
+      }
+      function animateCircle(line) {
+        var count = 0;
+        window.setInterval(function() {
+          count = (count + 1) % 200;
+    
+          var icons = line.get('icons');
+          icons[0].offset = (count / 2) + '%';
+          line.set('icons', icons);
+        }, 1000);
+      }
+    
+      var markers = [];
+      var map;
+      var directionsService;
+      map_center = getCenter(path)
+      function initMap() {
+        directionsService = new google.maps.DirectionsService();
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: map_center
+        });
+        
+    for(p in path){
+      calcRoute(path[p],dest_path,colors[p])
+    }
+    }
+    
+    function clearMarkers() {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+      markers = [];
+    }
+    
+    function getCenter(list){
+    
+      if(list.length==1){
+        return list[0];
+      }
+    
+      var x = 0;
+      var y = 0;
+      var z = 0;
+    
+      for (geoCoordinate in list)
+      {
+        var latitude = list[0].lat * Math.PI / 180;
+        var longitude = list[0].lng * Math.PI / 180;
+        
+        x += Math.cos(latitude) * Math.cos(longitude);
+        y += Math.cos(latitude) * Math.sin(longitude);
+        z += Math.sin(latitude);
+      }
+    
+      var total = list.length;
+    
+      x = x / total;
+      y = y / total;
+      z = z / total;
+    
+      var centralLongitude = Math.atan2(y, x);
+      var centralSquareRoot = Math.sqrt(x * x + y * y);
+      var centralLatitude = Math.atan2(z, centralSquareRoot);
+    
+      return({'lat':centralLatitude * 180 / Math.PI,'lng':centralLongitude * 180 / Math.PI});
+    }
+    </script>
+  </div>
 </div><!--/layout-->
+

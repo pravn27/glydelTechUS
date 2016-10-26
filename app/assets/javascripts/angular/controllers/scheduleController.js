@@ -12,6 +12,10 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.getAllSchedules = function(date){
 		scheduleRoutes.all({date:date},function(resp) {
 			$scope.schedules = resp.data
+			angular.forEach($scope.schedules, function(value) {
+				date = new Date(value.scheduled_date).toDateString()
+				value.s_date = date
+			});
 		})
 	}
 	param = getParam('date')
@@ -83,7 +87,10 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 			return countWords;
 		}, {});
 	}
-
+	$scope.dateFilter = function () {
+		date = $scope.filterDate.toDateString();
+		$scope.fDate = date
+	}
 })
 
 function getParam(key) {

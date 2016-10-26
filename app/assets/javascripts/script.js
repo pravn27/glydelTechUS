@@ -1,4 +1,5 @@
 $(document).ready(function(){
 	$('#calendar').fullCalendar()
-	$('[data-toggle="tooltip"]').tooltip()
+	$('[data-toggle="tooltip"]').tooltip();
+	initMap()
 })
