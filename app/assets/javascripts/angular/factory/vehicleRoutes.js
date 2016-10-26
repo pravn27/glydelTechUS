@@ -14,7 +14,7 @@ app.factory('vehicleRoutes',['$resource', function ($resource) {
 			method: 'GET'
 		},
 		update: {
-			url: '/vehicles/:id.json',
+			url: '/vehicles/:id/:vehicle_id',
 			method: 'PUT'
 		},
 		delete: {
