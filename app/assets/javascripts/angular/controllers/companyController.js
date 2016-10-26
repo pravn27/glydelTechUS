@@ -1,6 +1,8 @@
 app.controller("company",["$scope","companyRoutes","$httpParamSerializer",function ($scope, companyRoutes, $httpParamSerializer){
 	$scope.companies=[]
 	//$scope.name="jay"
+	$scope.modal="create"
+	
 	companyRoutes.all(function(resp){
 			$scope.companies=resp.data
 			// console.log(Array.isArray($scope.companies))
