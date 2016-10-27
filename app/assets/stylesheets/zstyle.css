@@ -696,3 +696,9 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
     line-height: 20px;
     font-weight: bold;
 }
+.details-company{
+      position: relative;
+    left: 145px;
+    font-size: 14px;
+    font-weight: bold;
+}
