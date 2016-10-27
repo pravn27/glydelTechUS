@@ -2,7 +2,7 @@
 <div class="overlay"></div>
 <div class="white-box" ng-controller="userController">
   <h2>Sign In</h2>
-  <form>  
+  <form ng-enter="login(user)">  
     <ul class="list-unstyled">
       <li>
         <div class="form-group">
@@ -27,7 +27,7 @@
         </span>
       </li>
       <li>
-        <input type="button" value="Signin" ng-click="login(user)"> 
+        <input type="button" value="Signin" ng-click="login(user)" > 
       </li>
       <li class="direction-link">
         You don't have an account? <a href="/users/sign_up">Signup</a>

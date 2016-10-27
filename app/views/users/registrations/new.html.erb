@@ -2,13 +2,13 @@
 <div class="overlay"></div>
 <div class="white-box" ng-controller="userController">
     <h2>Sign Up</h2>
-    <form>
+    <form ng-enter="signup(user)">
       <ul class="list-unstyled">
         <li>
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-user"></span></div>
-              <input type="text" placeholder="User name" ng-model="user.first_name"/>
+              <input type="text" placeholder="User name" ng-model="user.first_name" required/>
             </div>
           </div>
         </li>
@@ -16,7 +16,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-envelope"></span></div>
-              <input type="text" placeholder="Email" ng-model="user.email"/>
+              <input type="text" placeholder="Email" ng-model="user.email" required/>
             </div>
           </div>
         </li>
@@ -24,7 +24,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-mobile"></span></div>
-              <input type="text" placeholder="Mobile number" ng-model="user.contact_number"/>
+              <input type="text" placeholder="Mobile number" ng-model="user.contact_number" required/>
             </div>
           </div>
         </li>
@@ -32,7 +32,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-map-marker"></span></div>
-              <input type="text" placeholder="Locality" ng-model="user.locality"/>
+              <input type="text" placeholder="Locality" ng-model="user.locality" required/>
             </div>
           </div>
         </li>
@@ -40,7 +40,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-lock"></span></div>
-              <input type="password" placeholder="password" ng-model="user.password"/>
+              <input type="password" placeholder="password" ng-model="user.password" required/>
             </div>
           </div>
         </li>
