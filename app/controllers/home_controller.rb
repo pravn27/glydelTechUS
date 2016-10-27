@@ -9,4 +9,7 @@ class HomeController < ApplicationController
 		@schedules = Schedule.all
 		@issues = Issue.all
 	end
+
+  def settings
+  end
 end
