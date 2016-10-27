@@ -38,7 +38,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 		})
 	}
 	$scope.updateSchedule = function(schedule){
-		scheduleRoutes.update({vehicle_name: schedule.vehicle_name.make,vehicle_type: schedule.vehicle_type, scheduling_details: schedule.scheduling_details, scheduled_date: schedule.scheduled_date },{id:schedule._id.$oid}, function(resp) {
+		scheduleRoutes.update({vehicle_number: schedule.vehicle_number.make,vehicle_type: schedule.vehicle_type, scheduling_details: schedule.scheduling_details, scheduled_date: schedule.scheduled_date },{id:schedule._id.$oid}, function(resp) {
 			 window.location = resp.path;
 		})
 	}

@@ -23,7 +23,6 @@ class IssuesController < ApplicationController
 		vehicle = Vehicle.find_by(:vehicle_number => params[:vehicle_number])
 		if vehicle.present?
 			schedule = vehicle.schedules.create(schedule_params)
-			schedule.update(:vehicle_name => vehicle.model)
 			issues = Issue.where(:vehicle_number => params[:vehicle_number])
 			issues.each do |issue|
 				issue.update(:status => "scheduled")
@@ -47,7 +46,7 @@ class IssuesController < ApplicationController
 	private
 
 	def schedule_params
-		params.permit(:vehicle_name, :vehicle_type, :scheduling_details, :scheduled_date, :id)
+		params.permit(:vehicle_number, :vehicle_type, :scheduling_details, :scheduled_date, :id)
 	end
 
 end

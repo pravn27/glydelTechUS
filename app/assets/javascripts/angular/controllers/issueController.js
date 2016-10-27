@@ -26,7 +26,7 @@ app.controller('issueController', function ($scope, issueRoutes){
 		$scope.getIssues()
 	}
 	$scope.scheduleVehicle =function(schedule){
-		issueRoutes.schedule({vehicle_number:schedule.vehicle_number, vehicle_name: schedule.vehicle_name.make,vehicle_type: schedule.vehicle_type, scheduling_details: schedule.scheduling_details, scheduled_date: schedule.scheduled_date }, function(resp){
+		issueRoutes.schedule({vehicle_number:schedule.vehicle_number, vehicle_type: schedule.vehicle_type, scheduling_details: schedule.scheduling_details, scheduled_date: schedule.scheduled_date }, function(resp){
 			window.location = resp.path;
 		})
 	}
