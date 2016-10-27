@@ -1,6 +1,4 @@
-<div class="layout" id="general" ng-controller="company" ng-init="modal">
-    <input type="button" data-toggle="modal" data-target="#company" value="Add company" ng-click="modal='create'"/>
-    <%= render "partials/company_form" %>
+<div class="layout" id="general" ng-controller="company" ng-init="modal" ng-cloak>
     <div ng-if="companies.length>0">
         <h1>Companies</h1>
         <div class="row top-search" >
@@ -9,65 +7,66 @@
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><span class="fa fa-search"></span></div>
-                    <input type="text" placeholder="Search Customers..." />
+                    <input type="text" placeholder="Search Company..." />
                   </div>
                 </div>
               </form>
-              <!--
               <div class="col-md-6 text-right">
-                <a href="companies/new" class="action-btn"><i class="fa fa-plus"></i> Customer</a>
-              </div>
-              -->
+                <a data-toggle="modal" data-target="#company" class="action-btn" value="Add company" ng-click="modal='create'"/><i class="fa fa-plus"></i> Company</a>
+              </div>   
               <div class="clearfix"></div>
             </div>
         </div>
-        <table class="table table-hover customer-list" >
-                <thead>
-                    <tr>
-                      <th>
-                        <a>Index
-                          <span class="fa fa-caret-down"></span>
-                          <span class="fa fa-caret-up" ></span>
-                        </a>
-                      </th>
-                      <th>
-                        <a>Name
-                          <span class="fa fa-caret-down"></span>
-                          <span class="fa fa-caret-up" ></span>
-                        </a>
-                      </th>
-                      <th>
-                        <a>Contact
-                          <span class="fa fa-caret-down"></span>
-                          <span class="fa fa-caret-up" ></span>
-                        </a>
-                      </th>
-                      <th>
-                        <a>Address
-                          <span class="fa fa-caret-down"></span>
-                          <span class="fa fa-caret-up" ></span>
-                        </a>
-                      </th>
-                      <th>Delete</th> 
-                      <th>Edit</th> 
-                    </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="company in companies">
-                    <th>{{$index+1}}</th>
-                    <th>{{company.name}}</th>
-                    <th>{{company.contact_number}}</th>
-                    <th>{{company.address}}</th>
-                    <th ng-click="deleteCompany(companies[$index])" ><a>Delete</a></th>
-                    <th ng-click="modal='edit';editCompany(companies[$index]);"><a>Edit</a></th>
-                </tr>
-                </tbody>
+        <table class="table table-hover vehicles-list" >
+          <thead>
+              <tr>
+                <th>
+                  #
+                  <!-- <a>#
+                    <span class="fa fa-caret-down"></span>
+                    <span class="fa fa-caret-up" ></span>
+                  </a> -->
+                </th>
+                <th>
+                  <a>Name
+                    <span class="fa fa-caret-down"></span>
+                    <span class="fa fa-caret-up" ></span>
+                  </a>
+                </th>
+                <th>
+                  <a>Contact
+                    <span class="fa fa-caret-down"></span>
+                    <span class="fa fa-caret-up" ></span>
+                  </a>
+                </th>
+                <th>
+                  <a>Address
+                    <span class="fa fa-caret-down"></span>
+                    <span class="fa fa-caret-up" ></span>
+                  </a>
+                </th>
+                <th>Actions</th> 
+              </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="company in companies">
+                <td>{{$index+1}}</td>
+                <td>{{company.name}}</td>
+                <td>{{company.contact_number}}</td>
+                <td>{{company.address}}</td>
+                <td class="action-icon">
+                  <a ng-click="modal='edit';editCompany(companies[$index]);"><i class="fa fa-edit"></i></a>
+                  <a ng-click="deleteCompany(companies[$index])"><i class="fa fa-trash"></i></a>
+                </td> 
+            </tr>
+            </tbody>
         </table>
     </div> 
     <div ng-if="companies.length==0">
         <div class="new-cm">
-                <h1>please add a company</h1>
+          <h1>Please add a company</h1>
+          <a data-toggle="modal" data-target="#company" class="action-btn" value="Add company" ng-click="modal='create'"/><i class="fa fa-plus"></i> Company</a>
         </div>
     </div>
-
+    <%= render "partials/company_form" %>
 </div>

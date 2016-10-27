@@ -5,15 +5,27 @@ class SchedulesController < ApplicationController
 	end
 
 	def list
-		@vehicles = Vehicle.all
+		@vehicles= []
+		current_user.companies.each do |c|
+			@vehicles << c.vehicles
+		end
 		render :json=> { data: @vehicles}
 	end
 
 	def all
+		@vehicles= []
+		current_user.companies.each do |c|
+			@vehicles << c.vehicles
+		end
+
 		if params[:date].present?
-			@schedules = Schedule.where(:scheduled_date => params[:date], :is_active => "true", :status => "pending")
+			@vehicles.each do |c|
+				@schedules << c.schedules.where(:scheduled_date => params[:date], :is_active => "true", :status => "pending")
+			end
 		else
-			@schedules = Schedule.where(:is_active => "true", :status => "pending")
+			@vehicles.each do |c|
+				@schedules << c.schedules.where(:is_active => "true", :status => "pending")
+			end
 		end
 		render :json=> { data: @schedules}
 
