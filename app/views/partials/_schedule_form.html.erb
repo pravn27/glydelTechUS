@@ -15,7 +15,10 @@
               <li>
                 <label>Vehicle Number</label>
                 <input type="text" placeholder="Vehicle Number" on-selected="updateVehicleDetails($selected)" vehicle-auto-complete required>
-                <div ng-show="schedule_data.company" class="details-company">{{schedule_data.company}} - {{schedule_data.make}}, {{schedule_data.model}} ({{schedule_data.year}})</div>
+                <div ng-show="schedule_data.company" class="details-company">
+                Company : <span>{{schedule_data.company}}</span> <br> 
+                Make/Model : <span> {{schedule_data.make}}, {{schedule_data.model}}</span> <br> 
+                Year of make : <span> {{schedule_data.year}} </span></div>
               </li>
               <li>
                 <label>Scheduled on</label>
