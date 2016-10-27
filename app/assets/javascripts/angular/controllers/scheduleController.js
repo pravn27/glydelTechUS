@@ -4,7 +4,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.edit = false
 	$scope.getVehicles = function(schedule){
 		scheduleRoutes.list(function(resp) {
-			$scope.vehicles = resp.data[0]
+			$scope.vehicles = resp.data
 		})
 	}
 	$scope.getVehicles()

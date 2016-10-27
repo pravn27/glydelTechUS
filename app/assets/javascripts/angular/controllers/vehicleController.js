@@ -1,7 +1,6 @@
 app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRoutes){
 	$scope.vehicle={};
 	$scope.vehicles=[]
-
 	vehicleRoutes.all(function(resp){
 		$scope.vehicles=resp.data[0]	
 	})
