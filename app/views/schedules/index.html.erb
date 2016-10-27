@@ -7,7 +7,7 @@
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon"><span class="fa fa-search"></span></div>
-            <input type="date" placeholder="Search vehicles..." ng-model="filterDate" ng-change="dateFilter()"/>
+            <input type="text" datepicker placeholder="Search vehicles..." ng-model="filterDate" ng-change="dateFilter()"/>
           </div>
         </div>
       </form>
@@ -24,8 +24,8 @@
         <div class="date">{{schedule.scheduled_date | date:'MMM'}} <span>{{schedule.scheduled_date | date:'dd'}}</span></div>
         <div class="schedule-details">
           <ul class="list-unstyled details">
-            <li class="name">{{schedule.vehicle_name}} <span class="issue">{{schedule.issues}}</span></li>
-            <li>{{schedule.vehicle_type}}</li>
+            <li class="name">{{schedule.vehicle_name}} </li>
+            <li>{{schedule.vehicle_type}} <span class="issue">{{schedule.issues}}</span></li>
             <li class="desc">{{schedule.scheduling_details}}</li>
           </ul>
         </div>
@@ -34,7 +34,7 @@
           <ul class="list-inline">
             <li title="View issues"  ng-click="viewIssues(schedule._id)"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></li>
             <li title="Edit the schedule" data-toggle="modal" data-target="#schedule" ng-click="getSchedule(schedule._id)"><i class="fa fa-edit"></i></li>
-            <li title="Delete the schedule" ng-click="removeSchedule(schedule._id)"><i class="fa fa-trash"></i></li>
+            <li title="Delete the schedule" ng-click="readyToDelete(schedule._id)"><i class="fa fa-trash"></i></li>
             <li title="Complete the schedule" ng-click="completeSchedule(schedule._id)"><i class="fa fa-check" aria-hidden="true"></i></li>
           </ul>
         </div>
@@ -49,4 +49,5 @@
       </div>
     </div>
 <%= render "partials/schedule_form" %>
+<%= render "partials/delete_modal" %>
 </div>

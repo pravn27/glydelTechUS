@@ -681,3 +681,18 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .fc-content, td.fc-day{
   cursor: pointer;
 }
+.align-ve{
+      position: relative;
+    left: 145px;
+    top: -25px;
+}
+.issue {
+    float: right;
+    background: #941426;
+    color: #eee;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+}

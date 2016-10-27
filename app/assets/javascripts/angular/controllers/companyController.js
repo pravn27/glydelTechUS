@@ -1,5 +1,6 @@
 app.controller("company",["$scope","companyRoutes","$httpParamSerializer",function ($scope, companyRoutes, $httpParamSerializer){
 	$scope.companies=[]
+	$scope.deletingModule = 'company'
 	//$scope.name="jay"
 	$scope.modal="create"
 	companyRoutes.all(function(resp){
@@ -31,15 +32,18 @@ app.controller("company",["$scope","companyRoutes","$httpParamSerializer",functi
 		})
 	}
 
-	$scope.deleteCompany=function(company){
-
-		if(confirm("Are you sure?")==true){
+	$scope.deleteCompany=function(){
+			var company=$scope.deletingData;
 			companyRoutes.delete({id:company["_id"]["$oid"]},function(resp){
 				console.log(resp)
 				window.location = "/companies"
 			})	
-		}
+	
 		
+	}
+	$scope.readyToDelete = function (company) {
+		$scope.deletingData = company
+		$('#deleteModal').modal('show')
 	}
 
 
