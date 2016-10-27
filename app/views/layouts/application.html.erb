@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GlydelUs</title>
+  <title>Fleet & vehicle health management system - Glydel</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -17,7 +17,7 @@
   <% if current_user.present? %>
     <div class="top-bar">
       <div class="logo">
-        <a href=""><img src="/assets/logo.png" alt=""></a>
+        <a href=""><img src="/assets/logo1.png" alt=""></a>
       </div><!--/navbrand-->
       <ul class="pull-right list-inline right-nav">
         <li class="notify dropdown">
@@ -60,7 +60,7 @@
     <div class="side-nav">
 
      <ul class="list-unstyled menu">
-<<<<<<< HEAD
+
        <li>
         <a ng-href="/dashboard">
           <i class="fa fa-home" aria-hidden="true"></i> <span>Dashboard</span>
@@ -91,14 +91,6 @@
           <i class="fa fa-cog" aria-hidden="true"></i> <span>Settings</span>
         </a>
       </li>
-=======
-       <li><a ng-href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
-       <li><a href="/companies"><i class="fa fa-user" aria-hidden="true"></i> Company</a></li>
-       <li><a href="/vehicles"><i class="fa fa-truck" aria-hidden="true"></i> Vehicles</a></li>
-       <li><a href="/issues"><i class="fa fa-bug" aria-hidden="true"></i> Issues</a></li>
-       <li><a ng-href="/schedules"><i class="fa fa-calendar" aria-hidden="true"></i> Schedules</a></li>
-       <li><a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
->>>>>>> 3d35b6994c4b2a36047711fad4eccefdfd6b5ffe
 
      </ul><!--/invoice-menu-->
      <div class="footer-side-nav">
@@ -132,7 +124,7 @@
     	<%= yield %>
     </div>
     <div class="footer">
-      <p>Powered by Glydel</p>
+      <p>Powered by <img src="assets/glydel.png" alt=""></p>
     </div>
   <% else %>
     <%= yield %>
