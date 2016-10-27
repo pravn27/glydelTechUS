@@ -235,6 +235,7 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 /*Warpperlayout*/
 .wrapper {
   margin: 40px 0 0 200px;
+  min-height: 88vh;
 }
 #Dashboard {
   padding: 20px;
@@ -299,9 +300,23 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   outline: none;
   font-weight: 600;
   border: none;
+  cursor: pointer;
 }
 .action-btn:hover {
   background: #DE4A00;
+}
+.new-cm .action-icon{
+
+}
+.action-icon a {
+  font-weight: 600;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.46);
+  padding: 3px 7px;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff!important;
 }
 /*vehicle details page*/
 .vehicle-details li {
@@ -513,6 +528,8 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .new-cm a {
   text-decoration: none;
+  margin: 15px 0 0;
+  display: inline-block;
 }
 .new-cm h1 {
   margin: 0!important;
@@ -540,6 +557,18 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 #map {
   height: 400px;
   margin: 20px 15px;
+}
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #d9d9d9;
+  margin: 0 0 0 200px;
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+} 
+.footer p {
+  margin: 0;
 }
 .alert{
   position: fixed;
