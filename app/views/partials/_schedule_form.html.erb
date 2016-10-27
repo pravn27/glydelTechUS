@@ -13,6 +13,8 @@
                 <select ng-model="schedule_data.vehicle_type" ng-options="type for type in vehicle_types" required></select>
               </li>
               <li>
+                <label>Vehicle Name</label>
+                <select ng-model="schedule.vehicle_name" ng-options="vehicle.make for vehicle in vehicles|filter:{vehicle_type: schedule.vehicle_type}" required></select>
                 <label>Vehicle Number</label>
                 <input type="text" placeholder="Vehicle Number" on-selected="updateVehicleDetails($selected)" vehicle-auto-complete required>
                 <div ng-show="schedule_data.company" class="details-company">
