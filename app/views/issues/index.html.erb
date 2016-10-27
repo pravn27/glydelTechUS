@@ -33,7 +33,7 @@
         <td>{{issue.issue_date}}</td>
         <td>
           <a class="check-vehicle" href="" ng-if="issue.status == 'pending'" ng-click="scheduleDetails(issue)" data-toggle="modal" data-target="#schedule">Schedule It</a>
-          <a class="check-vehicle" href="" ng-if="issue.status == 'scheduled'">Scheduled</a>
+          <span class="check-vehicle-scheduled" ng-if="issue.status == 'scheduled'">Scheduled</span>
         </td>
         <td>
           <a class="action-btns" href="" title="Delete Vehicle" ng-click="removeIssue(issue.vehicle_id)"><i class="fa fa-trash"></i></a>
