@@ -88,7 +88,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
         	},
         	dayClick: function(date) {
         		$('#schedule').modal('show')
-        		$scope.schedule.scheduled_date = date._d
+        		$scope.schedule_data.scheduled_date = moment(new Date(date._d)).format('MM/DD/YYYY')
     		},
             events:$scope.fetchEvents
         }
