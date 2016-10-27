@@ -370,14 +370,14 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .vehicles-list .fa-caret-down ,.vehicles-list .fa-caret-up{
   position: absolute;
-  right: 30px;
+  right: 15px;
   cursor: pointer;
 }
 .vehicles-list .fa-caret-up{
-  top: 5px;
+  top: 7px;
 }
 .vehicles-list .fa-caret-down{
-  top: 15px;
+  top: 16px;
 }
 .vehicles-list td {
   vertical-align: middle!important;
@@ -588,8 +588,8 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   margin: 20px 15px;
 }
 .footer {
-  text-align: center;
-  padding: 10px 0;
+  text-align: right;
+  padding: 10px;
   border-top: 1px solid #d9d9d9;
   margin: 0 0 0 200px;
   font-size: 13px;
