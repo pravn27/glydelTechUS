@@ -1,8 +1,8 @@
-<div ng-controller="vehicle" ng-init="modal">
+<div ng-controller="vehicle" ng-init="modal" >
   <div class="layout" id="general">
-    <h1>Vehicles list</h1>
     <!-- <input type="button" data-toggle="modal" data-target="#vehicle" value="Add vehicle"/> -->
-    <div ng-hide="vehicles.length==0">
+    <div ng-hide="vehicles == undefined || vehicles.length == 0">
+      <h1>Vehicles list</h1>
       <div class="row">
         <!--Search box-->
         <form action="" class="col-md-6 no-padding">
@@ -88,10 +88,11 @@
         </tbody>
       </table>
     </div>
-    <div ng-if="vehicles.length==0">
+
+    <div ng-show="vehicles == undefined || vehicles.length == 0">
       <div class="new-cm">
         <h1>Please add a Vehicle</h1>
-        <a href="">asdasd</a>
+        <a data-toggle="modal" data-target="#vehicle" ng-click="modal='create';clear()" value="Add vehicle" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
       </div>
     </div>
   </div>

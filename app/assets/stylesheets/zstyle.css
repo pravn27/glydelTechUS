@@ -642,3 +642,6 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .prelative{
   position: relative;
 }
+[ng-cloak] {
+                display: none;
+            }
