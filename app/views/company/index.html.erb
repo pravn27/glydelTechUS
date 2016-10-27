@@ -57,7 +57,7 @@
                 <td>{{company.address}}</td>
                 <td class="action-icon">
                   <a ng-click="modal='edit';editCompany(companies[$index]);"><i class="fa fa-edit"></i></a>
-                  <a ng-click="deleteCompany(companies[$index])"><i class="fa fa-trash"></i></a>
+                  <a ng-click="readyToDelete(companies[$index])"><i class="fa fa-trash"></i></a>
                 </td> 
             </tr>
             </tbody>
@@ -70,4 +70,5 @@
         </div>
     </div>
     <%= render "partials/company_form" %>
+    <%= render "partials/delete_modal" %>
 </div>

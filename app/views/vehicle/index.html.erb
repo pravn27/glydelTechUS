@@ -1,4 +1,4 @@
-<div ng-controller="vehicle" ng-init="modal" >
+<div ng-controller="vehicle" ng-init="modal" ng-cloak>
   <div class="layout" id="general">
     <!-- <input type="button" data-toggle="modal" data-target="#vehicle" value="Add vehicle"/> -->
     <div ng-hide="vehicles == undefined || vehicles.length == 0">
@@ -79,8 +79,8 @@
               <a class="action-btns" href="" title="Edit Vehicle ">
               <i class="fa fa-edit" aria-hidden="true" ng-click="modal='edit';editVehicle(vehicles[$index])"></i>
               </a>
-              <a class="action-btns" href="" title="Delete Vehicle">
-                <i class="fa fa-trash" ng-click="deleteVehicle(vehicles[$index])"></i>
+              <a class="action-btns" title="Delete Vehicle" ng-click="readyToDelete(vehicle)">
+                <i class="fa fa-trash" ng-click="module='vehicle'"></i>
               </a>
             </td>
           </tr>
@@ -96,5 +96,6 @@
     </div>
   </div>
 <%= render "partials/vehicle_form" %>
+<%= render "partials/delete_modal" %>
 </div>
 

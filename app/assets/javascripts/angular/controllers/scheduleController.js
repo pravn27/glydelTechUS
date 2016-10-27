@@ -2,6 +2,11 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.vehicle_types = ["Gas", "Truck", "Mini-Truck"]
 	$scope.add = true
 	$scope.edit = false
+	$scope.deletingModule='schedule'
+	$scope.readyToDelete = function (schedule) {
+		$scope.deletingData = schedule
+		$('#deleteModal').modal('show')
+	}
 	$scope.getVehicles = function(schedule){
 		scheduleRoutes.list(function(resp) {
 			$scope.vehicles = resp.data
@@ -43,12 +48,11 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 			$scope.schedule = resp.data
 		})	 
 	}
-	$scope.removeSchedule = function (id) {
-		if(confirm("Are you sure?")==true){
+	$scope.removeSchedule = function () {
+		var id=$scope.deletingData;
 			scheduleRoutes.delete({id:id.$oid}, function(resp) {
 				window.location = resp.path;
 			})	
-		}
 	}
 	$scope.completeSchedule = function (id) {
 		scheduleRoutes.complete({id:id.$oid}, function(resp) {

@@ -37,13 +37,21 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 	$scope.edit=function(vehicle){	
 	}
 
-	$scope.deleteVehicle=function(vehicle,index){
-		if(confirm("Are you sure?")==true){
+	$scope.delete=function(vehicle){
+	}
+
+	$scope.deleteVehicle=function(){
+		var  vehicle=$scope.deletingData
 			vehicleRoutes.delete({id:vehicle["company_id"]["$oid"],vehicle_id:vehicle["_id"]["$oid"]},function(resp){
 				console.log(resp)
-				$scope.vehicles.splice(index,1)
+				window.location.reload()
 			})
-		}
+	}
+	$scope.deletingModule = 'vehicle'
+
+	$scope.readyToDelete = function (vehicle) {
+		$scope.deletingData = vehicle
+		$('#deleteModal').modal('show')
 	}
 	$scope.clear=function(){
 		$scope.vehicle={}
