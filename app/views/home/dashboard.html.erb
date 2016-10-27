@@ -5,7 +5,11 @@
         <h3>Customers</h3>
         <ul class="list-inline info">
           <li><img src="/assets/users.png" alt=""></li>
+          <% if @customers.present? %>
           <li class="count"><%= @customers.count %></li>
+          <% else %>
+          <li class="count">70</li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -14,7 +18,11 @@
         <h3>Vehicles</h3>
         <ul class="list-inline info">
           <li><img src="/assets/truck.png" alt=""></li>
+          <% if @vehicles.present? %>
           <li class="count"><%= @vehicles.count %></li>
+          <% else %>
+          <li class="count">795</li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -23,7 +31,11 @@
         <h3>Schedule Vehicles</h3>
         <ul class="list-inline info">
           <li><img src="/assets/calendar.png" alt=""></li>
+          <% if @schedules.present? %>
           <li class="count"><%= @schedules.count %></li>
+          <% else %>
+          <li class="count">345</li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -32,7 +44,11 @@
         <h3>Issues</h3>
         <ul class="list-inline info">
           <li><img src="/assets/issue.png" alt=""></li>
+          <% if @issues.present? %>
           <li class="count"><%= @issues.count %></li>
+          <% else %>
+          <li class="count">95</li>
+          <% end %>
         </ul>
       </div>
     </div>
