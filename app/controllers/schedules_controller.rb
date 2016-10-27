@@ -17,7 +17,6 @@ class SchedulesController < ApplicationController
 		current_user.companies.each do |c|
 			@vehicles += c.vehicles
 		end
-
 		if params[:date].present?
 			@vehicles.each do |v|
 				@schedules += v.schedules.where(:scheduled_date => params[:date], :is_active => "true", :status => "pending")

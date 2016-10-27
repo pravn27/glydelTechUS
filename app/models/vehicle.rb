@@ -2,7 +2,6 @@ class Vehicle
   include Mongoid::Document
   belongs_to :company
   has_many :schedules
-  has_many :issues
 
   field :vehicle_type, type: String
   field :vehicle_number,type: String
