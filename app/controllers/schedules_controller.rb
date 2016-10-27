@@ -77,7 +77,13 @@ class SchedulesController < ApplicationController
 	end
 
 	def events
-		@schedules = Schedule.where(:is_active => "true", :status => "pending")
+		@vehicles= @schedules=[]
+		current_user.companies.each do |c|
+			@vehicles += c.vehicles
+		end
+		@vehicles.each do |v|
+			@schedules += v.schedules.where(:is_active => "true", :status => "pending")
+		end
 		@events = @schedules.map{|s|s.scheduled_date.to_s}
 		render :json=> { data: @events}
 	end

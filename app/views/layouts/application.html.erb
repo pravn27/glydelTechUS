@@ -60,6 +60,7 @@
     <div class="side-nav">
 
      <ul class="list-unstyled menu">
+
        <li><a ng-href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
        <li><a href="/companies"><i class="fa fa-user" aria-hidden="true"></i> Company</a></li>
        <li><a href="/vehicles"><i class="fa fa-truck" aria-hidden="true"></i> Vehicles</a></li>
@@ -80,9 +81,14 @@
            <i class="fa fa-power-off" aria-hidden="true"></i>
          </a>
        </li>
-       <li>
-         <a data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
+       <li class="left-toggle">
+         <a class="sidebar-toggle-box" data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+         </a>
+       </li>
+       <li class="right-toggle">
+         <a class="sidebar-toggle-box" data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
+           <i class="fa fa-arrow-right" aria-hidden="true"></i>
          </a>
        </li>
      </ul>
