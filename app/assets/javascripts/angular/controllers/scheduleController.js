@@ -13,7 +13,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 		scheduleRoutes.all({date:date},function(resp) {
 			$scope.schedules = resp.data
 			angular.forEach($scope.schedules, function(value) {
-				date = new Date(value.scheduled_date).toDateString()
+				date = moment(new Date(value.scheduled_date)).format('MM/DD/YYYY')
 				value.s_date = date
 			});
 		})
@@ -96,7 +96,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 		}, {});
 	}
 	$scope.dateFilter = function () {
-		date = $scope.filterDate.toDateString();
+		date = $scope.filterDate;
 		$scope.fDate = date
 	}
 })
