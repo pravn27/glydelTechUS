@@ -44,9 +44,11 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 		})	 
 	}
 	$scope.removeSchedule = function (id) {
-		scheduleRoutes.delete({id:id.$oid}, function(resp) {
-			window.location = resp.path;
-		})	 
+		if(confirm("Are you sure?")==true){
+			scheduleRoutes.delete({id:id.$oid}, function(resp) {
+				window.location = resp.path;
+			})	
+		}
 	}
 	$scope.completeSchedule = function (id) {
 		scheduleRoutes.complete({id:id.$oid}, function(resp) {

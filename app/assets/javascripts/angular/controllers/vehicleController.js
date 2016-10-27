@@ -38,10 +38,12 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 	}
 
 	$scope.deleteVehicle=function(vehicle,index){
-		vehicleRoutes.delete({id:vehicle["company_id"]["$oid"],vehicle_id:vehicle["_id"]["$oid"]},function(resp){
-			console.log(resp)
-			$scope.vehicles.splice(index,1)
-		})
+		if(confirm("Are you sure?")==true){
+			vehicleRoutes.delete({id:vehicle["company_id"]["$oid"],vehicle_id:vehicle["_id"]["$oid"]},function(resp){
+				console.log(resp)
+				$scope.vehicles.splice(index,1)
+			})
+		}
 	}
 	$scope.clear=function(){
 		$scope.vehicle={}

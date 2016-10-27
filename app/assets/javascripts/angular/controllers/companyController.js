@@ -32,10 +32,14 @@ app.controller("company",["$scope","companyRoutes","$httpParamSerializer",functi
 	}
 
 	$scope.deleteCompany=function(company){
-		companyRoutes.delete({id:company["_id"]["$oid"]},function(resp){
-			console.log(resp)
-			window.location = "/companies"
-		})
+
+		if(confirm("Are you sure?")==true){
+			companyRoutes.delete({id:company["_id"]["$oid"]},function(resp){
+				console.log(resp)
+				window.location = "/companies"
+			})	
+		}
+		
 	}
 
 
