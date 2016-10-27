@@ -10,24 +10,30 @@
             <ul class="list-unstyled">
               <li>
                 <label>Vehicle Type</label>
-                <select ng-model="schedule.vehicle_type" ng-options="type for type in vehicle_types" required></select>
+                <select ng-model="schedule_data.vehicle_type" ng-options="type for type in vehicle_types" required></select>
               </li>
               <li>
                 <label>Vehicle Name</label>
                 <select ng-model="schedule.vehicle_name" ng-options="vehicle.make for vehicle in vehicles|filter:{vehicle_type: schedule.vehicle_type}" required></select>
+                <label>Vehicle Number</label>
+                <input type="text" placeholder="Vehicle Number" on-selected="updateVehicleDetails($selected)" vehicle-auto-complete required>
+                <div ng-show="schedule_data.company" class="details-company">
+                Company : <span>{{schedule_data.company}}</span> <br> 
+                Make/Model : <span> {{schedule_data.make}}, {{schedule_data.model}}</span> <br> 
+                Year of make : <span> {{schedule_data.year}} </span></div>
               </li>
               <li>
                 <label>Scheduled on</label>
-                <input type="text" datepicker placeholder="MM/DD/YYYY" ng-model="schedule.scheduled_date" required>
+                <input type="text" datepicker placeholder="MM/DD/YYYY" ng-model="schedule_data.scheduled_date" required>
               </li>
               <li>
                 <label>Decription</label>
-                <textarea ng-model="schedule.scheduling_details"></textarea>
+                <textarea ng-model="schedule_data.scheduling_details"></textarea>
               </li>
               <li>
                 <label>&nbsp;</label>
-                <input class="action-btn" type="button" value="Add" ng-click="addSchedule(schedule)" ng-if="add">
-                <input class="action-btn" type="button" value="Edit" ng-click="updateSchedule(schedule)" ng-if="edit">
+                <input class="action-btn" type="button" value="Add" ng-click="addSchedule(schedule_data)" ng-if="add">
+                <input class="action-btn" type="button" value="Edit" ng-click="updateSchedule(schedule_data)" ng-if="edit">
               </li>
             </ul>
           </div>

@@ -20,6 +20,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 			angular.forEach($scope.schedules, function(value) {
 				date = moment(new Date(value.scheduled_date)).format('MM/DD/YYYY')
 				value.s_date = date
+				value.scheduled_date = new Date(value.scheduled_date)
 			});
 		})
 	}
@@ -30,8 +31,8 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 		$scope.getAllSchedules()
 	}
 	$scope.addSchedule = function(schedule){
-		id = schedule.vehicle_name._id.$oid
-		scheduleRoutes.create({id:id, vehicle_name: schedule.vehicle_name.make,vehicle_type: schedule.vehicle_type, scheduling_details: schedule.scheduling_details, scheduled_date: schedule.scheduled_date }, function(resp) {
+		vehicle_number = schedule.vehicle_number
+		scheduleRoutes.create({vehicle_number:vehicle_number, vehicle_type: schedule.vehicle_type, scheduling_details: schedule.scheduling_details, scheduled_date: schedule.scheduled_date }, function(resp) {
 			 window.location = resp.path;
 		})
 	}
@@ -102,6 +103,14 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.dateFilter = function () {
 		date = $scope.filterDate;
 		$scope.fDate = date
+	}
+	$scope.schedule_data = {}
+	$scope.updateVehicleDetails = function(vehicle){
+		$scope.schedule_data.vehicle_number=vehicle.vehicle_number
+		$scope.schedule_data.company=vehicle.company_name
+		$scope.schedule_data.make=vehicle.make
+		$scope.schedule_data.model=vehicle.model
+		$scope.schedule_data.year=vehicle.year
 	}
 })
 

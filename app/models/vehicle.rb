@@ -13,5 +13,11 @@ class Vehicle
   field :fuel_type,type: String
   field :odometer_reading,type: Integer
 
+  def as_json(option={})
+    super.merge({
+      company_name: self.company.name
+      })
+  end
+
 end
 

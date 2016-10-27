@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
 </head>
-<body ng-app="glydel">
+<body ng-app="glydel" class="ng-cloak" ng-cloak>
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
   <% end %>
@@ -27,22 +27,22 @@
           <ul class="dropdown-menu extended">
             <div class="notify-arrow notify-arrow-green"></div>
             <li>
-              <h4>Heading1</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Truck</h4>
+              <p>Air conditioner not working</p>
             </li>
             <li>
-              <h4>Heading2</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Car</h4>
+              <p>Cruise Control On Signal Malfunction</p>
             </li>
             <li>
-              <h4>Heading3</h4>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Van</h4>
+              <p>Problems starting the engine</p>
             </li>
           </ul>
         </li>
         <li class="dropdown useraccountmenu">
           <a href="" data-toggle="dropdown" class="dropdown-toggle" >
-            <span class="avatar"><img src="assets/user.png" alt=""></span>
+            <span class="avatar"><img src="/assets/user.png" alt=""></span>
             <span class="name"><%= current_user.email %></span>
           </a>
           

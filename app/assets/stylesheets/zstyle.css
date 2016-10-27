@@ -27,6 +27,23 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   padding: 0!important
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+} 
+
+.details-company {
+  border: 1px #3c763d solid;
+  width: 200px;
+  padding: 10px;
+  margin: 10px 0px;
+  background: rgba(0, 128, 0, 0.17);
+}
+
+.details-company span {
+  color: #ff4c00;
+}
+
+
 /*Loginpage*/
 .login-bk {
   position: absolute;
@@ -694,5 +711,11 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
     width: 20px;
     text-align: center;
     line-height: 20px;
+    font-weight: bold;
+}
+.details-company{
+      position: relative;
+    left: 145px;
+    font-size: 14px;
     font-weight: bold;
 }
