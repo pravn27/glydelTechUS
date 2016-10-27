@@ -11,7 +11,7 @@ issues=[
 		"description": "Cruise Control On Signal Malfunction ",
 		"level": "1",
 		"service_action": "Regular Service",
-		"date": "2016/10/14",
+		"date": "10/14/2016",
 		"vehicle_number": "ABC12"
 	},
 
@@ -20,7 +20,7 @@ issues=[
 		"description": "Cruise Control Off Signal Malfunction  ",
 		"level": "1",
 		"service_action": "Regular Service",
-		"date": "2016/10/15",
+		"date": "10/15/2016",
 		"vehicle_number": "ABC24"
 	},
 
@@ -29,7 +29,7 @@ issues=[
 		"description": "Cruise Control Resume Signal Malfunction ",
 		"level": "1",
 		"service_action": "Regular Service",
-		"date": "2016/10/16",
+		"date": "10/16/2016",
 		"vehicle_number": "ABC12"
 	},	
 
@@ -38,7 +38,7 @@ issues=[
 		"description": "Misfire at Startup",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/17",
+		"date": "10/17/2016",
 		"vehicle_number": "ABC24"
 	},	
 
@@ -47,7 +47,7 @@ issues=[
 		"description": "Misfire Cylinder Random ",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/18",
+		"date": "10/18/2016",
 		"vehicle_number": "ABC12"
 	},	
 
@@ -56,7 +56,7 @@ issues=[
 		"description": "Misfire Cylinder #1",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/19",
+		"date": "10/19/2016",
 		"vehicle_number": "ABC24"
 	},	
 
@@ -65,7 +65,7 @@ issues=[
 		"description": "Misfire Cylinder #2",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/20",
+		"date": "10/20/2016",
 		"vehicle_number": "ABC12"
 	},	
 
@@ -74,7 +74,7 @@ issues=[
 		"description": "Misfire Cylinder #3",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/21",
+		"date": "10/21/2016",
 		"vehicle_number": "ABC24"
 	},	
 
@@ -83,7 +83,7 @@ issues=[
 		"description": "Misfire Cylinder #4",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/22",
+		"date": "10/22/2016",
 		"vehicle_number": "ABC12"
 	},	
 
@@ -92,7 +92,7 @@ issues=[
 		"description": "Misfire Cylinder #5",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/23",
+		"date": "10/23/2016",
 		"vehicle_number": "ABC24"
 	},	
 
@@ -101,7 +101,7 @@ issues=[
 		"description": "Misfire Cylinder #6",
 		"level": "0",
 		"service_action": "Engine Tuning",
-		"date": "2016/10/24",
+		"date": "10/24/2016",
 		"vehicle_number": "ABC12"
 	},	
 
@@ -110,7 +110,7 @@ issues=[
 		"description": "Diesel Particulate Filter Restriction",
 		"level": "2",
 		"service_action": "Fuel Filter Service",
-		"date": "2016/10/25",
+		"date": "10/25/2016",
 		"vehicle_number": "ABC24"
 	},	
 
@@ -119,7 +119,7 @@ issues=[
 		"description": "VIN Information Error",
 		"level": "2",
 		"service_action": "Regular Service",
-		"date": "2016/10/26",
+		"date": "10/26/2016",
 		"vehicle_number": "ABC12"
 	}	
 ]

@@ -19,19 +19,22 @@
           <a>On</a>
         </th>
         <th>
-          &nbsp;
+          <a>Schedule</a>
         </th>
         <th>
-          &nbsp;
+          <a>Action</a>
         </th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="issue in issues" ng-class="{'p0': p0.indexOf(issue.issue_code) > -1, 'p1': p1.indexOf(issue.issue_code) > -1}">
         <td class="issue-desc">{{issue.issue_description}}</td>
-        <td>{{issue.vehicle_name}}</td>
-        <td>{{issue.issue_date | date}}</td>
-        <td><a class="check-vehicle" href="" ng-click="scheduleDetails(issue)" data-toggle="modal" data-target="#schedule">Schedule It</a></td>
+        <td>{{issue.vehicle_number}}</td>
+        <td>{{issue.issue_date}}</td>
+        <td>
+          <a class="check-vehicle" href="" ng-if="issue.status == 'pending'" ng-click="scheduleDetails(issue)" data-toggle="modal" data-target="#schedule">Schedule It</a>
+          <a class="check-vehicle" href="" ng-if="issue.status == 'scheduled'">Scheduled</a>
+        </td>
         <td>
           <a class="action-btns" href="" title="Delete Vehicle" ng-click="removeIssue(issue.vehicle_id)"><i class="fa fa-trash"></i></a>
         </td>

@@ -6,7 +6,8 @@ class IssuesController < ApplicationController
 
 	def list
 		if params[:id].present?
-			@issues = Issue.where(:vehicle_id => params[:id])
+			vehicle = Vehicle.find(params[:id])
+			@issues = Issue.where(:vehicle_number => vehicle.vehicle_number)
 		else
 			@issues = Issue.where(:is_active => "true")
 		end
@@ -14,14 +15,19 @@ class IssuesController < ApplicationController
 	end
 
 	def vehicle
-		@vehicle = Vehicle.find(params[:id])
+		@vehicle = Vehicle.find_by(:vehicle_number => params[:id])
 		render :json=> { data: @vehicle}
 	end
 
 	def schedule
-		vehicle = Vehicle.find(params[:id])
+		vehicle = Vehicle.find_by(:vehicle_number => params[:vehicle_number])
 		if vehicle.present?
 			schedule = vehicle.schedules.create(schedule_params)
+			schedule.update(:vehicle_name => vehicle.model)
+			issues = Issue.where(:vehicle_number => params[:vehicle_number])
+			issues.each do |issue|
+				issue.update(:status => "scheduled")
+			end
 			render :json=> { message:"Schedule created Succesfully", path: issues_path}
 		else
 			ender :json=> { message:"Unable to save. Please try againy", path: issues_path}

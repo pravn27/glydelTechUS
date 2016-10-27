@@ -103,7 +103,7 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .logo {
   float: left;
-  background-color: #FFFFFF;
+  background-color: #231F20;
   color: #fff;
   width: 200px;
   height: 40px;
@@ -271,7 +271,7 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 /*Warpperlayout*/
 .wrapper {
   margin: 40px 0 0 200px;
-  min-height: 88vh;
+  min-height: 90vh;
 }
 #Dashboard {
   padding: 20px;
@@ -596,7 +596,7 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .footer {
   text-align: right;
-  padding: 10px;
+  padding: 3px 10px;
   border-top: 1px solid #d9d9d9;
   margin: 0 0 0 200px;
   font-size: 13px;
@@ -605,6 +605,9 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 } 
 .footer p {
   margin: 0;
+}
+.footer img {
+  height: 35px;
 }
 .alert{
   position: fixed;
@@ -675,6 +678,21 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .error{
   color: #f00;
 }
-.fc-content{
+.fc-content, td.fc-day{
   cursor: pointer;
+}
+.align-ve{
+      position: relative;
+    left: 145px;
+    top: -25px;
+}
+.issue {
+    float: right;
+    background: #941426;
+    color: #eee;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
 }

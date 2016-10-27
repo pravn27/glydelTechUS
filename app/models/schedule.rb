@@ -13,7 +13,7 @@ class Schedule
 
   def as_json(option={})
 		super.merge({
-			issues: self.vehicle.issues.count,
+			issues: Issue.where(:vehicle_number => self.vehicle.vehicle_number).count
 			})
 	end
 end 
