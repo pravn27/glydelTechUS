@@ -75,9 +75,13 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 	$scope.uiConfig = {
         calendar:{
         	eventClick:function(event) {
-        			date = event.value;
-        			window.location = '/schedules?date='+date
-        		},
+        		date = event.value;
+        		window.location = '/schedules?date='+date
+        	},
+        	dayClick: function(date) {
+        		$('#schedule').modal('show')
+        		$scope.schedule.scheduled_date = date._d
+    		},
             events:$scope.fetchEvents
         }
     };
