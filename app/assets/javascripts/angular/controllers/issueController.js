@@ -4,6 +4,7 @@ app.controller('issueController', function ($scope, issueRoutes){
 			$scope.issues = resp.data
 		})
 	}
+	
 	$scope.schedule ={}
 	$scope.p0 = ["P0316", "P0300", "P0301", "P0302", "P0303", "P0304","P0305","P0306"]
 	$scope.p1 = ["P0566", "P0565", "P0567"]

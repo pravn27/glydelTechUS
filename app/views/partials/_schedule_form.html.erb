@@ -14,7 +14,7 @@
               </li>
               <li>
                 <label>Vehicle Name</label>
-                <select ng-model="schedule.vehicle_name" ng-options="vehicle.make for vehicle in vehicles" required></select>
+                <select ng-model="schedule.vehicle_name" ng-options="vehicle.make for vehicle in vehicles|filter:{vehicle_type: schedule.vehicle_type}" required></select>
               </li>
               <li>
                 <label>Scheduled on</label>
