@@ -5,7 +5,10 @@ class SchedulesController < ApplicationController
 	end
 
 	def list
-		@vehicles = Vehicle.all
+		@vehicles= []
+		current_user.companies.each do |c|
+			@vehicles << c.vehicles
+		end
 		render :json=> { data: @vehicles}
 	end
 

@@ -10,15 +10,15 @@
             <ul class="list-unstyled">
               <li>
                 <label>Vehicle Type</label>
-                <select ng-model="schedule.vehicle_type" ng-options="type for type in vehicle_types"></select>
+                <select ng-model="schedule.vehicle_type" ng-options="type for type in vehicle_types" required></select>
               </li>
               <li>
                 <label>Vehicle Name</label>
-                <select ng-model="schedule.vehicle_name" ng-options="vehicle.make for vehicle in vehicles"></select>
+                <select ng-model="schedule.vehicle_name" ng-options="vehicle.make for vehicle in vehicles" required></select>
               </li>
               <li>
                 <label>Scheduled on</label>
-                <input type="date" placeholder="DD/MM/YYYY" ng-model="schedule.scheduled_date">
+                <input type="date" placeholder="DD/MM/YYYY" ng-model="schedule.scheduled_date" required>
               </li>
               <li>
                 <label>Decription</label>

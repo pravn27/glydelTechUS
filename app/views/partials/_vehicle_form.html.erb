@@ -17,7 +17,7 @@
                 <ul class="list-unstyled vehicle-add">
                   <li ng-if="modal=='create'">
                     <label>Company Name</label>
-                    <input type="text" name="company-name" placeholder="Company Name" auto-complete>
+                    <input type="text" name="company-name" placeholder="Company Name" auto-complete required>
                   </li>
                 <li>
                   <label>Vehicle Type</label>
@@ -29,23 +29,23 @@
                 </li>
                 <li>
                   <label>Registration Number</label>
-                  <input type="text" name="registration_number" placeholder="Vehicle Registration Number" ng-model="vehicle.vehicle_number">
+                  <input type="text" name="registration_number" placeholder="Vehicle Registration Number" ng-model="vehicle.vehicle_number" required>
                 </li>
                  <li>
                   <label>VIN Number</label>
-                  <input type="text" name="vin" placeholder="Vehicle Identification Number" ng-model="vehicle.vin_number">
+                  <input type="text" name="vin" placeholder="Vehicle Identification Number" ng-model="vehicle.vin_number" required>
                 </li>
                 <li>
                   <label>Make</label>
-                  <input type="text" name="make" placeholder="Vehicle Make" ng-model="vehicle.make">
+                  <input type="text" name="make" placeholder="Vehicle Make" ng-model="vehicle.make" required>
                 </li>
                 <li>
                   <label>Model</label>
-                  <input type="text" name="model" placeholder="Vehicle Model" ng-model="vehicle.model">
+                  <input type="text" name="model" placeholder="Vehicle Model" ng-model="vehicle.model" required>
                 </li>
                 <li>
                   <label>Year</label>
-                  <input type="text" name="year" placeholder="Vehicle Make Year" ng-model="vehicle.year">
+                  <input type="text" name="year" placeholder="Vehicle Make Year" ng-model="vehicle.year" required>
                 </li>
               </ul>
             </div>
@@ -53,7 +53,7 @@
               <ul class="list-unstyled vehicle-add">
                 <li>
                   <label>Fuel Type</label>
-                  <input type="text" name="fuel_type" placeholder="Vehicle Fuel Type" ng-model="vehicle.fuel_type">
+                  <input type="text" name="fuel_type" placeholder="Vehicle Fuel Type" ng-model="vehicle.fuel_type" required>
                 </li>
                 <li>
                   <label>Fuel Capacity</label>
@@ -61,17 +61,17 @@
                 </li>
                 <li>
                   <label>Current Odometer Reading</label>
-                  <input  type="text" name="current_odometer_reading" placeholder="Vehicle Odometer Reading at time of adding" ng-model="vehicle.odometer_reading">
+                  <input  type="text" name="current_odometer_reading" placeholder="Vehicle Odometer Reading at time of adding" ng-model="vehicle.odometer_reading" required>
                 </li>
               </ul>
             </div>
             <div class="clearfix"></div>
             <div ng-if="modal=='create'">
-              <input class="action-btn" type="submit" value="Add Vehicle" ng-click="createVehicle(vehicle)">
+              <input class="action-btn" type="submit" value="Add Vehicle" ng-click="createVehicle(vehicle)" required>
             </div>
 
             <div ng-if="modal=='edit'">
-              <input class="action-btn" type="submit" value="Edit Vehicle" ng-click="edit(vehicle)">
+              <input class="action-btn" type="submit" value="Edit Vehicle" ng-click="edit(vehicle)" required>
             </div>
           </form>
           </div>

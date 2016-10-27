@@ -632,3 +632,13 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
     left: -9999px; 
   }
 }
+.fa-spinner{
+  position: absolute;
+  right: 125px;
+  color: #fff;
+  top: 6px;
+  font-size: 24px;
+}
+.prelative{
+  position: relative;
+}
