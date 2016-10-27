@@ -27,6 +27,11 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   padding: 0!important
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+} 
+
+
 /*Loginpage*/
 .login-bk {
   position: absolute;
