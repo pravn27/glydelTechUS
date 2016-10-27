@@ -9,7 +9,7 @@
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><span class="fa fa-search"></span></div>
-                    <input type="text" placeholder="Search Customers..." />
+                    <input type="text" placeholder="Search Customers..." ng-model="searchText"/>
                   </div>
                 </div>
               </form>
@@ -53,7 +53,7 @@
                     </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="company in companies">
+                <tr ng-repeat="company in companies|filter:searchText">
                     <th>{{$index+1}}</th>
                     <th>{{company.name}}</th>
                     <th>{{company.contact_number}}</th>
