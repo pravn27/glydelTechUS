@@ -47,7 +47,7 @@ app.controller('scheduleController', function ($scope, scheduleRoutes){
 		$scope.add = false
 		$scope.edit = true
 		scheduleRoutes.edit({id:id.$oid}, function(resp) {
-			$scope.schedule = resp.data
+			$scope.schedule_data = resp.data
 		})	 
 	}
 	$scope.removeSchedule = function () {
