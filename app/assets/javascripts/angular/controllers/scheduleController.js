@@ -1,5 +1,5 @@
 app.controller('scheduleController', function ($scope, scheduleRoutes){
-	$scope.vehicle_types = ["Gas", "Truck", "Mini-Truck"]
+	$scope.vehicle_types = ["Truck", "Mini-Truck"]
 	$scope.add = true
 	$scope.edit = false
 	$scope.deletingModule='schedule'

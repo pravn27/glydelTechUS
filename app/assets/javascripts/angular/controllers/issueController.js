@@ -9,10 +9,13 @@ app.controller('issueController', function ($scope, issueRoutes){
 	$scope.p1 = ["P0566", "P0565", "P0567"]
 	$scope.scheduleDetails =function(issue){
 		issueRoutes.vehicle({id:issue.vehicle_number},function(resp) {
-			$scope.schedule.vehicle_name = resp.data.make
 			$scope.schedule.vehicle_type = resp.data.vehicle_type
 			$scope.schedule.scheduling_details = issue.issue_description
 			$scope.schedule.vehicle_number = issue.vehicle_number
+			$scope.schedule.company = resp.data.company_name
+			$scope.schedule.make = resp.data.make
+			$scope.schedule.model = resp.data.model
+			$scope.schedule.year = resp.data.year
 		})
 	}
 	param = getParam('id')
