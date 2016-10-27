@@ -20,14 +20,29 @@
         <a href=""><img src="/assets/logo.png" alt=""></a>
       </div><!--/navbrand-->
       <ul class="pull-right list-inline right-nav">
-        <li class="notify">
-          <a href=""><i class="fa fa-bell" aria-hidden="true"></i>
+        <li class="notify dropdown">
+          <a href="" data-toggle="dropdown" class="dropdown-toggle" ><i class="fa fa-bell" aria-hidden="true"></i>
           </a>
           <span class="badge">3</span> 
+          <ul class="dropdown-menu extended">
+            <div class="notify-arrow notify-arrow-green"></div>
+            <li>
+              <h4>Heading1</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </li>
+            <li>
+              <h4>Heading2</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </li>
+            <li>
+              <h4>Heading3</h4>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </li>
+          </ul>
         </li>
         <li class="dropdown useraccountmenu">
           <a href="" data-toggle="dropdown" class="dropdown-toggle" >
-            <span class="avatar"><img src="images/user.png" alt=""></span>
+            <span class="avatar"><img src="assets/user.png" alt=""></span>
             <span class="name"><%= current_user.email %></span>
           </a>
           
@@ -45,11 +60,12 @@
     <div class="side-nav">
 
      <ul class="list-unstyled menu">
+
        <li><a ng-href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
+       <li><a href="/companies"><i class="fa fa-user" aria-hidden="true"></i> Company</a></li>
        <li><a href="/vehicles"><i class="fa fa-truck" aria-hidden="true"></i> Vehicles</a></li>
-       <li><a href="/companies"><i class="fa fa-user" aria-hidden="true"></i> Customers</a></li>
-       <li><a ng-href="/schedules"><i class="fa fa-calendar" aria-hidden="true"></i> Schedules</a></li>
        <li><a href="/issues"><i class="fa fa-bug" aria-hidden="true"></i> Issues</a></li>
+       <li><a ng-href="/schedules"><i class="fa fa-calendar" aria-hidden="true"></i> Schedules</a></li>
        <li><a href="/settings"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
 
      </ul><!--/invoice-menu-->
@@ -65,9 +81,14 @@
            <i class="fa fa-power-off" aria-hidden="true"></i>
          </a>
        </li>
-       <li>
-         <a data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
+       <li class="left-toggle">
+         <a class="sidebar-toggle-box" data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+         </a>
+       </li>
+       <li class="right-toggle">
+         <a class="sidebar-toggle-box" data-toggle="tooltip" data-placement="top" href="" title="Toggle navbar">
+           <i class="fa fa-arrow-right" aria-hidden="true"></i>
          </a>
        </li>
      </ul>
@@ -77,6 +98,9 @@
     <!--wrapper-content-->
     <div class="wrapper">
     	<%= yield %>
+    </div>
+    <div class="footer">
+      <p>Powered by Glydel</p>
     </div>
   <% else %>
     <%= yield %>

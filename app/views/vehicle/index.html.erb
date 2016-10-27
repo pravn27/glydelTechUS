@@ -1,92 +1,100 @@
-<div ng-controller="vehicle" ng-init="modal">
-<div class="layout" id="general">
-  <h1>Vehicles list</h1>
-  <!-- <input type="button" data-toggle="modal" data-target="#vehicle" value="Add vehicle"/> -->
-  <div class="row">
-    <!--Search box-->
-    <form action="" class="col-md-6 no-padding">
-      <div class="form-group">
-        <div class="input-group">
-          <div class="input-group-addon"><span class="fa fa-search"></span></div>
-          <input type="text" placeholder="Search vehicles..." />
+<div ng-controller="vehicle" ng-init="modal" >
+  <div class="layout" id="general">
+    <!-- <input type="button" data-toggle="modal" data-target="#vehicle" value="Add vehicle"/> -->
+    <div ng-hide="vehicles == undefined || vehicles.length == 0">
+      <h1>Vehicles list</h1>
+      <div class="row">
+        <!--Search box-->
+        <form action="" class="col-md-6 no-padding">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><span class="fa fa-search"></span></div>
+              <input type="text" placeholder="Search vehicles..." />
+            </div>
+          </div>
+        </form>
+        <div class="col-md-6 text-right">
+          <a data-toggle="modal" data-target="#vehicle" ng-click="modal='create';clear()" value="Add vehicle" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
         </div>
       </div>
-    </form>
-    <div class="col-md-6 text-right">
-      <a data-toggle="modal" data-target="#vehicle" ng-click="modal='create';clear()" value="Add vehicle" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
+      <table class="table vehicles-list table-hover">
+        <thead>
+          <tr>
+            <th>
+              #
+               <!--  <span class="fa fa-caret-down"></span>
+                <span class="fa fa-caret-up" ></span> -->
+            </th>
+            <th>
+              <a>Vehicle Type
+                <span class="fa fa-caret-down"></span>
+                <span class="fa fa-caret-up" ></span>
+              </a>
+            </th>
+            <th>
+              <a>Vehicle Number
+                <span class="fa fa-caret-down"></span>
+                <span class="fa fa-caret-up" ></span>
+              </a>
+            </th>
+            <th>
+              <a>VIN Number
+                <span class="fa fa-caret-down"></span>
+                <span class="fa fa-caret-up" ></span>
+              </a>
+            </th>
+            <th>
+              <a>
+                Make, Model (Year)
+                <span class="fa fa-caret-down"></span>
+                <span class="fa fa-caret-up" ></span>
+              </a>
+            </th>
+            <th>
+              <a>Fuel Capacity
+                <span class="fa fa-caret-down"></span>
+                <span class="fa fa-caret-up" ></span>
+              </a>
+            </th>
+
+            <th>
+              <a>Fuel Tank Type
+                <span class="fa fa-caret-down"></span>
+                <span class="fa fa-caret-up" ></span>
+              </a>
+            </th>
+            <th>&nbsp;</th> 
+          </tr>
+        </thead>
+        <tbody ng-repeat="vehicle in vehicles">
+          <tr>
+            <td>{{$index + 1}}</td>
+            <td>{{vehicle.vehicle_type}}</td>
+            <td>{{vehicle.vehicle_number}}</td>
+            <td>{{vehicle.vin_number}}</td>
+            <td>{{vehicle.make}}, {{vehicle.model}} ({{vehicle.year}})</td>
+            <td>{{vehicle.fuel_capacity}}</td>
+            <td>{{vehicle.fuel_type}}</td>
+            <td>
+              <a class="action-btns" href="" title="Edit Vehicle ">
+              <i class="fa fa-edit" aria-hidden="true" ng-click="modal='edit';editVehicle(vehicles[$index])"></i>
+              </a>
+              <a class="action-btns" href="" title="Delete Vehicle">
+                <i class="fa fa-trash" ng-click="deleteVehicle(vehicles[$index])"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div ng-show="vehicles == undefined || vehicles.length == 0">
+      <div class="new-cm">
+        <h1>Please add a Vehicle</h1>
+        <a data-toggle="modal" data-target="#vehicle" ng-click="modal='create';clear()" value="Add vehicle" class="action-btn"><i class="fa fa-plus"></i> New Vehicle</a>
+      </div>
     </div>
   </div>
-  <table class="table vehicles-list table-hover">
-    <thead>
-      <tr>
-        <th>
-          <a>Index
-            <span class="fa fa-caret-down"></span>
-            <span class="fa fa-caret-up" ></span>
-          </a>
-        </th>
-        <th>
-          <a>Vehicle Type
-            <span class="fa fa-caret-down"></span>
-            <span class="fa fa-caret-up" ></span>
-          </a>
-        </th>
-        <th>
-          <a>Vehicle Number
-            <span class="fa fa-caret-down"></span>
-            <span class="fa fa-caret-up" ></span>
-          </a>
-        </th>
-        <th>
-          <a>VIN Number
-            <span class="fa fa-caret-down"></span>
-            <span class="fa fa-caret-up" ></span>
-          </a>
-        </th>
-        <th>
-          <a>
-            Make, Model (Year)
-            <span class="fa fa-caret-down"></span>
-            <span class="fa fa-caret-up" ></span>
-          </a>
-        </th>
-        <th>
-          <a>Fuel Capacity
-            <span class="fa fa-caret-down"></span>
-            <span class="fa fa-caret-up" ></span>
-          </a>
-        </th>
-
-        <th>
-          <a>Fuel Tank Type
-            <span class="fa fa-caret-down"></span>
-            <span class="fa fa-caret-up" ></span>
-          </a>
-        </th>
-        <th>&nbsp;</th> 
-      </tr>
-    </thead>
-    <tbody ng-repeat="vehicle in vehicles">
-      <tr>
-        <td>{{$index + 1}}</td>
-        <td>{{vehicle.vehicle_type}}</td>
-        <td>{{vehicle.vehicle_number}}</td>
-        <td>{{vehicle.vin_number}}</td>
-        <td>{{vehicle.make}}{{vehicle.model}}{{vehicle.year}}</td>
-        <td>{{vehicle.fuel_capacity}}</td>
-        <td>{{vehicle.fuel_type}}</td>
-        <td>
-          <a class="action-btns" href="" title="Edit Vehicle ">
-          <i class="fa fa-info" aria-hidden="true" ng-click="modal='edit';editVehicle(vehicles[$index])"></i>
-          </a>
-          <a class="action-btns" href="" title="Delete Vehicle">
-            <i class="fa fa-trash" ng-click="deleteVehicle(vehicles[$index])"></i>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 <%= render "partials/vehicle_form" %>
 </div>
 

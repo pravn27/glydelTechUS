@@ -1,21 +1,30 @@
 app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRoutes){
 	$scope.vehicle={};
 	$scope.vehicles=[]
-
 	vehicleRoutes.all(function(resp){
 		$scope.vehicles=resp.data[0]	
-		console.log($scope.vehicles)
 	})
 
-	$scope.createVehicle=function(vehicleObj){
-		$scope.modal="create"
-		console.log(vehicleObj)
-		vehicleRoutes.create(vehicleObj,function(resp){
-			$('#vehicle').modal('hide')
-			$scope.vehicle={}
-			console.log(resp)
-			$scope.vehicles.push(resp.data)
-		})
+	$scope.vehicleFrom=function(vehicle,modal){
+		if (modal == "create"){
+			$scope.modal="create"
+			vehicleRoutes.create(vehicle,function(resp){
+				$('#vehicle').modal('hide')
+				$scope.vehicle={}
+				console.log(resp)
+				$scope.vehicles.push(resp.data)
+			})
+		}
+		else if (modal == "edit"){
+			var id=vehicle["company_id"]["$oid"];
+			vehicleRoutes.update({id:id,vehicle_id:vehicle["_id"]["$oid"]},vehicle,function(resp){
+				window.location='/vehicles'
+				$scope.clear()
+				$('#vehicle').modal('hide')
+
+			},function(a,b){
+			})
+		}
 	}
 
 	$scope.editVehicle=function(vehicle){
@@ -26,15 +35,6 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 	}
 	
 	$scope.edit=function(vehicle){	
-		var id=vehicle["company_id"]["$oid"];
-		vehicleRoutes.update({id:id,vehicle_id:vehicle["_id"]["$oid"]},vehicle,function(resp){
-			window.location='/vehicles'
-			$scope.clear()
-			$('#vehicle').modal('hide')
-
-		},function(a,b){
-			//window.location='/vehicles'
-		})
 	}
 
 	$scope.deleteVehicle=function(vehicle,index){

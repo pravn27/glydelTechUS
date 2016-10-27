@@ -12,12 +12,12 @@
             </div>
           </div>
           <div class="modal-body" >
-            <form method="post">
+            <form method="post" name="vehicle_form" ng-submit="vehicleFrom(vehicle,modal)">
               <div class="col-sm-6 pad-lzero">
                 <ul class="list-unstyled vehicle-add">
                   <li ng-if="modal=='create'">
                     <label>Company Name</label>
-                    <input type="text" name="company-name" placeholder="Company Name" auto-complete>
+                    <input type="text" name="company-name" placeholder="Company Name" auto-complete required>
                   </li>
                 <li>
                   <label>Vehicle Type</label>
@@ -29,23 +29,24 @@
                 </li>
                 <li>
                   <label>Registration Number</label>
-                  <input type="text" name="registration_number" placeholder="Vehicle Registration Number" ng-model="vehicle.vehicle_number">
+                  <input type="text" name="registration_number" placeholder="Vehicle Registration Number" ng-model="vehicle.vehicle_number" required>
                 </li>
                  <li>
                   <label>VIN Number</label>
-                  <input type="text" name="vin" placeholder="Vehicle Identification Number" ng-model="vehicle.vin_number">
+                  <input type="text" name="vin" placeholder="Vehicle Identification Number" ng-model="vehicle.vin_number" required>
                 </li>
                 <li>
                   <label>Make</label>
-                  <input type="text" name="make" placeholder="Vehicle Make" ng-model="vehicle.make">
+                  <input type="text" name="make" placeholder="Vehicle Make" ng-model="vehicle.make" required>
                 </li>
                 <li>
                   <label>Model</label>
-                  <input type="text" name="model" placeholder="Vehicle Model" ng-model="vehicle.model">
+                  <input type="text" name="model_no" placeholder="Vehicle Model" ng-model="vehicle.model" required>
                 </li>
                 <li>
                   <label>Year</label>
-                  <input type="text" name="year" placeholder="Vehicle Make Year" ng-model="vehicle.year">
+                  <input type="text" name="year" placeholder="Vehicle Make Year" ng-model="vehicle.year" required ng-pattern="/^[0-9]{1,7}$/">
+                  <span class="error" ng-show="vehicle_form.year.$error.pattern">Not a valid number!</span>
                 </li>
               </ul>
             </div>
@@ -53,25 +54,31 @@
               <ul class="list-unstyled vehicle-add">
                 <li>
                   <label>Fuel Type</label>
-                  <input type="text" name="fuel_type" placeholder="Vehicle Fuel Type" ng-model="vehicle.fuel_type">
+                  <select ng-model="vehicle.fuel_type">
+                    <option value='Gas'>Gas</option>
+                    <option value='Petrol'>Petrol</option>
+                    <option value='Diesel'>Diesel</option>
+                  </select>
                 </li>
                 <li>
                   <label>Fuel Capacity</label>
-                  <input type="text" name="fuel_tank" placeholder="Vehicle Fuel Capacity" ng-model="vehicle.fuel_capacity">
+                  <input type="text" name="fuel_tank" placeholder="Vehicle Fuel Capacity" ng-model="vehicle.fuel_capacity" ng-pattern="/^[0-9]{1,7}$/">
+                  <span class="error" ng-show="vehicle_form.fuel_tank.$error.pattern">Not a valid number!</span>
                 </li>
                 <li>
                   <label>Current Odometer Reading</label>
-                  <input  type="text" name="current_odometer_reading" placeholder="Vehicle Odometer Reading at time of adding" ng-model="vehicle.odometer_reading">
+                  <input  type="text" name="current_odometer_reading" placeholder="Vehicle Odometer Reading at time of adding" ng-model="vehicle.odometer_reading" required ng-pattern="/^[0-9]{1,7}$/">
+                  <span class="error" ng-show="vehicle_form.current_odometer_reading.$error.pattern">Not a valid number!</span>
                 </li>
               </ul>
             </div>
             <div class="clearfix"></div>
             <div ng-if="modal=='create'">
-              <input class="action-btn" type="submit" value="Add Vehicle" ng-click="createVehicle(vehicle)">
+              <input class="action-btn" type="submit" value="Add Vehicle" >
             </div>
 
             <div ng-if="modal=='edit'">
-              <input class="action-btn" type="submit" value="Edit Vehicle" ng-click="edit(vehicle)">
+              <input class="action-btn" type="submit" value="Edit Vehicle" >
             </div>
           </form>
           </div>

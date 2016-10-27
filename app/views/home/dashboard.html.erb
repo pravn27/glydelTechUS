@@ -5,7 +5,11 @@
         <h3>Customers</h3>
         <ul class="list-inline info">
           <li><img src="/assets/users.png" alt=""></li>
-          <li class="count">12345</li>
+          <% if @customers.present? %>
+          <li class="count"><%= @customers.count %></li>
+          <% else %>
+          <li class="count">70</li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -14,7 +18,11 @@
         <h3>Vehicles</h3>
         <ul class="list-inline info">
           <li><img src="/assets/truck.png" alt=""></li>
-          <li class="count">12345</li>
+          <% if @vehicles.present? %>
+          <li class="count"><%= @vehicles.count %></li>
+          <% else %>
+          <li class="count">795</li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -23,7 +31,11 @@
         <h3>Schedule Vehicles</h3>
         <ul class="list-inline info">
           <li><img src="/assets/calendar.png" alt=""></li>
-          <li class="count">12345</li>
+          <% if @schedules.present? %>
+          <li class="count"><%= @schedules.count %></li>
+          <% else %>
+          <li class="count">345</li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -32,7 +44,11 @@
         <h3>Issues</h3>
         <ul class="list-inline info">
           <li><img src="/assets/issue.png" alt=""></li>
-          <li class="count">12345</li>
+          <% if @issues.present? %>
+          <li class="count"><%= @issues.count %></li>
+          <% else %>
+          <li class="count">95</li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -67,10 +83,10 @@
               direction_path.push({lat:direction[i].lat(),lng:direction[i].lng()})
             }
             var lineSymbol = {
-              path: 'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z',
+              path: 'M 2.00,13.00 C 2.00,10.81 1.74,4.10 2.57,2.43 3.77,0.05 6.70,0.08 9.00,0.02 11.45,-0.06 16.34,-0.32 18.01,1.74 19.25,3.28 19.00,7.06 19.00,9.00 19.00,9.00 19.00,39.00 19.00,39.00 11.47,37.65 9.53,37.65 2.00,39.00 2.00,39.00 2.00,13.00 2.00,13.00 Z M 17.00,12.00 C 17.00,12.00 4.00,12.00 4.00,12.00 4.00,12.00 4.00,37.00 4.00,37.00 4.00,37.00 8.00,37.00 8.00,37.00 8.00,37.00 8.00,13.00 8.00,13.00 8.00,13.00 13.00,13.00 13.00,13.00 13.00,13.00 13.00,37.00 13.00,37.00 13.00,37.00 17.00,37.00 17.00,37.00 17.00,37.00 17.00,12.00 17.00,12.00 Z M 6.00,2.00 C 6.00,2.00 15.00,2.00 15.00,2.00 11.70,0.69 9.30,0.69 6.00,2.00 Z M 15.00,4.00 C 15.00,4.00 6.00,4.00 6.00,4.00 6.00,4.00 6.00,8.00 6.00,8.00 6.00,8.00 15.00,8.00 15.00,8.00 15.00,8.00 15.00,4.00 15.00,4.00 Z M 6.00,11.00 C 6.00,11.00 15.00,11.00 15.00,11.00 11.70,9.69 9.30,9.69 6.00,11.00 Z',
               fillColor: 'black',
               fillOpacity: 0.8,
-              scale: 0.8,
+              scale: 0.6,
               strokeColor: 'black',
               strokeWeight: 0.5
     
@@ -106,7 +122,7 @@
       function initMap() {
         directionsService = new google.maps.DirectionsService();
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
+          zoom: 13,
           center: map_center
         });
         

@@ -1,4 +1,5 @@
 <div class="layout" id="general" ng-controller="scheduleController">
+<div ng-hide="!schedules.length">
   <h2>Scheduled Vehicles</h2>
   <div class="row top-search">
     <div class="col-md-12 pad-zero">
@@ -40,5 +41,12 @@
       </div>
     </div>
 </div>
+</div>
+    <div ng-if="!schedules.length">
+      <div class="new-cm">
+        <h1>Please add a Schedule</h1>
+        <a href="#" class="action-btn" data-toggle="modal" data-target="#schedule"><i class="fa fa-plus"></i> Schedule</a>
+      </div>
+    </div>
 <%= render "partials/schedule_form" %>
 </div>
