@@ -675,3 +675,9 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .hide-menu .right-toggle {
   display: inline-block!important;
 }
+.error{
+  color: #f00;
+}
+.fc-content, td.fc-day{
+  cursor: pointer;
+}
