@@ -43,6 +43,12 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   color: #ff4c00;
 }
 
+.check-vehicle-scheduled {
+  background: transparent !important;
+  border: 0px !important;
+  color: green !important;
+  padding-left: 10px;
+}
 
 /*Loginpage*/
 .login-bk {
