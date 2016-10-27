@@ -46,7 +46,7 @@
                 <li>
                   <label>Year</label>
                   <input type="text" name="year" placeholder="Vehicle Make Year" ng-model="vehicle.year" required ng-pattern="/^[0-9]{1,7}$/">
-                  <span ng-show="vehicle_form.year.$error.pattern">Not a valid number!</span>
+                  <span class="error" ng-show="vehicle_form.year.$error.pattern">Not a valid number!</span>
                 </li>
               </ul>
             </div>
@@ -63,12 +63,12 @@
                 <li>
                   <label>Fuel Capacity</label>
                   <input type="text" name="fuel_tank" placeholder="Vehicle Fuel Capacity" ng-model="vehicle.fuel_capacity" ng-pattern="/^[0-9]{1,7}$/">
-                  <span ng-show="vehicle_form.fuel_tank.$error.pattern">Not a valid number!</span>
+                  <span class="error" ng-show="vehicle_form.fuel_tank.$error.pattern">Not a valid number!</span>
                 </li>
                 <li>
                   <label>Current Odometer Reading</label>
                   <input  type="text" name="current_odometer_reading" placeholder="Vehicle Odometer Reading at time of adding" ng-model="vehicle.odometer_reading" required ng-pattern="/^[0-9]{1,7}$/">
-                  <span ng-show="vehicle_form.current_odometer_reading.$error.pattern">Not a valid number!</span>
+                  <span class="error" ng-show="vehicle_form.current_odometer_reading.$error.pattern">Not a valid number!</span>
                 </li>
               </ul>
             </div>

@@ -672,3 +672,6 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .hide-menu .right-toggle {
   display: inline-block!important;
 }
+.error{
+  color: #f00;
+}

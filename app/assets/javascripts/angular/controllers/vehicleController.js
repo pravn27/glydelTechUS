@@ -8,8 +8,7 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 	$scope.vehicleFrom=function(vehicle,modal){
 		if (modal == "create"){
 			$scope.modal="create"
-			console.log(vehicleObj)
-			vehicleRoutes.create(vehicleObj,function(resp){
+			vehicleRoutes.create(vehicle,function(resp){
 				$('#vehicle').modal('hide')
 				$scope.vehicle={}
 				console.log(resp)
