@@ -4,7 +4,6 @@ app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRout
 
 	vehicleRoutes.all(function(resp){
 		$scope.vehicles=resp.data[0]	
-		console.log($scope.vehicles)
 	})
 
 	$scope.createVehicle=function(vehicleObj){
