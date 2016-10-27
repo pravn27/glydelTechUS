@@ -675,6 +675,6 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .error{
   color: #f00;
 }
-.fc-content{
+.fc-content, td.fc-day{
   cursor: pointer;
 }
