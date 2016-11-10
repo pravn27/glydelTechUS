@@ -27,46 +27,46 @@
             </th>
             <th>
               <a>Vehicle Type
-                <span class="fa fa-caret-down"></span>
-                <span class="fa fa-caret-up" ></span>
+                <span class="fa fa-caret-down" ng-click="sortType = 'vehicle_type'"></span>
+                <span class="fa fa-caret-up" ng-click="sortType = '-vehicle_type'"></span>
               </a>
             </th>
             <th>
               <a>Vehicle Number
-                <span class="fa fa-caret-down"></span>
-                <span class="fa fa-caret-up" ></span>
+                <span class="fa fa-caret-down" ng-click="sortType = 'vehicle_number'"></span>
+                <span class="fa fa-caret-up" ng-click="sortType = '-vehicle_number'"></span>
               </a>
             </th>
             <th>
               <a>VIN Number
-                <span class="fa fa-caret-down"></span>
-                <span class="fa fa-caret-up" ></span>
+                <span class="fa fa-caret-down" ng-click="sortType = 'vin_number'"></span>
+                <span class="fa fa-caret-up" ng-click="sortType = '-vin_number'"></span>
               </a>
             </th>
             <th>
               <a>
                 Make, Model (Year)
-                <span class="fa fa-caret-down"></span>
-                <span class="fa fa-caret-up" ></span>
+                <span class="fa fa-caret-down" ng-click="sortType = 'make'"></span>
+                    <span class="fa fa-caret-up" ng-click="sortType = -'make'"></span>
               </a>
             </th>
             <th>
               <a>Fuel Capacity
-                <span class="fa fa-caret-down"></span>
-                <span class="fa fa-caret-up" ></span>
+                <span class="fa fa-caret-down" ng-click="sortType = 'fuel_capacity'"></span>
+                    <span class="fa fa-caret-up" ng-click="sortType = -'fuel_capacity'"></span>
               </a>
             </th>
 
             <th>
               <a>Fuel Tank Type
-                <span class="fa fa-caret-down"></span>
-                <span class="fa fa-caret-up" ></span>
+                <span class="fa fa-caret-down" ng-click="sortType = 'fuel_type'"></span>
+                    <span class="fa fa-caret-up" ng-click="sortType = -'fuel_type'"></span>
               </a>
             </th>
             <th>&nbsp;</th> 
           </tr>
         </thead>
-        <tbody ng-repeat="vehicle in vehicles|filter:searchText">
+        <tbody ng-repeat="vehicle in vehicles | filter:searchText | orderBy : sortType">
           <tr>
             <td>{{$index + 1}}</td>
             <td>{{vehicle.vehicle_type}}</td>
