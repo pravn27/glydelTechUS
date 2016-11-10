@@ -739,3 +739,7 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .dropdown-menu.dropdown-menu-form{
   overflow-x: inherit !important;
 }
+.desc-option{
+  display: inline-block;
+  width: 60%
+}

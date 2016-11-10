@@ -52,5 +52,10 @@ app.controller("notificationController",["$scope","companyRoutes","$timeout", "n
 			})
 		}, 3000);
 	}
+	
+	$scope.notification.message_type = "Marketing"
+	$scope.description = function(){
+		$scope.notification.body_content="";
+	}
 
 }]);

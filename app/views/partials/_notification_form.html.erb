@@ -28,8 +28,17 @@
                   </select>
                 </li>
                 <li>
-                  <label>Body Content</label>
-                  <textarea name="description" ng-model="notification.body_content"> </textarea>
+                <label>Body Content</label>
+                <div class="desc-option" ng-init="notification.body_content='Some issue is notified in your vehicle'">
+                  <input type="radio" name="content" ng-model="notification.body_content" value="Some issue is notified in your vehicle" ng-checked="true"/>
+                  <span>Some issue is notified in your vehicle</span>
+                  <br>
+                  <input type="radio" name="content" ng-model="notification.body_content" value="Engine issue is notified in your vehicle"/>
+                  <span>Engine issue is notified in your vehicle</span>
+                  <br>
+                  <input type="radio" name="content" ng-click="description()"/>
+                  <textarea ng-model="notification.body_content"> </textarea>
+                 </div>
                 </li>
                 <li class="prelative">
                   <label>&nbsp;</label>
@@ -55,16 +64,24 @@
                   </select>
                 </li>
                 <li>
-                  <label>Body Content</label>
-                  <textarea name="description" ng-model="notification.body_content"> </textarea>
+                <label>Body Content</label>
+                <div class="desc-option" ng-init="notification.body_content='Some issue is notified in your vehicle'">
+                  <input type="radio" name="content" ng-model="notification.body_content" value="Some issue is notified in your vehicle" ng-checked="true"/>
+                  <span>Some issue is notified in your vehicle</span>
+                  <br>
+                  <input type="radio" name="content" ng-model="notification.body_content" value="Engine issue is notified in your vehicle"/>
+                  <span>Engine issue is notified in your vehicle</span>
+                  <br>
+                  <input type="radio" name="content" ng-click="description()"/>
+                  <textarea ng-model="notification.body_content"> </textarea>
+                 </div>
                 </li>
                 <li class="prelative">
                   <label>&nbsp;</label>
                   <input class="action-btn" type="button" value="Send" ng-click="sendNotifications(notification)" >
                   <span class="send-notify fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span>
                 </li>
-              </ul>
-              </ul>
+              </ul>   
             </form>
           </div>
         </div>
