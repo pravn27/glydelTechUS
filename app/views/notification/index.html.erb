@@ -1,0 +1,31 @@
+<h1> Notification </h1>
+<div ng-controller="notificationController">
+    <label for="email">Email</label>
+    <input id="email" type="radio" name="content" ng-model="content" value="email"/>
+    <label for="sms">SMS</label>
+    <input id="sms" type="radio" name="content" ng-model="content" value="sms"/>
+  
+    <form ng-show="content == 'email'">
+      <label for="to">To
+      <div ng-dropdown-multiselect="" options="companyNames" selected-model="selectedNames"></div></label>
+      <select name="singleSelect" ng-model="data.singleSelect">
+        <option value="option-1">Marketing</option>
+        <option value="option-2">Transactional</option>
+      </select>
+      <textarea name="description"> </textarea>  
+       <li class="prelative">
+        <input type="button" value="Send" ng-click="email()">
+        <span style="color:black; font-size: 20px" class="fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span> 
+      </li>
+      <div ng-if="success">
+        <p class="alert alert-success">Email has been successfully send to {{emailCount}} customers</p>
+      </div>
+    </form>
+
+    <form ng-show="content == 'sms'">
+      <label for="to">To
+      <div ng-dropdown-multiselect="" options="" selected-model=""></div>
+      </label>
+      <button>Send</button>
+    </form>
+  </div>
