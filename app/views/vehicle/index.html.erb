@@ -9,7 +9,11 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-search"></span></div>
-              <input type="text" placeholder="Search vehicles..." ng-model="searchText"/>
+              <input type="text" class="mr15" placeholder="Search vehicles..." ng-model="searchText"/>
+              <div class="input-group-addon"><span class="fa fa-search"></span></div>
+              <select ng-model="searchByCompany">
+                <option value="{{company.name}}" ng-repeat="company in companies">{{company.name}}</option>
+              </select>
             </div>
           </div>
         </form>
@@ -66,7 +70,7 @@
             <th>&nbsp;</th> 
           </tr>
         </thead>
-        <tbody ng-repeat="vehicle in vehicles | filter:searchText | orderBy : sortType">
+        <tbody ng-repeat="vehicle in vehicles | filter:searchByCompany | filter: searchText | orderBy : sortType">
           <tr>
             <td>{{$index + 1}}</td>
             <td>{{vehicle.vehicle_type}}</td>

@@ -1,10 +1,16 @@
-app.controller("vehicle",["$scope","vehicleRoutes",function ($scope, vehicleRoutes){
+app.controller("vehicle",["$scope","vehicleRoutes","companyRoutes",function ($scope, vehicleRoutes, companyRoutes){
 	$scope.vehicle={};
 	$scope.vehicles=[]
 	vehicleRoutes.all(function(resp){
-		$scope.vehicles=resp.data[0]	
+		angular.forEach(resp.data, function(value, key) {
+			angular.forEach(value, function(value, key) {
+				$scope.vehicles.push(value);
+			});
+		});	
 	})
-
+	companyRoutes.all(function(resp){
+			$scope.companies=resp.data
+	})
 	$scope.vehicleFrom=function(vehicle,modal){
 		if (modal == "create"){
 			$scope.modal="create"
