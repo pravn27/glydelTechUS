@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('#calendar').fullCalendar()
-	$('[data-toggle="tooltip"]').tooltip();
+	$('body').tooltip({ selector: '[data-toggle="tooltip"]' });
 
 
 	

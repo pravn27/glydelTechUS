@@ -30,27 +30,27 @@
                 </th>
                 <th>
                   <a>Name
-                    <span class="fa fa-caret-down"></span>
-                    <span class="fa fa-caret-up" ></span>
+                    <span class="fa fa-caret-down" ng-click="sortType = 'name'"></span>
+                    <span class="fa fa-caret-up" ng-click="sortType = -'name'"></span>
                   </a>
                 </th>
                 <th>
                   <a>Contact
-                    <span class="fa fa-caret-down"></span>
-                    <span class="fa fa-caret-up" ></span>
+                    <span class="fa fa-caret-down" ng-click="sortType = 'contact_number'"></span>
+                    <span class="fa fa-caret-up" ng-click="sortType = -'contact_number'"></span>
                   </a>
                 </th>
                 <th>
                   <a>Address
-                    <span class="fa fa-caret-down"></span>
-                    <span class="fa fa-caret-up" ></span>
+                    <span class="fa fa-caret-down" ng-click="sortType = 'address'"></span>
+                    <span class="fa fa-caret-up" ng-click="sortType = -'address'"></span>
                   </a>
                 </th>
                 <th>Actions</th> 
               </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="company in companies | filter:searchText">
+            <tr ng-repeat="company in companies | filter:searchText | orderBy : sortType">
                 <td>{{$index+1}}</td>
                 <td>{{company.name}}</td>
                 <td>{{company.contact_number}}</td>
