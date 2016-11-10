@@ -634,18 +634,18 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .alert{
   position: fixed;
-    z-index: 9;
-    width: 225px;
-    height: 56px;
-    right: 20px;
-    text-align: center;
-    bottom: 0;
-    -webkit-animation: seconds 1.0s forwards;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-delay: 3s;
-    animation: seconds 1.0s forwards;
-    animation-iteration-count: 1;
-    animation-delay: 3s;
+  z-index: 9;
+  width: 225px;
+  height: 56px;
+  right: 20px;
+  text-align: center;
+  bottom: 0;
+  -webkit-animation: seconds 1.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 3s;
+  animation: seconds 1.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
 }
 @-webkit-keyframes seconds {
   0% {
@@ -676,8 +676,8 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   position: relative;
 }
 [ng-cloak] {
-                display: none;
-            }
+  display: none;
+}
 .hide-menu,.hide-menu span,.side-nav span,.hide-menu .footer-side-nav ,.footer-side-nav  {
   -webkit-transition: all ease-in 0.5s;
   transition: all ease-in 0.3s;
@@ -705,29 +705,37 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   cursor: pointer;
 }
 .align-ve{
-      position: relative;
-    left: 145px;
-    top: -25px;
+  position: relative;
+  left: 145px;
+  top: -25px;
 }
 .issue {
-    float: right;
-    background: #941426;
-    color: #eee;
-    border-radius: 50%;
-    width: 20px;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
+  float: right;
+  background: #941426;
+  color: #eee;
+  border-radius: 50%;
+  width: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
 }
 .details-company{
-      position: relative;
-    left: 145px;
-    font-size: 14px;
-    font-weight: bold;
+  position: relative;
+  left: 145px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .mr15{
   margin-right: 15px;
 }
 .multi-drop{
   display: inline;
+}
+.send-notify{
+  color: #000;
+  right: 325px;
+  top: 1px
+}
+.dropdown-menu.dropdown-menu-form{
+  overflow-x: inherit !important;
 }

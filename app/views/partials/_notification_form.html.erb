@@ -7,9 +7,9 @@
       </div>
       <div class="modal-body">
         <div class="schedule-form">
-          <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#email">Email</a></li>
-            <li><a data-toggle="tab" href="#sms">SMS</a></li>
+          <ul class="nav nav-tabs" ng-init="notification.notification_type = 'email'">
+            <li class="active"><a data-toggle="tab" href="#email" ng-click="notification.notification_type= 'email'">Email</a></li>
+            <li><a data-toggle="tab" href="#sms" ng-click="notification.notification_type= 'sms'">SMS</a></li>
           </ul>
           <div class="tab-content">
             <div id="email" class="tab-pane fade in active">
@@ -18,28 +18,25 @@
                <ul class="list-unstyled">
                 <li>
                   <label>To</label>
-                  <div class="multi-drop" ng-dropdown-multiselect="" options="companyNames" selected-model="selectedNames" placeholder="select customers"></div>
+                  <div class="multi-drop" ng-dropdown-multiselect="" options="companyNames" selected-model="notification.selected_names" extra-settings="notificationSettings" translation-texts="notificationTexts"></div>
                 </li>
                 <li>
                   <label>Message Type</label>
-                  <select name="singleSelect" ng-model="data.singleSelect">
-                    <option value="option-1">Marketing</option>
-                    <option value="option-2">Transactional</option>
+                  <select name="message_type" ng-model="notification.message_type">
+                    <option value="Marketing">Marketing</option>
+                    <option value="Transactional">Transactional</option>
                   </select>
                 </li>
                 <li>
-                  <label>Body</label>
-                  <textarea name="description"> </textarea>
+                  <label>Body Content</label>
+                  <textarea name="description" ng-model="notification.body_content"> </textarea>
                 </li>
-                <li>
+                <li class="prelative">
                   <label>&nbsp;</label>
-                  <input class="action-btn" type="button" value="Send" ng-click="email()" >
-                  <span style="color:black; font-size: 20px" class="fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span> 
+                  <input class="action-btn" type="button" value="Send" ng-click="sendNotifications(notification)" >
+                  <span class="send-notify fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span>
                 </li>
               </ul>
-              <div ng-if="success">
-                <p class="alert alert-success">Email has been successfully send to {{emailCount}} customers</p>
-              </div>
             </form>
           </div>
           <div id="sms" class="tab-pane fade">
@@ -48,28 +45,26 @@
                <ul class="list-unstyled">
                 <li>
                   <label>To</label>
-                  <div class="multi-drop" ng-dropdown-multiselect="" options="companyNames" selected-model="selectedNames" placeholder="select customers"></div>
+                  <div class="multi-drop" ng-dropdown-multiselect="" options="companyNames" selected-model="notification.selected_names" extra-settings="notificationSettings"></div>
                 </li>
                 <li>
                   <label>Message Type</label>
-                  <select name="singleSelect" ng-model="data.singleSelect">
-                    <option value="option-1">Marketing</option>
-                    <option value="option-2">Transactional</option>
+                  <select name="message_type" ng-model="notification.message_type">
+                    <option value="Marketing">Marketing</option>
+                    <option value="Transactional">Transactional</option>
                   </select>
                 </li>
                 <li>
-                  <label>Body</label>
-                  <textarea name="description"> </textarea>
+                  <label>Body Content</label>
+                  <textarea name="description" ng-model="notification.body_content"> </textarea>
                 </li>
-                <li>
+                <li class="prelative">
                   <label>&nbsp;</label>
-                  <input class="action-btn" type="button" value="Send" ng-click="email()" >
-                  <span style="color:black; font-size: 20px" class="fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span> 
+                  <input class="action-btn" type="button" value="Send" ng-click="sendNotifications(notification)" >
+                  <span class="send-notify fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span>
                 </li>
               </ul>
-              <div ng-if="success">
-                <p class="alert alert-success">Email has been successfully send to {{emailCount}} customers</p>
-              </div>
+              </ul>
             </form>
           </div>
         </div>

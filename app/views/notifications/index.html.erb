@@ -1,6 +1,6 @@
 <div ng-controller="notificationController" ng-init="modal" ng-cloak>
   <div class="layout" id="general">
-    <div ng-hide="vehicles == undefined || vehicles.length == 0">
+    <div ng-hide="notifications == undefined || notifications.length == 0">
       <h1>Notifications list</h1>
       <div class="row">
         <!--Search box-->
@@ -8,11 +8,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon"><span class="fa fa-search"></span></div>
-              <input type="text" class="mr15" placeholder="Search vehicles..." ng-model="searchText"/>
-              <div class="input-group-addon"><span class="fa fa-search"></span></div>
-              <select ng-model="searchByCompany">
-                <option value="{{company.name}}" ng-repeat="company in companies">{{company.name}}</option>
-              </select>
+              <input type="text" class="mr15" placeholder="Search Notifications..." ng-model="searchText"/>
             </div>
           </div>
         </form>
@@ -27,61 +23,42 @@
               #
             </th>
             <th>
-              <a>Vehicle Type
-                <span class="fa fa-caret-down" ng-click="sortType = 'vehicle_type'"></span>
-                <span class="fa fa-caret-up" ng-click="sortType = '-vehicle_type'"></span>
+              <a>Customers</a>
+            </th>
+            <th>
+              <a>Notifications Type
+                <span class="fa fa-caret-down" ng-click="sortType = 'notification_type'"></span>
+                <span class="fa fa-caret-up" ng-click="sortType = '-notification_type'"></span>
               </a>
             </th>
             <th>
-              <a>Vehicle Number
-                <span class="fa fa-caret-down" ng-click="sortType = 'vehicle_number'"></span>
-                <span class="fa fa-caret-up" ng-click="sortType = '-vehicle_number'"></span>
-              </a>
-            </th>
-            <th>
-              <a>VIN Number
-                <span class="fa fa-caret-down" ng-click="sortType = 'vin_number'"></span>
-                <span class="fa fa-caret-up" ng-click="sortType = '-vin_number'"></span>
-              </a>
-            </th>
-            <th>
-              <a>
-                Make, Model (Year)
-                <span class="fa fa-caret-down" ng-click="sortType = 'make'"></span>
-                    <span class="fa fa-caret-up" ng-click="sortType = -'make'"></span>
-              </a>
-            </th>
-            <th>
-              <a>Fuel Capacity
-                <span class="fa fa-caret-down" ng-click="sortType = 'fuel_capacity'"></span>
-                    <span class="fa fa-caret-up" ng-click="sortType = -'fuel_capacity'"></span>
+              <a>Message Type
+                <span class="fa fa-caret-down" ng-click="sortType = 'message_type'"></span>
+                <span class="fa fa-caret-up" ng-click="sortType = '-message_type'"></span>
               </a>
             </th>
 
             <th>
-              <a>Fuel Tank Type
-                <span class="fa fa-caret-down" ng-click="sortType = 'fuel_type'"></span>
-                    <span class="fa fa-caret-up" ng-click="sortType = -'fuel_type'"></span>
+              <a>Body Content
+                <span class="fa fa-caret-down" ng-click="sortType = 'body_content'"></span>
+                <span class="fa fa-caret-up" ng-click="sortType = '-body_content'"></span>
               </a>
             </th>
-            <th>&nbsp;</th> 
+            <th>
+              <a>Actions</a>
+            </th>
           </tr>
         </thead>
-        <tbody ng-repeat="vehicle in vehicles | filter:searchByCompany | filter: searchText | orderBy : sortType">
+        <tbody ng-repeat="notification in notifications | filter: searchText | orderBy : sortType">
           <tr>
             <td>{{$index + 1}}</td>
-            <td>{{vehicle.vehicle_type}}</td>
-            <td>{{vehicle.vehicle_number}}</td>
-            <td>{{vehicle.vin_number}}</td>
-            <td>{{vehicle.make}}, {{vehicle.model}} ({{vehicle.year}})</td>
-            <td>{{vehicle.fuel_capacity}}</td>
-            <td>{{vehicle.fuel_type}}</td>
+            <td>{{notification.selected_names}}</td>
+            <td>{{notification.notification_type}}</td>
+            <td>{{notification.message_type}}</td>
+            <td>{{notification.body_content}}</td>
             <td>
-              <a class="action-btns" href="" title="Edit Vehicle ">
-              <i class="fa fa-edit" aria-hidden="true" ng-click="modal='edit';editVehicle(vehicles[$index])"></i>
-              </a>
-              <a class="action-btns" title="Delete Vehicle" ng-click="readyToDelete(vehicle)">
-                <i class="fa fa-trash" ng-click="module='vehicle'"></i>
+              <a class="action-btns" title="Delete Notification" ng-click="">
+                <i class="fa fa-trash"></i>
               </a>
             </td>
           </tr>
@@ -89,7 +66,7 @@
       </table>
     </div>
 
-    <div ng-show="vehicles == undefined || vehicles.length == 0">
+    <div ng-show="notifications == undefined || notifications.length == 0">
       <div class="new-cm">
         <h1>Send Notifications</h1>
         <a data-toggle="modal" data-target="#notify" value="Send Notifications" class="action-btn"><i class="fa fa-plus"></i> Send Notifications</a>
@@ -97,4 +74,8 @@
     </div>
   </div>
    <%= render "partials/notification_form" %>
+   <div ng-if="success">
+    <p class="alert alert-success" ng-show="notification_type == 'email'">Email has been successfully send to {{customerCount}} customers</p>
+    <p class="alert alert-success" ng-show="notification_type == 'sms'">SMS has been successfully send to {{customerCount}} customers</p>
+  </div>
 </div>

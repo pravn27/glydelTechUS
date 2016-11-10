@@ -8,6 +8,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :companies
+  has_many :notifications
   
   ## Database authenticatable
   field :email,              type: String, default: ""
