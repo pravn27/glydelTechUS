@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'dashboard' => "home#dashboard"
   get 'settings' => "home#settings"
+
   # get 'cus' => 'home#customers'
   get 'vehicles' => "vehicle#index"
   get 'vehicles/new' => "vehicle#add"
   get 'vehicles/details' => "vehicle#detail"
-
+  
   # get 'issues' => "vehicle#issues"
   post 'vehicle/create'=>"vehicle#create"
   get 'vehicles/all'=>"vehicle#all"
@@ -38,4 +39,5 @@ Rails.application.routes.draw do
   get 'issues/vehicle' => "issues#vehicle"
   resources :issues
 
+  get 'notification' => 'notification#index'
 end

@@ -1,1 +1,1 @@
-var app=angular.module('glydel',['ngResource', 'ui.calendar']);
+var app=angular.module('glydel',['ngResource', 'ui.calendar', 'angularjs-dropdown-multiselect']);
