@@ -728,3 +728,6 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 .mr15{
   margin-right: 15px;
 }
+.multi-drop{
+  display: inline;
+}

@@ -19,6 +19,8 @@
 //= require moment.min
 //= require fullcalendar.min
 //= require calendar
+//= require lodash
+//= require angularjs-dropdown-multiselect
 //= require app
 //= require_tree .
 

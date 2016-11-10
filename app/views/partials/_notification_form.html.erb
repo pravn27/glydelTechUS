@@ -1,0 +1,80 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="notify" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Send Notifications</h4>
+      </div>
+      <div class="modal-body">
+        <div class="schedule-form">
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#email">Email</a></li>
+            <li><a data-toggle="tab" href="#sms">SMS</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="email" class="tab-pane fade in active">
+              <h3>Email</h3>
+              <form>
+               <ul class="list-unstyled">
+                <li>
+                  <label>To</label>
+                  <div class="multi-drop" ng-dropdown-multiselect="" options="companyNames" selected-model="selectedNames" placeholder="select customers"></div>
+                </li>
+                <li>
+                  <label>Message Type</label>
+                  <select name="singleSelect" ng-model="data.singleSelect">
+                    <option value="option-1">Marketing</option>
+                    <option value="option-2">Transactional</option>
+                  </select>
+                </li>
+                <li>
+                  <label>Body</label>
+                  <textarea name="description"> </textarea>
+                </li>
+                <li>
+                  <label>&nbsp;</label>
+                  <input class="action-btn" type="button" value="Send" ng-click="email()" >
+                  <span style="color:black; font-size: 20px" class="fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span> 
+                </li>
+              </ul>
+              <div ng-if="success">
+                <p class="alert alert-success">Email has been successfully send to {{emailCount}} customers</p>
+              </div>
+            </form>
+          </div>
+          <div id="sms" class="tab-pane fade">
+            <h3>SMS</h3>
+              <form>
+               <ul class="list-unstyled">
+                <li>
+                  <label>To</label>
+                  <div class="multi-drop" ng-dropdown-multiselect="" options="companyNames" selected-model="selectedNames" placeholder="select customers"></div>
+                </li>
+                <li>
+                  <label>Message Type</label>
+                  <select name="singleSelect" ng-model="data.singleSelect">
+                    <option value="option-1">Marketing</option>
+                    <option value="option-2">Transactional</option>
+                  </select>
+                </li>
+                <li>
+                  <label>Body</label>
+                  <textarea name="description"> </textarea>
+                </li>
+                <li>
+                  <label>&nbsp;</label>
+                  <input class="action-btn" type="button" value="Send" ng-click="email()" >
+                  <span style="color:black; font-size: 20px" class="fa fa-spin" ng-class="{'fa-spinner' : sending }"> </span> 
+                </li>
+              </ul>
+              <div ng-if="success">
+                <p class="alert alert-success">Email has been successfully send to {{emailCount}} customers</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

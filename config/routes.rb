@@ -39,5 +39,5 @@ Rails.application.routes.draw do
   get 'issues/vehicle' => "issues#vehicle"
   resources :issues
 
-  get 'notification' => 'notification#index'
+  resources :notifications
 end
