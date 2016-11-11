@@ -560,8 +560,8 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
   width: 140px;
 }
 .schedule-form  textarea {
-  width: 320px;
-  height: 90px;
+      width: 273px;
+    height: 75px;
 }
 .view-toggle {
   background-color: #eee;
@@ -741,5 +741,19 @@ input[type="text"],textarea,select,input[type="date"],input[type="email"],input[
 }
 .desc-option{
   display: inline-block;
-  width: 60%
+  width: 60%;
+  line-height: 36px;
+}
+.multiselect-parent.btn-group.dropdown-multiselect{
+  width: 50%
+}
+.dropdown-toggle.btn.btn-default{
+  width: 100%;
+}
+.message_type{
+  width: 50%
+}
+.body-content{
+  position: relative;
+  top: -95px;
 }
