@@ -1,6 +1,6 @@
 <div class="layout" id="general" ng-controller="company" ng-init="modal" ng-cloak>
     <div ng-if="companies.length>0">
-        <h1>Companies</h1>
+        <h1>Fleets</h1>
         <div class="row top-search" >
             <div class="col-md-12 pad-zero">
               <form action="" class="col-md-6 pad-zero">
@@ -12,7 +12,7 @@
                 </div>
               </form>
               <div class="col-md-6 text-right">
-                <a data-toggle="modal" data-target="#company" class="action-btn" value="Add company" ng-click="modal='create'"/><i class="fa fa-plus"></i> Company</a>
+                <a data-toggle="modal" data-target="#company" class="action-btn" value="Add company" ng-click="modal='create'"/><i class="fa fa-plus"></i> Fleet</a>
               </div>   
               <div class="clearfix"></div>
             </div>
@@ -65,8 +65,8 @@
     </div> 
     <div ng-if="companies.length==0">
         <div class="new-cm">
-          <h1>Please add a company</h1>
-          <a data-toggle="modal" data-target="#company" class="action-btn" value="Add company" ng-click="modal='create'"/><i class="fa fa-plus"></i> Company</a>
+          <h1>Please add a Fleet</h1>
+          <a data-toggle="modal" data-target="#company" class="action-btn" value="Add company" ng-click="modal='create'"/><i class="fa fa-plus"></i> Fleet</a>
         </div>
     </div>
     <%= render "partials/company_form" %>
